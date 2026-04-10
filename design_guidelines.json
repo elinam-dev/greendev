@@ -1,0 +1,132 @@
+{
+  "project_name": "GreenDev Associates International Limited",
+  "domain": "Environmental and Sustainability Consulting",
+  "theme": "Light",
+  "archetype": "Archetype 1 (Organic & Earthy)",
+  "emotional_tone": "Scientifically authoritative, globally competitive, trustworthy, warm, environmentally conscious",
+  "color_palette": {
+    "background": {
+      "primary": "#FFFFFF",
+      "secondary": "#F9FAFB",
+      "tertiary": "#F0FDF4"
+    },
+    "text": {
+      "primary": "#111827",
+      "secondary": "#4B5563",
+      "inverse": "#FFFFFF"
+    },
+    "brand": {
+      "primary_green": "#064E3B",
+      "sage_green": "#4D7C0F",
+      "earth_sand": "#D4A373",
+      "accent_gold": "#B45309"
+    },
+    "surfaces": {
+      "card_bg": "#FFFFFF",
+      "glass_bg": "rgba(255, 255, 255, 0.7)",
+      "dark_surface": "#064E3B"
+    }
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Outfit, sans-serif",
+      "weights": ["400", "600", "700"],
+      "h1": "text-4xl md:text-5xl lg:text-6xl tracking-tight leading-none",
+      "h2": "text-3xl md:text-4xl tracking-tight",
+      "h3": "text-2xl",
+      "h4": "text-xl font-semibold"
+    },
+    "body": {
+      "font_family": "IBM Plex Sans, sans-serif",
+      "weights": ["400", "500"],
+      "base": "text-base leading-relaxed text-gray-700",
+      "small": "text-sm text-gray-500",
+      "overline": "text-xs font-semibold tracking-[0.2em] uppercase text-sage-green"
+    }
+  },
+  "spacing_and_layout": {
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "section_padding": "py-24",
+    "grid_system": "grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12",
+    "cards": {
+      "padding": "p-8",
+      "border_radius": "rounded-none",
+      "shadow": "shadow-sm hover:shadow-xl transition-shadow duration-300",
+      "border": "border border-gray-100"
+    }
+  },
+  "surface_strategies": {
+    "header": "Crystal Glass - backdrop-blur-xl bg-white/80 border-b border-gray-200/50 sticky top-0 z-50",
+    "footer": "Solid Dark - bg-primary_green text-white py-24",
+    "services_grid": "Bento Grid - Asymmetrical spanning, 1px subtle borders, solid backgrounds with hover lifts"
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-primary_green text-white px-8 py-3 font-medium hover:bg-emerald-900 transition-colors",
+      "secondary": "border border-primary_green text-primary_green px-8 py-3 font-medium hover:bg-primary_green hover:text-white transition-colors"
+    },
+    "navigation": "Sticky mega menu using Radix UI/Shadcn Navigation Menu, distinct active states",
+    "forms": "Shadcn UI inputs with subtle borders, generous padding, focus:ring-2 focus:ring-sage-green",
+    "carousels": "Embla Carousel (via Shadcn) for Clients and Testimonials, auto-play enabled",
+    "stats_counter": "Framer Motion intersection observer triggers, React CountUp for number animation"
+  },
+  "animations": {
+    "library": "Framer Motion, Lenis (smooth scrolling)",
+    "page_load": "Subtle fade up for hero text, scale-in for hero image",
+    "scroll": "Staggered fade-up for grid items (0.1s delay between items), image parallax effect on hero"
+  },
+  "iconography": {
+    "library": "@phosphor-icons/react",
+    "style": "Duotone, size 32px for sections, size 24px for ui elements, matching primary_green color"
+  },
+  "media": {
+    "hero": {
+      "description": "High-end sustainable infrastructure and wind turbines",
+      "url": "https://images.pexels.com/photos/9800116/pexels-photo-9800116.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    "about_us": {
+      "description": "Environmental scientist doing field work",
+      "url": "https://images.unsplash.com/photo-1612408934218-916d7b033df3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwxfHxlbnZpcm9ubWVudGFsJTIwc2NpZW50aXN0JTIwZmllbGQlMjB3b3JrfGVufDB8fHx8MTc3NTgzNTEzOHww&ixlib=rb-4.1.0&q=85"
+    },
+    "services_bg": {
+      "description": "Abstract solar panel background for technical sections",
+      "url": "https://images.unsplash.com/photo-1766839500277-b6c3a43c14e5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHN1c3RhaW5hYmxlJTIwZW5lcmd5JTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3NzU4MzUxNDl8MA&ixlib=rb-4.1.0&q=85"
+    },
+    "team": [
+      {
+        "description": "Corporate leadership portrait 1",
+        "url": "https://images.pexels.com/photos/36363694/pexels-photo-36363694.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "description": "Corporate leadership portrait 2",
+        "url": "https://images.pexels.com/photos/4687549/pexels-photo-4687549.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      }
+    ],
+    "client_logos": [
+      {
+        "description": "Energy Client Logo",
+        "url": "https://images.unsplash.com/photo-1766853209032-3c4b7a5c8b04?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NjZ8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBlbmVyZ3klMjBjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NzU4MzUxMzh8MA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "description": "Partner Logo",
+        "url": "https://images.unsplash.com/photo-1764344815160-0e2afc6939a0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxjb21wYW55JTIwbG9nbyUyMHdoaXRlJTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3NzU4MzUxNDl8MA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "description": "Corporate Logo",
+        "url": "https://images.pexels.com/photos/9973170/pexels-photo-9973170.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Strictly adhere to the color palette: Deep green (#064E3B) must be the grounding color, accented by earth tones. Do not use generic tailwind blue/indigo.",
+    "For headings, install and use Outfit via Google Fonts. For body, install IBM Plex Sans. Never use Inter for headings.",
+    "Implement Lenis for smooth scrolling globally. This is critical for the premium feel.",
+    "Hero sections MUST have an overlay gradient (bg-gradient-to-r from-black/70 via-black/40 to-transparent) to preserve text readability over complex images.",
+    "Use Phosphor icons. Install via: yarn add @phosphor-icons/react",
+    "Bento grids for 'Services' and 'Industries' sections. Span grid items asymmetrically to create visual interest. Avoid basic 3-column equal layouts.",
+    "Ensure all interactive components and forms have data-testid attributes for testing.",
+    "Do NOT use placeholder text or dummy image URLs. Only use the URLs provided in this media section.",
+    "Add 'group' class to cards and use 'group-hover:translate-x-1' and similar micro-interactions on arrows or icons inside them.",
+    "Build the admin panel using standard Shadcn table/form components but style them densely (Control Room Grid approach)."
+  ]
+}
