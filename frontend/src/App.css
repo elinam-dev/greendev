@@ -1,34 +1,130 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* App-specific styles */
+
+/* Navigation active state */
+.nav-link {
+  @apply relative text-gray-700 hover:text-[#064E3B] transition-colors;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.nav-link::after {
+  content: '';
+  @apply absolute left-0 bottom-0 w-0 h-0.5 bg-[#064E3B] transition-all duration-300;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.nav-link:hover::after,
+.nav-link.active::after {
+  @apply w-full;
 }
 
-.App-link {
-    color: #61dafb;
+/* Mobile menu styles */
+.mobile-menu {
+  @apply fixed inset-0 bg-white z-50 flex flex-col;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.mobile-menu-link {
+  @apply text-xl font-medium text-gray-800 hover:text-[#064E3B] py-4 border-b border-gray-100 transition-colors;
+}
+
+/* Hero section */
+.hero-section {
+  @apply relative min-h-[90vh] flex items-center;
+}
+
+.hero-content {
+  @apply relative z-10 max-w-3xl;
+}
+
+/* Stats counter */
+.stat-item {
+  @apply text-center p-6;
+}
+
+.stat-number {
+  @apply text-4xl md:text-5xl font-bold text-[#064E3B];
+}
+
+.stat-label {
+  @apply text-sm text-gray-600 mt-2;
+}
+
+/* Service grid */
+.services-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+/* Project card */
+.project-card {
+  @apply bg-white border border-gray-100 overflow-hidden transition-all duration-300;
+}
+
+.project-card:hover {
+  @apply shadow-xl border-transparent;
+}
+
+/* Team card */
+.team-card {
+  @apply bg-white overflow-hidden transition-all duration-300;
+}
+
+.team-card:hover {
+  @apply shadow-lg;
+}
+
+/* Testimonial card */
+.testimonial-card {
+  @apply bg-white border border-gray-100 p-8;
+}
+
+/* Contact form */
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  @apply w-full px-4 py-3 border border-gray-200 focus:border-[#064E3B] focus:ring-2 focus:ring-[#064E3B]/20 transition-all outline-none;
+}
+
+/* Admin panel */
+.admin-sidebar {
+  @apply w-64 bg-[#064E3B] text-white min-h-screen;
+}
+
+.admin-nav-item {
+  @apply flex items-center gap-3 px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 transition-colors;
+}
+
+.admin-nav-item.active {
+  @apply text-white bg-white/10 border-l-4 border-[#D4A373];
+}
+
+/* Mega menu */
+.mega-menu {
+  @apply absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100 opacity-0 invisible transition-all duration-300;
+}
+
+.mega-menu.open {
+  @apply opacity-100 visible;
+}
+
+/* Loading spinner */
+.spinner {
+  @apply animate-spin rounded-full h-8 w-8 border-2 border-gray-200 border-t-[#064E3B];
+}
+
+/* Smooth scroll for Lenis */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
