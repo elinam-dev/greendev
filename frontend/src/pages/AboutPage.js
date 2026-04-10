@@ -99,13 +99,13 @@ const AboutPage = () => {
                 Who We Are
               </h2>
               <p className="text-gray-600 leading-relaxed mb-6">
-                GreenDev Associates International Limited is an associate-based sustainability consultancy registered in Ghana. We specialize in delivering comprehensive environmental and engineering solutions to industries including manufacturing, oil & gas, mining, agriculture, energy, and infrastructure development.
+                GreenDev Associates International Limited is a Ghanaian sustainability consultancy and project management firm, incorporated under the Companies Act, 1963 (Act 179) and authorized to commence business since April 2016.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Our team comprises experienced environmental scientists, engineers, and industry specialists who bring together technical expertise and practical industry knowledge to deliver solutions that meet both regulatory requirements and business objectives.
+                We offer a wide range of environmental and socio-economic impact assessments, permit acquisition support, and capacity building services. Our team comprises experienced environmental scientists, engineers, and industry specialists who bring together technical expertise and practical industry knowledge.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                We have successfully completed over 500 projects across West Africa, establishing ourselves as a trusted partner for multinational corporations seeking reliable environmental consulting services.
+                We serve diverse industries including Manufacturing, Oil & Gas, Built Environment, Mining, Agriculture, and Energy across Ghana and West Africa, with a strong concentration in the Tema region and Greater Accra.
               </p>
             </motion.div>
             <motion.div
@@ -140,7 +140,7 @@ const AboutPage = () => {
               </div>
               <h3 className="font-outfit text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
               <p className="text-gray-600 leading-relaxed">
-                To be Africa's most trusted environmental and sustainability consultancy, setting the benchmark for scientific excellence and practical solutions that enable sustainable development across the continent.
+                To be acclaimed as a resourceful, responsive and reliable sustainability solutions provider in the sub-region.
               </p>
             </motion.div>
 
@@ -156,7 +156,7 @@ const AboutPage = () => {
               </div>
               <h3 className="font-outfit text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
               <p className="text-gray-600 leading-relaxed">
-                To deliver innovative, science-based environmental and engineering solutions that help our clients achieve regulatory compliance, operational excellence, and sustainable growth while protecting the environment and communities.
+                To provide professional and practicable guidance for companies to ensure sustainable development at all stages of the project cycle.
               </p>
             </motion.div>
           </div>
@@ -179,11 +179,11 @@ const AboutPage = () => {
             >
               <Quotes className="w-16 h-16 text-[#D4A373] mx-auto mb-8" weight="fill" />
               <blockquote className="font-outfit text-2xl md:text-3xl text-gray-900 leading-relaxed mb-8">
-                "At GreenDev Associates, we believe that environmental stewardship and economic development are not mutually exclusive. Our mission is to help organizations navigate the complex landscape of environmental regulations while achieving their business objectives."
+                "At GreenDev Associates, we understand project objectives thoroughly, visit sites for baseline data collection, and interact with all stakeholders including regulatory bodies, affected persons, project owners, and end-users. We conduct extensive research and practice a systematic quality control strategy to deliver professional and practicable guidance."
               </blockquote>
               <div>
-                <p className="font-outfit font-semibold text-gray-900">Dr. Kwame Mensah</p>
-                <p className="text-gray-500">Managing Director</p>
+                <p className="font-outfit font-semibold text-gray-900">Kojo Anagbo</p>
+                <p className="text-gray-500">Managing Partner, Environmental Sustainability Practitioner</p>
               </div>
             </motion.div>
           </div>

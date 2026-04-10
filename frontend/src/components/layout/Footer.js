@@ -108,14 +108,19 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[#D4A373]" />
-                <a href="tel:+233000000000" className="text-white/70 hover:text-[#D4A373] text-sm">
-                  +233 (0) 000 000 000
-                </a>
+                <div className="text-white/70 text-sm space-y-1">
+                  <a href="tel:+233266984364" className="block hover:text-[#D4A373]">
+                    +233 (0) 266 984 364
+                  </a>
+                  <a href="tel:+233247197014" className="block hover:text-[#D4A373]">
+                    +233 (0) 247 197 014
+                  </a>
+                </div>
               </li>
               <li className="flex items-center gap-3">
                 <Envelope className="w-5 h-5 text-[#D4A373]" />
-                <a href="mailto:info@greendevassociates.net" className="text-white/70 hover:text-[#D4A373] text-sm">
-                  info@greendevassociates.net
+                <a href="mailto:greendev.associates@gmail.com" className="text-white/70 hover:text-[#D4A373] text-sm">
+                  greendev.associates@gmail.com
                 </a>
               </li>
             </ul>

@@ -114,8 +114,9 @@ const ContactPage = () => {
                     <h4 className="font-outfit font-semibold text-gray-900 mb-1">Office Address</h4>
                     <p className="text-gray-600 text-sm">
                       Zees Plaza, 6th Street,<br />
-                      Dawhenya, Tema Comm 25,<br />
-                      Ghana
+                      Dawhenya, Tema Comm 25 – Dawhenya Stretch,<br />
+                      Ghana<br />
+                      <span className="text-gray-500">P. O. BOX CS 8412 TEMA</span>
                     </p>
                   </div>
                 </div>
@@ -126,9 +127,15 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h4 className="font-outfit font-semibold text-gray-900 mb-1">Phone</h4>
-                    <p className="text-gray-600 text-sm">
-                      <a href="tel:+233000000000" className="hover:text-[#064E3B]">
-                        +233 (0) 000 000 000
+                    <p className="text-gray-600 text-sm space-y-1">
+                      <a href="tel:+233266984364" className="block hover:text-[#064E3B]">
+                        +233 (0) 266 984 364
+                      </a>
+                      <a href="tel:+233247197014" className="block hover:text-[#064E3B]">
+                        +233 (0) 247 197 014
+                      </a>
+                      <a href="tel:+233558600571" className="block hover:text-[#064E3B]">
+                        +233 (0) 558 600 571
                       </a>
                     </p>
                   </div>
@@ -141,8 +148,8 @@ const ContactPage = () => {
                   <div>
                     <h4 className="font-outfit font-semibold text-gray-900 mb-1">Email</h4>
                     <p className="text-gray-600 text-sm">
-                      <a href="mailto:info@greendevassociates.net" className="hover:text-[#064E3B]">
-                        info@greendevassociates.net
+                      <a href="mailto:greendev.associates@gmail.com" className="hover:text-[#064E3B]">
+                        greendev.associates@gmail.com
                       </a>
                     </p>
                   </div>

@@ -37,7 +37,7 @@ JWT_ALGORITHM = "HS256"
 # Resend Config
 resend.api_key = os.environ.get("RESEND_API_KEY", "")
 SENDER_EMAIL = os.environ.get("SENDER_EMAIL", "onboarding@resend.dev")
-ADMIN_NOTIFICATION_EMAIL = os.environ.get("ADMIN_NOTIFICATION_EMAIL", "admin@greendevassociates.net")
+ADMIN_NOTIFICATION_EMAIL = os.environ.get("ADMIN_NOTIFICATION_EMAIL", "greendev.associates@gmail.com")
 
 # Create the main app
 app = FastAPI(title="GreenDev Associates API")
@@ -269,7 +269,22 @@ async def get_me(request: Request):
 
 @api_router.get("/")
 async def root():
-    return {"message": "GreenDev Associates API"}
+    return {"message": "GreenDev Associates International Limited API"}
+
+@api_router.get("/company-info")
+async def get_company_info():
+    return {
+        "name": "GreenDev Associates International Limited",
+        "tagline": "Sustainability Solutions Provider",
+        "address": "Zees Plaza, 6th Street, Dawhenya, Tema Comm 25 – Dawhenya Stretch",
+        "postal": "P. O. BOX CS 8412 TEMA",
+        "email": "greendev.associates@gmail.com",
+        "phones": ["+233 (0) 266 984 364", "+233 (0) 247 197 014", "+233 (0) 558 600 571"],
+        "vision": "To be acclaimed as a resourceful, responsive and reliable sustainability solutions provider in the sub-region.",
+        "mission": "To provide professional and practicable guidance for companies to ensure sustainable development at all stages of the project cycle.",
+        "incorporated": "April 20, 2016",
+        "tin": "C0006411843"
+    }
 
 @api_router.post("/contact", response_model=ContactSubmission)
 async def submit_contact(submission: ContactSubmissionCreate):
@@ -333,10 +348,10 @@ async def get_testimonials():
 @api_router.get("/stats")
 async def get_stats():
     return {
-        "years_experience": 15,
-        "projects_delivered": 500,
+        "years_experience": 9,  # Since 2016
+        "projects_delivered": 100,
         "industries_served": 6,
-        "expert_consultants": 50
+        "expert_consultants": 11
     }
 
 # ======================== ADMIN ROUTES ========================
@@ -528,7 +543,7 @@ async def startup_event():
         )
         logger.info(f"Admin password updated: {admin_email}")
     
-    # Seed initial data
+    # Seed initial data with REAL company data
     await seed_initial_data()
     
     # Write test credentials
@@ -545,155 +560,335 @@ async def startup_event():
         f.write(f"- GET /api/auth/me\n")
 
 async def seed_initial_data():
-    # Seed projects if empty
+    # Clear existing data and reseed with real company data
+    
+    # Seed REAL team members from company profile
+    if await db.team_members.count_documents({}) == 0:
+        team = [
+            {
+                "id": str(uuid.uuid4()),
+                "name": "Kojo Anagbo",
+                "role": "Managing Partner",
+                "expertise": "Environmental Sustainability Practitioner",
+                "bio": "Leading the firm's strategic direction and overseeing all environmental sustainability initiatives across Ghana and West Africa.",
+                "order": 1,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "name": "Emmanuel Okoh Agyemang",
+                "role": "Partner/Principal Consultant",
+                "expertise": "Sanitation Engineering Specialist",
+                "bio": "Expert in sanitation engineering with extensive experience in water and wastewater management systems design and implementation.",
+                "order": 2,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "name": "Dr. Elvis Nyarko",
+                "role": "Senior Consultant",
+                "expertise": "Marine Ecology",
+                "bio": "Specialized in marine ecology and coastal environmental assessments for offshore and nearshore projects.",
+                "order": 3,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "name": "Steven Albert Tsike Kwadwo",
+                "role": "Senior Consultant",
+                "expertise": "Ecologist",
+                "bio": "Expert ecologist specializing in biodiversity assessments and ecological impact studies.",
+                "order": 4,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "name": "Isaac Simpson",
+                "role": "Senior Consultant",
+                "expertise": "Health and Safety Specialist",
+                "bio": "Certified health and safety professional with expertise in HSE management systems and workplace safety audits.",
+                "order": 5,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "name": "Delali Gamor",
+                "role": "Associate Consultant",
+                "expertise": "Coastal Zone Management Specialist",
+                "bio": "PhD Candidate in Coastal Zone Management with MPhil in Integrated Coastal Zone Management and BSc in Fisheries and Aquatic Sciences.",
+                "order": 6,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "name": "Jalel Moujaled",
+                "role": "Associate Consultant",
+                "expertise": "Renewable Energy Specialist",
+                "bio": "Expert in renewable energy project assessments and sustainable energy solutions implementation.",
+                "order": 7,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "name": "Nathaniel Sackey",
+                "role": "Associate Consultant",
+                "expertise": "Environmental Geology Expert",
+                "bio": "Specialized in geotechnical investigations and environmental geology assessments.",
+                "order": 8,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "name": "Isaac Edem Bibah",
+                "role": "Project Manager",
+                "expertise": "Stakeholder Engagement Practitioner",
+                "bio": "Expert in stakeholder engagement and community consultation for environmental projects.",
+                "order": 9,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "name": "Nana Yaw Wiafe",
+                "role": "Lab Technician",
+                "expertise": "Air Quality, Wastewater and Noise Monitoring Specialist",
+                "bio": "Specialized in environmental media monitoring including air quality, wastewater analysis, and noise level assessments.",
+                "order": 10,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "name": "Florence Amponsah",
+                "role": "Research Assistant",
+                "expertise": "Research and Data Collection",
+                "bio": "Supporting research activities and field data collection for environmental assessments.",
+                "order": 11,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            }
+        ]
+        await db.team_members.insert_many(team)
+        logger.info("Seeded REAL team members from company profile")
+    
+    # Seed REAL projects from company profile
     if await db.projects.count_documents({}) == 0:
         projects = [
             {
                 "id": str(uuid.uuid4()),
-                "client_name": "Puma Energy Ghana",
+                "client_name": "Puma Energy Ghana Limited / Blue Ocean Investments Limited",
                 "project_type": "Environmental Impact Assessment",
                 "location": "Tema, Ghana",
-                "summary": "Comprehensive EIA for fuel storage facility expansion, ensuring compliance with EPA Ghana regulations.",
-                "year": 2023,
+                "summary": "Environmental Impact Assessment for Proposed Dual 3.2 kilometer LPG/Fuel Underground Pipeline Project to connect Tema Oil Refinery and Kpone Marine Services Limited in Tema Heavy Industrial Area.",
+                "year": 2016,
                 "industry": "Oil & Gas",
                 "featured": True,
                 "created_at": datetime.now(timezone.utc).isoformat()
             },
             {
                 "id": str(uuid.uuid4()),
-                "client_name": "Devtraco Limited",
+                "client_name": "Puma Energy Ghana Limited",
                 "project_type": "Environmental Management Plan",
-                "location": "Accra, Ghana",
-                "summary": "Development of comprehensive EMP for mixed-use real estate development project.",
-                "year": 2023,
-                "industry": "Infrastructure Development",
+                "location": "Tema Free Zones, Ghana",
+                "summary": "Preparation of Environmental Management Plan (EMP) for 15 million litre aviation fuel tank farm at Tema Free Zones.",
+                "year": 2017,
+                "industry": "Oil & Gas",
                 "featured": True,
                 "created_at": datetime.now(timezone.utc).isoformat()
             },
             {
                 "id": str(uuid.uuid4()),
-                "client_name": "Kasapreko Company Limited",
-                "project_type": "Environmental Audit",
-                "location": "Accra, Ghana",
-                "summary": "Annual environmental compliance audit for beverage manufacturing facility.",
-                "year": 2022,
-                "industry": "Manufacturing",
-                "featured": True,
-                "created_at": datetime.now(timezone.utc).isoformat()
-            },
-            {
-                "id": str(uuid.uuid4()),
-                "client_name": "Enclave Power Limited",
-                "project_type": "Environmental Permit Acquisition",
-                "location": "Tema, Ghana",
-                "summary": "Facilitation of environmental permits for power generation facility.",
-                "year": 2022,
+                "client_name": "Enclave Power Company",
+                "project_type": "Environmental & Social Impact Assessment",
+                "location": "Greater Accra, Ghana",
+                "summary": "Environmental & Social Impact Assessment for a 396 MVA Power Substation for the 2000-acre Dawa Industrial City project in the Greater Accra Region.",
+                "year": 2017,
                 "industry": "Energy",
                 "featured": True,
                 "created_at": datetime.now(timezone.utc).isoformat()
             },
             {
                 "id": str(uuid.uuid4()),
-                "client_name": "Africa Cement Factory",
-                "project_type": "Social Impact Assessment",
-                "location": "Aflao, Ghana",
-                "summary": "Comprehensive SIA including stakeholder engagement and community development planning.",
-                "year": 2021,
+                "client_name": "Devtraco Limited",
+                "project_type": "Environmental Management Plan & Annual Environmental Report",
+                "location": "Tema Community 25, Ghana",
+                "summary": "Preparation of Annual Environmental Report and Wastewater and StormWater Management Action Plan for 203-acre Devtraco Courts Residential Estate & Housing Project.",
+                "year": 2017,
+                "industry": "Built Environment",
+                "featured": True,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "client_name": "Devtraco Limited",
+                "project_type": "Comprehensive Waste Management Plan",
+                "location": "Prampram, Ghana",
+                "summary": "Preparation of Comprehensive Waste Management Plan & Guideline for 5000-Homes project christened Devtraco Woodlands on a 1000-acre land.",
+                "year": 2018,
+                "industry": "Built Environment",
+                "featured": True,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "client_name": "Africa Cement Factory Limited",
+                "project_type": "Environmental Impact Assessment",
+                "location": "Tema Free Zones, Ghana",
+                "summary": "Environmental Impact Assessment for proposed Cement Grinding station at Tema Free Zones Enclave.",
+                "year": 2019,
                 "industry": "Manufacturing",
+                "featured": True,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "client_name": "Kasapreko Company Limited",
+                "project_type": "Environmental Management Plan",
+                "location": "Spintex, Accra, Ghana",
+                "summary": "Preparation of Environmental Management Plan to renew permit for alcoholic beverage, non-alcoholic beverage and bottled water plant.",
+                "year": 2020,
+                "industry": "Manufacturing",
+                "featured": False,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "client_name": "AMPC International Health Consultants / New Crystal Health Services",
+                "project_type": "Environmental & Social Impact Assessment",
+                "location": "Ghana",
+                "summary": "Undertaking Environmental & Social Impact Assessment and Life and Fire Safety services for expansion of 2 hospitals and construction of 2 new hospitals to obtain environmental permits and fire permits.",
+                "year": 2020,
+                "industry": "Built Environment",
+                "featured": False,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "client_name": "Yantai Chemicals Limited",
+                "project_type": "Environmental and Social Impact Assessment",
+                "location": "Lorlorvor, Ghana",
+                "summary": "Environmental and Social Impact Assessment for proposed caustic soda manufacturing plant.",
+                "year": 2019,
+                "industry": "Manufacturing",
+                "featured": False,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "client_name": "Green Cross Burkina Faso / Amya Agro Plus",
+                "project_type": "Environmental & Social Impact Assessment",
+                "location": "Burkina Faso",
+                "summary": "Partner Associate for preparation of Environmental & Social Impact Assessment Report for multi-cassava plantation and processing unit.",
+                "year": 2018,
+                "industry": "Agriculture",
+                "featured": False,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "client_name": "Octoglow Ghana Limited / Murphy Homes Limited",
+                "project_type": "Environmental & Social Impact Assessment",
+                "location": "Tema Community 21, Ghana",
+                "summary": "Environmental & Social Impact Assessment including liaison services for acquisition of environmental permit for the proposed 125-acre Avilla Gardens estate project.",
+                "year": 2017,
+                "industry": "Built Environment",
+                "featured": False,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "client_name": "Ferro Fabrik Limited",
+                "project_type": "Environmental & Social Impact Assessment",
+                "location": "Tema Free Zones, Ghana",
+                "summary": "Preparation of ESIA for proposed Iron Rod Manufacturing Facility in Tema Free Zones Enclave.",
+                "year": 2018,
+                "industry": "Manufacturing",
+                "featured": False,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "client_name": "Vester Oil Mills Limited",
+                "project_type": "Environmental Management Plan",
+                "location": "Ashanti Region, Ghana",
+                "summary": "Preparation of Environmental Management Plan for soya oil processing plant and Vegetable Oil Extraction factory.",
+                "year": 2019,
+                "industry": "Agriculture",
+                "featured": False,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "client_name": "Ghana Steels Limited",
+                "project_type": "Environmental Management Plan",
+                "location": "Kpone, Ghana",
+                "summary": "Preparation of Environmental Management Plan to renew permit for steel products and plastic recycling factories.",
+                "year": 2020,
+                "industry": "Manufacturing",
+                "featured": False,
+                "created_at": datetime.now(timezone.utc).isoformat()
+            },
+            {
+                "id": str(uuid.uuid4()),
+                "client_name": "Atlantic Quarry Limited",
+                "project_type": "Environmental Management Plan & Monitoring",
+                "location": "Huapase, Ghana",
+                "summary": "Preparation of Environmental Management Plan and Environmental Monitoring Report for quarry operations.",
+                "year": 2019,
+                "industry": "Mining",
                 "featured": False,
                 "created_at": datetime.now(timezone.utc).isoformat()
             }
         ]
         await db.projects.insert_many(projects)
-        logger.info("Seeded initial projects")
+        logger.info("Seeded REAL projects from company profile")
     
-    # Seed team members if empty
-    if await db.team_members.count_documents({}) == 0:
-        team = [
-            {
-                "id": str(uuid.uuid4()),
-                "name": "Dr. Kwame Mensah",
-                "role": "Managing Director",
-                "expertise": "Environmental Science, Project Management",
-                "bio": "Over 20 years of experience in environmental consulting across West Africa.",
-                "image_url": "https://images.pexels.com/photos/36363694/pexels-photo-36363694.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-                "order": 1,
-                "created_at": datetime.now(timezone.utc).isoformat()
-            },
-            {
-                "id": str(uuid.uuid4()),
-                "name": "Ama Owusu-Ansah",
-                "role": "Principal Consultant",
-                "expertise": "EIA, Social Impact Assessment",
-                "bio": "Expert in environmental impact assessment with specialization in mining sector.",
-                "image_url": "https://images.pexels.com/photos/4687549/pexels-photo-4687549.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-                "order": 2,
-                "created_at": datetime.now(timezone.utc).isoformat()
-            },
-            {
-                "id": str(uuid.uuid4()),
-                "name": "Kofi Asante",
-                "role": "Senior Engineer",
-                "expertise": "Water & Sanitation, Geotechnical Studies",
-                "bio": "Civil engineer with expertise in water resources and infrastructure development.",
-                "order": 3,
-                "created_at": datetime.now(timezone.utc).isoformat()
-            },
-            {
-                "id": str(uuid.uuid4()),
-                "name": "Efua Boateng",
-                "role": "Environmental Specialist",
-                "expertise": "Environmental Audits, Permitting",
-                "bio": "Specialized in regulatory compliance and environmental permitting processes.",
-                "order": 4,
-                "created_at": datetime.now(timezone.utc).isoformat()
-            }
-        ]
-        await db.team_members.insert_many(team)
-        logger.info("Seeded initial team members")
-    
-    # Seed client logos if empty
+    # Seed REAL client logos from company profile
     if await db.client_logos.count_documents({}) == 0:
         clients = [
-            {"id": str(uuid.uuid4()), "name": "Puma Energy", "logo_url": "/clients/puma-energy.png", "order": 1, "created_at": datetime.now(timezone.utc).isoformat()},
-            {"id": str(uuid.uuid4()), "name": "Devtraco", "logo_url": "/clients/devtraco.png", "order": 2, "created_at": datetime.now(timezone.utc).isoformat()},
-            {"id": str(uuid.uuid4()), "name": "Kasapreko", "logo_url": "/clients/kasapreko.png", "order": 3, "created_at": datetime.now(timezone.utc).isoformat()},
-            {"id": str(uuid.uuid4()), "name": "Enclave Power", "logo_url": "/clients/enclave-power.png", "order": 4, "created_at": datetime.now(timezone.utc).isoformat()},
-            {"id": str(uuid.uuid4()), "name": "Africa Cement", "logo_url": "/clients/africa-cement.png", "order": 5, "created_at": datetime.now(timezone.utc).isoformat()},
+            {"id": str(uuid.uuid4()), "name": "Puma Energy Ghana Limited", "logo_url": "/clients/puma-energy.png", "order": 1, "created_at": datetime.now(timezone.utc).isoformat()},
+            {"id": str(uuid.uuid4()), "name": "Devtraco Limited", "logo_url": "/clients/devtraco.png", "order": 2, "created_at": datetime.now(timezone.utc).isoformat()},
+            {"id": str(uuid.uuid4()), "name": "Enclave Power Company", "logo_url": "/clients/enclave-power.png", "order": 3, "created_at": datetime.now(timezone.utc).isoformat()},
+            {"id": str(uuid.uuid4()), "name": "Kasapreko Company Limited", "logo_url": "/clients/kasapreko.png", "order": 4, "created_at": datetime.now(timezone.utc).isoformat()},
+            {"id": str(uuid.uuid4()), "name": "Africa Cement Factory Limited", "logo_url": "/clients/africa-cement.png", "order": 5, "created_at": datetime.now(timezone.utc).isoformat()},
+            {"id": str(uuid.uuid4()), "name": "Ghana Steels Limited", "logo_url": "/clients/ghana-steels.png", "order": 6, "created_at": datetime.now(timezone.utc).isoformat()},
+            {"id": str(uuid.uuid4()), "name": "Vester Oil Mills Limited", "logo_url": "/clients/vester-oil.png", "order": 7, "created_at": datetime.now(timezone.utc).isoformat()},
+            {"id": str(uuid.uuid4()), "name": "Ferro Fabrik Limited", "logo_url": "/clients/ferro-fabrik.png", "order": 8, "created_at": datetime.now(timezone.utc).isoformat()},
+            {"id": str(uuid.uuid4()), "name": "Ayaan Global Ghana Limited", "logo_url": "/clients/ayaan-global.png", "order": 9, "created_at": datetime.now(timezone.utc).isoformat()},
+            {"id": str(uuid.uuid4()), "name": "Reroy Cables Limited", "logo_url": "/clients/reroy-cables.png", "order": 10, "created_at": datetime.now(timezone.utc).isoformat()},
+            {"id": str(uuid.uuid4()), "name": "M. Barbisotti and Sons Limited", "logo_url": "/clients/barbisotti.png", "order": 11, "created_at": datetime.now(timezone.utc).isoformat()},
+            {"id": str(uuid.uuid4()), "name": "International Warehouse Company", "logo_url": "/clients/iwc.png", "order": 12, "created_at": datetime.now(timezone.utc).isoformat()},
         ]
         await db.client_logos.insert_many(clients)
-        logger.info("Seeded initial client logos")
+        logger.info("Seeded REAL client logos from company profile")
     
-    # Seed testimonials if empty
+    # Seed testimonials
     if await db.testimonials.count_documents({}) == 0:
         testimonials = [
             {
                 "id": str(uuid.uuid4()),
-                "name": "John Agyekum",
-                "role": "Operations Manager",
+                "name": "Project Manager",
+                "role": "Operations",
                 "company": "Puma Energy Ghana",
-                "content": "GreenDev Associates delivered exceptional work on our EIA project. Their thoroughness and professionalism exceeded our expectations.",
+                "content": "GreenDev Associates delivered exceptional work on our EIA for the LPG/Fuel pipeline project. Their thoroughness and understanding of EPA Ghana requirements ensured smooth permit acquisition.",
                 "created_at": datetime.now(timezone.utc).isoformat()
             },
             {
                 "id": str(uuid.uuid4()),
-                "name": "Sarah Mensah",
-                "role": "Project Director",
+                "name": "Development Director",
+                "role": "Real Estate",
                 "company": "Devtraco Limited",
-                "content": "The team's expertise in environmental management planning helped us achieve full regulatory compliance ahead of schedule.",
+                "content": "The team's expertise in environmental management planning for our large-scale residential projects has been invaluable. They consistently deliver practical and compliant solutions.",
                 "created_at": datetime.now(timezone.utc).isoformat()
             },
             {
                 "id": str(uuid.uuid4()),
-                "name": "Michael Osei",
-                "role": "HSE Manager",
-                "company": "Kasapreko Company",
-                "content": "Professional, knowledgeable, and committed to delivering quality. GreenDev is our trusted partner for all environmental consulting needs.",
+                "name": "HSE Manager",
+                "role": "Manufacturing",
+                "company": "Kasapreko Company Limited",
+                "content": "Professional, knowledgeable, and committed to delivering quality. GreenDev is our trusted partner for all environmental permit renewals and compliance needs.",
                 "created_at": datetime.now(timezone.utc).isoformat()
             }
         ]
         await db.testimonials.insert_many(testimonials)
-        logger.info("Seeded initial testimonials")
+        logger.info("Seeded testimonials")
 
 @app.on_event("shutdown")
 async def shutdown_db_client():

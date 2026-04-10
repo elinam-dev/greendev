@@ -17,13 +17,13 @@ const StatsCounter = ({ stats }) => {
   const defaultStats = [
     { 
       icon: CalendarCheck, 
-      value: stats?.years_experience || 15, 
+      value: stats?.years_experience || 9, 
       suffix: '+', 
       label: 'Years of Experience' 
     },
     { 
       icon: Buildings, 
-      value: stats?.projects_delivered || 500, 
+      value: stats?.projects_delivered || 100, 
       suffix: '+', 
       label: 'Projects Delivered' 
     },
@@ -35,7 +35,7 @@ const StatsCounter = ({ stats }) => {
     },
     { 
       icon: Users, 
-      value: stats?.expert_consultants || 50, 
+      value: stats?.expert_consultants || 11, 
       suffix: '+', 
       label: 'Expert Consultants' 
     },

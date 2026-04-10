@@ -10,20 +10,24 @@ const ClientsPage = () => {
   const [clients, setClients] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Hardcoded clients since we're using initials
+  // Real clients from company profile
   const clientList = [
-    { name: 'Puma Energy Ghana', initial: 'PE', industry: 'Oil & Gas' },
-    { name: 'Devtraco Limited', initial: 'DT', industry: 'Real Estate' },
+    { name: 'Puma Energy Ghana Limited', initial: 'PE', industry: 'Oil & Gas' },
+    { name: 'Devtraco Limited', initial: 'DT', industry: 'Built Environment' },
+    { name: 'Enclave Power Company', initial: 'EP', industry: 'Energy' },
     { name: 'Kasapreko Company Limited', initial: 'KC', industry: 'Manufacturing' },
-    { name: 'Enclave Power Limited', initial: 'EP', industry: 'Energy' },
-    { name: 'Africa Cement Factory', initial: 'AC', industry: 'Manufacturing' },
-    { name: 'Ghana Gas Company', initial: 'GG', industry: 'Oil & Gas' },
-    { name: 'Volta River Authority', initial: 'VR', industry: 'Energy' },
-    { name: 'AngloGold Ashanti', initial: 'AA', industry: 'Mining' },
-    { name: 'Newmont Ghana', initial: 'NG', industry: 'Mining' },
-    { name: 'Total Energies', initial: 'TE', industry: 'Oil & Gas' },
-    { name: 'Ecobank Ghana', initial: 'EB', industry: 'Financial Services' },
-    { name: 'Ghana Ports Authority', initial: 'GP', industry: 'Infrastructure' },
+    { name: 'Africa Cement Factory Limited', initial: 'AC', industry: 'Manufacturing' },
+    { name: 'Ghana Steels Limited', initial: 'GS', industry: 'Manufacturing' },
+    { name: 'Ferro Fabrik Limited', initial: 'FF', industry: 'Manufacturing' },
+    { name: 'Vester Oil Mills Limited', initial: 'VO', industry: 'Agriculture' },
+    { name: 'Ayaan Global Ghana Limited', initial: 'AG', industry: 'Manufacturing' },
+    { name: 'Reroy Cables Limited', initial: 'RC', industry: 'Manufacturing' },
+    { name: 'Western Rod and Wire Limited', initial: 'WR', industry: 'Manufacturing' },
+    { name: 'AMPC International Health Consultants', initial: 'AI', industry: 'Health Services' },
+    { name: 'Yantai Chemicals Limited', initial: 'YC', industry: 'Manufacturing' },
+    { name: 'Atlantic Quarry Limited', initial: 'AQ', industry: 'Mining' },
+    { name: 'M. Barbisotti and Sons Limited', initial: 'MB', industry: 'Logistics' },
+    { name: 'International Warehouse Company', initial: 'IW', industry: 'Logistics' },
   ];
 
   useEffect(() => {
