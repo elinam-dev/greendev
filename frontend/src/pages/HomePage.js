@@ -91,12 +91,20 @@ const HomePage = () => {
   ];
 
   const clientLogos = [
-    { name: 'Puma Energy', initial: 'PE' },
-    { name: 'Devtraco', initial: 'DT' },
-    { name: 'Kasapreko', initial: 'KC' },
-    { name: 'Enclave Power', initial: 'EP' },
-    { name: 'Africa Cement', initial: 'AC' },
-    { name: 'Ghana Steels', initial: 'GS' },
+    { name: 'Puma Energy', initial: 'PE', logo: null },
+    { name: 'Devtraco', initial: 'DT', logo: null },
+    { name: 'Kasapreko', initial: 'KC', logo: null },
+    { name: 'Enclave Power', initial: 'EP', logo: null },
+    { 
+      name: 'AMPC Health', 
+      initial: 'AI', 
+      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/ktdv8xhh_Screenshot_12-4-2026_3324_www.bing.com.jpeg'
+    },
+    { 
+      name: 'Int\'l Warehouse', 
+      initial: 'IW', 
+      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/g2z6mzb2_Screenshot_12-4-2026_4510_www.bing.com.jpeg'
+    },
   ];
 
   return (
@@ -459,12 +467,20 @@ const HomePage = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="w-28 h-28 md:w-36 md:h-36 bg-gray-50 rounded-xl flex items-center justify-center group hover:bg-emerald-600 transition-all duration-300 shadow-sm hover:shadow-xl"
+                className="w-32 h-32 md:w-40 md:h-40 bg-gray-50 rounded-xl flex items-center justify-center group hover:bg-emerald-600 transition-all duration-300 shadow-sm hover:shadow-xl p-4"
                 data-testid={`client-logo-${index}`}
               >
-                <span className="font-outfit text-2xl md:text-3xl font-bold text-gray-400 group-hover:text-white transition-colors">
-                  {client.initial}
-                </span>
+                {client.logo ? (
+                  <img 
+                    src={client.logo} 
+                    alt={client.name}
+                    className="max-w-full max-h-full object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                  />
+                ) : (
+                  <span className="font-outfit text-2xl md:text-3xl font-bold text-gray-400 group-hover:text-white transition-colors">
+                    {client.initial}
+                  </span>
+                )}
               </motion.div>
             ))}
           </div>
