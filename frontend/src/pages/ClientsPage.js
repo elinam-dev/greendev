@@ -12,14 +12,49 @@ const ClientsPage = () => {
 
   // Real clients with uploaded logos
   const clientList = [
-    { name: 'Puma Energy Ghana Limited', initial: 'PE', industry: 'Oil & Gas', logo: null },
-    { name: 'Devtraco Limited', initial: 'DT', industry: 'Built Environment', logo: null },
-    { name: 'Enclave Power Company', initial: 'EP', industry: 'Energy', logo: null },
-    { name: 'Kasapreko Company Limited', initial: 'KC', industry: 'Manufacturing', logo: null },
-    { name: 'Africa Cement Factory Limited', initial: 'AC', industry: 'Manufacturing', logo: null },
+    { 
+      name: 'Puma Energy Ghana Limited', 
+      initial: 'PE', 
+      industry: 'Oil & Gas',
+      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/fx46xlb3_Screenshot_12-4-2026_24927_www.bing.com.jpeg'
+    },
+    { 
+      name: 'Devtraco Limited', 
+      initial: 'DT', 
+      industry: 'Built Environment',
+      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/w1fwdwhu_Screenshot_12-4-2026_25221_www.bing.com.jpeg'
+    },
+    { 
+      name: 'Enclave Power Company', 
+      initial: 'EP', 
+      industry: 'Energy',
+      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/3stvz2a1_Screenshot_12-4-2026_25617_www.bing.com.jpeg'
+    },
+    { 
+      name: 'Kasapreko Company Limited', 
+      initial: 'KC', 
+      industry: 'Manufacturing',
+      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/20v5cn2d_Screenshot_12-4-2026_25850_www.bing.com.jpeg'
+    },
+    { 
+      name: 'Africa Cement Factory Limited', 
+      initial: 'AC', 
+      industry: 'Manufacturing',
+      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/8o55n5b8_Screenshot_12-4-2026_3439_www.bing.com.jpeg'
+    },
     { name: 'Ghana Steels Limited', initial: 'GS', industry: 'Manufacturing', logo: null },
-    { name: 'Ferro Fabrik Limited', initial: 'FF', industry: 'Manufacturing', logo: null },
-    { name: 'Vester Oil Mills Limited', initial: 'VO', industry: 'Agriculture', logo: null },
+    { 
+      name: 'Ferro Fabrik Limited', 
+      initial: 'FF', 
+      industry: 'Manufacturing',
+      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/dq9eewte_Screenshot_12-4-2026_31415_www.bing.com.jpeg'
+    },
+    { 
+      name: 'Vester Oil Mills Limited', 
+      initial: 'VO', 
+      industry: 'Agriculture',
+      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/7gkxn3e4_Screenshot_12-4-2026_32256_www.bing.com.jpeg'
+    },
     { 
       name: 'International Warehouse Company', 
       initial: 'IW', 
@@ -50,9 +85,24 @@ const ClientsPage = () => {
       industry: 'Health Services',
       logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/ktdv8xhh_Screenshot_12-4-2026_3324_www.bing.com.jpeg'
     },
-    { name: 'Reroy Cables Limited', initial: 'RC', industry: 'Manufacturing', logo: null },
-    { name: 'Western Rod and Wire Limited', initial: 'WR', industry: 'Manufacturing', logo: null },
-    { name: 'Ayaan Global Ghana Limited', initial: 'AG', industry: 'Manufacturing', logo: null },
+    { 
+      name: 'Reroy Cables Limited', 
+      initial: 'RC', 
+      industry: 'Manufacturing',
+      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/clds22bo_Screenshot_12-4-2026_32837_www.bing.com.jpeg'
+    },
+    { 
+      name: 'Western Rod and Wire Limited', 
+      initial: 'WR', 
+      industry: 'Manufacturing',
+      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/mst56ojx_Screenshot_12-4-2026_33031_www.bing.com.jpeg'
+    },
+    { 
+      name: 'Ayaan Global Ghana Limited', 
+      initial: 'AG', 
+      industry: 'Manufacturing',
+      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/pye8u4dn_Screenshot_12-4-2026_32638_www.bing.com.jpeg'
+    },
   ];
 
   useEffect(() => {

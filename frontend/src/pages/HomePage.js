@@ -91,10 +91,26 @@ const HomePage = () => {
   ];
 
   const clientLogos = [
-    { name: 'Puma Energy', initial: 'PE', logo: null },
-    { name: 'Devtraco', initial: 'DT', logo: null },
-    { name: 'Kasapreko', initial: 'KC', logo: null },
-    { name: 'Enclave Power', initial: 'EP', logo: null },
+    { 
+      name: 'Puma Energy', 
+      initial: 'PE', 
+      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/fx46xlb3_Screenshot_12-4-2026_24927_www.bing.com.jpeg'
+    },
+    { 
+      name: 'Devtraco', 
+      initial: 'DT', 
+      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/w1fwdwhu_Screenshot_12-4-2026_25221_www.bing.com.jpeg'
+    },
+    { 
+      name: 'Kasapreko', 
+      initial: 'KC', 
+      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/20v5cn2d_Screenshot_12-4-2026_25850_www.bing.com.jpeg'
+    },
+    { 
+      name: 'Enclave Power', 
+      initial: 'EP', 
+      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/3stvz2a1_Screenshot_12-4-2026_25617_www.bing.com.jpeg'
+    },
     { 
       name: 'AMPC Health', 
       initial: 'AI', 
@@ -104,6 +120,16 @@ const HomePage = () => {
       name: 'Int\'l Warehouse', 
       initial: 'IW', 
       logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/g2z6mzb2_Screenshot_12-4-2026_4510_www.bing.com.jpeg'
+    },
+    { 
+      name: 'Ferro Fabrik', 
+      initial: 'FF', 
+      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/dq9eewte_Screenshot_12-4-2026_31415_www.bing.com.jpeg'
+    },
+    { 
+      name: 'Reroy Cables', 
+      initial: 'RC', 
+      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/clds22bo_Screenshot_12-4-2026_32837_www.bing.com.jpeg'
     },
   ];
 
