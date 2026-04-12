@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+#emergent-badge {
+  display: none !important;
+}
+
 :root {
   --primary-green: #065F46;
   --dark-green: #064E3B;
