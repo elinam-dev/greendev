@@ -11,7 +11,9 @@ import {
   Shield,
   ChartLineUp,
   Handshake,
-  Quotes
+  Quotes,
+  CheckCircle,
+  Star
 } from '@phosphor-icons/react';
 import StatsCounter from '../components/shared/StatsCounter';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../components/ui/carousel';
@@ -48,19 +50,19 @@ const HomePage = () => {
     {
       icon: Leaf,
       title: 'Environmental Impact Assessment',
-      description: 'Comprehensive EIA studies ensuring regulatory compliance and sustainable development.',
+      description: 'Comprehensive EIA studies ensuring regulatory compliance and sustainable development for all project types.',
       link: '/services#environmental'
     },
     {
       icon: HardHat,
       title: 'Engineering Solutions',
-      description: 'Water, sanitation, and geotechnical engineering services for infrastructure projects.',
+      description: 'Water, sanitation, and geotechnical engineering services for infrastructure and industrial projects.',
       link: '/services#engineering'
     },
     {
       icon: Lightbulb,
       title: 'Advisory Services',
-      description: 'CSR development, feasibility studies, and capacity building training programs.',
+      description: 'CSR development, feasibility studies, and professional capacity building programs.',
       link: '/services#advisory'
     }
   ];
@@ -68,140 +70,235 @@ const HomePage = () => {
   const whyChooseUs = [
     {
       icon: Shield,
-      title: 'Regulatory Expertise',
-      description: 'Deep understanding of Ghana EPA and international environmental standards.'
+      title: 'EPA Ghana Certified',
+      description: 'Deep expertise in Ghana EPA regulations and international environmental standards.'
     },
     {
       icon: ChartLineUp,
-      title: 'Proven Track Record',
-      description: 'Over 500 successful projects across multiple industries in West Africa.'
+      title: '100+ Projects Delivered',
+      description: 'Proven track record across manufacturing, oil & gas, mining, and infrastructure sectors.'
     },
     {
       icon: Handshake,
-      title: 'Client Partnership',
-      description: 'Collaborative approach ensuring projects meet both regulatory and business objectives.'
+      title: 'Client-Focused Approach',
+      description: 'We work collaboratively, ensuring projects meet regulatory and business objectives.'
+    },
+    {
+      icon: Star,
+      title: 'Expert Team',
+      description: '11+ specialists including ecologists, engineers, and sustainability practitioners.'
     }
   ];
 
   const clientLogos = [
     { name: 'Puma Energy', initial: 'PE' },
     { name: 'Devtraco', initial: 'DT' },
-    { name: 'Kasapreko', initial: 'KP' },
+    { name: 'Kasapreko', initial: 'KC' },
     { name: 'Enclave Power', initial: 'EP' },
     { name: 'Africa Cement', initial: 'AC' },
+    { name: 'Ghana Steels', initial: 'GS' },
   ];
 
   return (
     <div className="min-h-screen" data-testid="home-page">
-      {/* Hero Section */}
-      <section className="hero-section bg-gray-900" data-testid="hero-section">
+      {/* Hero Section - Vibrant and High Contrast */}
+      <section className="hero-section relative overflow-hidden" data-testid="hero-section">
+        {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
-            backgroundImage: `url('https://images.pexels.com/photos/9800116/pexels-photo-9800116.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')` 
+            backgroundImage: `url('https://images.pexels.com/photos/9800116/pexels-photo-9800116.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')` 
           }}
         />
-        <div className="hero-overlay absolute inset-0" />
         
-        <div className="container-custom relative z-10 pt-32 pb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="hero-content"
-          >
-            <span className="overline text-[#D4A373] mb-4 block">
-              Ghana's Premier Environmental Consultancy
-            </span>
-            <h1 className="font-outfit text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Leading Sustainable Solutions for Environmental and Engineering Excellence
-            </h1>
-            <p className="text-white/80 text-lg md:text-xl max-w-2xl mb-8">
-              Delivering expert environmental consulting, engineering solutions, and advisory services to multinational corporations across Africa.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                to="/contact"
-                className="btn-primary inline-flex items-center justify-center gap-2 group"
-                data-testid="hero-cta-consultation"
-              >
-                Request Consultation
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                to="/services"
-                className="btn-secondary bg-transparent border-white text-white hover:bg-white hover:text-[#064E3B] inline-flex items-center justify-center gap-2"
-                data-testid="hero-cta-services"
-              >
-                Explore Services
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Stats Counter */}
-      <StatsCounter stats={stats} />
-
-      {/* About Preview */}
-      <section className="section-padding bg-white" data-testid="about-preview-section">
-        <div className="container-custom">
+        {/* Gradient Overlay - Better contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/95 via-emerald-800/90 to-emerald-900/70" />
+        
+        {/* Pattern Overlay */}
+        <div className="absolute inset-0 hero-pattern opacity-30" />
+        
+        {/* Decorative Elements */}
+        <div className="absolute top-20 right-20 w-72 h-72 bg-amber-500/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-emerald-400/20 rounded-full blur-3xl" />
+        
+        <div className="container-custom relative z-10 pt-32 pb-24">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              <span className="overline mb-4 block">About GreenDev Associates</span>
-              <h2 className="font-outfit text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Your Trusted Partner in Environmental Excellence
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                GreenDev Associates International Limited is an associate-based sustainability consultancy registered in Ghana, delivering comprehensive environmental and engineering solutions to industries across Africa.
+              <div className="inline-flex items-center gap-2 bg-amber-500/20 backdrop-blur-sm border border-amber-500/30 rounded-full px-4 py-2 mb-6">
+                <span className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
+                <span className="text-amber-300 text-sm font-semibold">Ghana's Premier Environmental Consultancy</span>
+              </div>
+              
+              <h1 className="font-outfit text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+                Leading Sustainable Solutions for{' '}
+                <span className="text-amber-400">Environmental Excellence</span>
+              </h1>
+              
+              <p className="text-emerald-100 text-lg md:text-xl max-w-xl mb-8 leading-relaxed">
+                Delivering professional environmental consulting, engineering solutions, and advisory services to multinational corporations across Ghana and West Africa since 2016.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-8">
-                With over 15 years of combined expertise, our team of environmental scientists, engineers, and industry specialists provides scientifically rigorous and commercially practical solutions that help our clients achieve their sustainability goals while maintaining regulatory compliance.
-              </p>
-              <Link
-                to="/about"
-                className="btn-secondary inline-flex items-center gap-2 group"
-                data-testid="about-learn-more"
-              >
-                Learn More About Us
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  to="/contact"
+                  className="btn-accent inline-flex items-center justify-center gap-2 group"
+                  data-testid="hero-cta-consultation"
+                >
+                  Request Consultation
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link
+                  to="/services"
+                  className="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-4 font-semibold rounded-lg hover:bg-white/20 transition-all inline-flex items-center justify-center gap-2"
+                  data-testid="hero-cta-services"
+                >
+                  Explore Services
+                </Link>
+              </div>
+              
+              {/* Trust Indicators */}
+              <div className="flex items-center gap-6 mt-10 pt-10 border-t border-white/20">
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-amber-400">9+</p>
+                  <p className="text-emerald-200 text-sm">Years Experience</p>
+                </div>
+                <div className="w-px h-12 bg-white/20" />
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-amber-400">100+</p>
+                  <p className="text-emerald-200 text-sm">Projects Delivered</p>
+                </div>
+                <div className="w-px h-12 bg-white/20" />
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-amber-400">6</p>
+                  <p className="text-emerald-200 text-sm">Industries Served</p>
+                </div>
+              </div>
             </motion.div>
+            
+            {/* Hero Image/Card */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative"
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="hidden lg:block"
             >
-              <img
-                src="https://images.unsplash.com/photo-1612408934218-916d7b033df3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwxfHxlbnZpcm9ubWVudGFsJTIwc2NpZW50aXN0JTIwZmllbGQlMjB3b3JrfGVufDB8fHx8MTc3NTgzNTEzOHww&ixlib=rb-4.1.0&q=85"
-                alt="Environmental consultant at work"
-                className="w-full h-[400px] object-cover"
-              />
-              <div className="absolute -bottom-6 -right-6 bg-[#064E3B] text-white p-6 max-w-xs hidden md:block">
-                <p className="font-outfit text-3xl font-bold mb-1">15+</p>
-                <p className="text-white/80 text-sm">Years of Excellence in Environmental Consulting</p>
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-amber-500 to-emerald-500 rounded-2xl blur-2xl opacity-30" />
+                <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8">
+                  <div className="space-y-6">
+                    {[
+                      'Environmental Impact Assessment',
+                      'Social Impact Assessment', 
+                      'Permit Acquisition Support',
+                      'Water & Sanitation Engineering',
+                      'CSR Program Development'
+                    ].map((service, i) => (
+                      <div key={i} className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-emerald-500/30 flex items-center justify-center">
+                          <CheckCircle className="w-5 h-5 text-emerald-300" weight="fill" />
+                        </div>
+                        <span className="text-white font-medium">{service}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="section-padding bg-[#F9FAFB]" data-testid="services-section">
+      {/* Stats Counter */}
+      <StatsCounter stats={stats} />
+
+      {/* About Preview - Cream Background */}
+      <section className="section-padding section-cream relative overflow-hidden" data-testid="about-preview-section">
+        {/* Decorative */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl" />
+        
+        <div className="container-custom relative">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative"
+            >
+              <div className="absolute -inset-4 bg-gradient-to-r from-emerald-600 to-amber-500 rounded-2xl blur-xl opacity-20" />
+              <img
+                src="https://images.unsplash.com/photo-1612408934218-916d7b033df3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwxfHxlbnZpcm9ubWVudGFsJTIwc2NpZW50aXN0JTIwZmllbGQlMjB3b3JrfGVufDB8fHx8MTc3NTgzNTEzOHww&ixlib=rb-4.1.0&q=85"
+                alt="Environmental consultant at work"
+                className="relative w-full h-[450px] object-cover rounded-2xl shadow-2xl"
+              />
+              {/* Floating Card */}
+              <div className="absolute -bottom-8 -right-8 bg-white rounded-xl p-6 shadow-2xl max-w-xs">
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center">
+                    <Leaf className="w-7 h-7 text-white" weight="fill" />
+                  </div>
+                  <div>
+                    <p className="font-outfit text-2xl font-bold text-gray-900">Since 2016</p>
+                    <p className="text-gray-500 text-sm">Trusted by Industry Leaders</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <span className="overline mb-4 block">About GreenDev Associates</span>
+              <h2 className="font-outfit text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Your Trusted Partner in{' '}
+                <span className="text-gradient">Sustainability</span>
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                GreenDev Associates International Limited is a Ghanaian sustainability consultancy providing professional and practicable guidance for companies to ensure sustainable development at all stages of the project cycle.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-8">
+                Our team of 11+ specialists includes environmental scientists, sanitation engineers, marine ecologists, and health & safety experts delivering world-class solutions across manufacturing, oil & gas, mining, and infrastructure sectors.
+              </p>
+              
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                {['EPA Ghana Certified', 'ISO Compliant', 'Multinational Clients', 'West Africa Coverage'].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-emerald-500" weight="fill" />
+                    <span className="text-gray-700 font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
+              
+              <Link
+                to="/about"
+                className="btn-primary inline-flex items-center gap-2 group"
+                data-testid="about-learn-more"
+              >
+                Learn More About Us
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section - White with accent borders */}
+      <section className="section-padding section-light" data-testid="services-section">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="overline mb-4 block">Our Services</span>
-            <h2 className="font-outfit text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Comprehensive Environmental & Engineering Solutions
+            <h2 className="font-outfit text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Comprehensive Environmental & Engineering{' '}
+              <span className="text-gradient">Solutions</span>
             </h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-lg">
               From environmental assessments to engineering design, we provide end-to-end solutions for sustainable development.
             </p>
           </div>
@@ -214,17 +311,17 @@ const HomePage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="service-card group"
+                className="service-card group rounded-xl"
                 data-testid={`service-card-${index}`}
               >
-                <div className="w-14 h-14 bg-[#F0FDF4] flex items-center justify-center mb-6 group-hover:bg-[#064E3B] transition-colors">
-                  <service.icon className="w-7 h-7 text-[#064E3B] group-hover:text-white transition-colors" weight="duotone" />
+                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                  <service.icon className="w-8 h-8 text-white" weight="duotone" />
                 </div>
-                <h3 className="font-outfit text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
+                <h3 className="font-outfit text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
                 <p className="text-gray-600 mb-6">{service.description}</p>
                 <Link
                   to={service.link}
-                  className="inline-flex items-center gap-2 text-[#064E3B] font-medium group-hover:text-[#4D7C0F] transition-colors"
+                  className="inline-flex items-center gap-2 text-emerald-600 font-semibold group-hover:text-amber-500 transition-colors"
                 >
                   Learn More
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -236,7 +333,7 @@ const HomePage = () => {
           <div className="text-center mt-12">
             <Link
               to="/services"
-              className="btn-primary inline-flex items-center gap-2"
+              className="btn-secondary inline-flex items-center gap-2"
               data-testid="services-view-all"
             >
               View All Services
@@ -246,61 +343,47 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white" data-testid="why-choose-section">
+      {/* Why Choose Us - Light Green */}
+      <section className="section-padding section-light-green" data-testid="why-choose-section">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="overline mb-4 block">Why Choose GreenDev</span>
-              <h2 className="font-outfit text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-                Trusted by Industry Leaders Across Africa
-              </h2>
-              <div className="space-y-6">
-                {whyChooseUs.map((item, index) => (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="flex gap-4"
-                    data-testid={`why-choose-item-${index}`}
-                  >
-                    <div className="w-12 h-12 bg-[#F0FDF4] flex items-center justify-center flex-shrink-0">
-                      <item.icon className="w-6 h-6 text-[#064E3B]" weight="duotone" />
-                    </div>
-                    <div>
-                      <h4 className="font-outfit font-semibold text-gray-900 mb-1">{item.title}</h4>
-                      <p className="text-gray-600 text-sm">{item.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <img
-                src="https://images.unsplash.com/photo-1766839500277-b6c3a43c14e5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHN1c3RhaW5hYmxlJTIwZW5lcmd5JTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3NzU4MzUxNDl8MA&ixlib=rb-4.1.0&q=85"
-                alt="Sustainable energy"
-                className="w-full h-64 object-cover"
-              />
-              <img
-                src="https://images.pexels.com/photos/9800116/pexels-photo-9800116.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                alt="Wind turbines"
-                className="w-full h-64 object-cover mt-8"
-              />
-            </div>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="overline mb-4 block">Why Choose GreenDev</span>
+            <h2 className="font-outfit text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Trusted by{' '}
+              <span className="text-gradient-gold">Industry Leaders</span>
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {whyChooseUs.map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 text-center group"
+                data-testid={`why-choose-item-${index}`}
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-500 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                  <item.icon className="w-8 h-8 text-white" weight="fill" />
+                </div>
+                <h4 className="font-outfit font-bold text-gray-900 mb-2 text-lg">{item.title}</h4>
+                <p className="text-gray-600 text-sm">{item.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Projects */}
-      <section className="section-padding bg-[#F9FAFB]" data-testid="projects-section">
+      {/* Featured Projects - Gray Background */}
+      <section className="section-padding section-gray" data-testid="projects-section">
         <div className="container-custom">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
             <div>
               <span className="overline mb-4 block">Our Work</span>
               <h2 className="font-outfit text-3xl md:text-4xl font-bold text-gray-900">
-                Featured Projects
+                Featured <span className="text-gradient">Projects</span>
               </h2>
             </div>
             <Link
@@ -314,34 +397,43 @@ const HomePage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.slice(0, 3).map((project, index) => (
+            {projects.slice(0, 6).map((project, index) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="project-card group"
+                className="project-card group rounded-xl overflow-hidden"
                 data-testid={`project-card-${index}`}
               >
-                <div className="h-48 bg-gradient-to-br from-[#064E3B] to-[#4D7C0F] flex items-center justify-center">
-                  <span className="font-outfit text-4xl font-bold text-white/20">
+                <div className="h-48 bg-gradient-to-br from-emerald-600 via-emerald-700 to-emerald-800 flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.1),transparent)]" />
+                  <span className="font-outfit text-5xl font-bold text-white/20">
                     {project.client_name.split(' ').map(w => w[0]).join('').slice(0, 2)}
                   </span>
+                  {project.featured && (
+                    <span className="absolute top-4 right-4 badge-featured rounded-full">
+                      Featured
+                    </span>
+                  )}
                 </div>
                 <div className="p-6">
-                  <span className="text-xs font-medium text-[#4D7C0F] uppercase tracking-wider">
+                  <span className="badge-industry">
                     {project.industry}
                   </span>
-                  <h3 className="font-outfit text-lg font-semibold text-gray-900 mt-2 mb-2">
+                  <h3 className="font-outfit text-lg font-bold text-gray-900 mt-3 mb-2">
                     {project.client_name}
                   </h3>
+                  <p className="text-emerald-600 font-medium text-sm mb-3">
+                    {project.project_type}
+                  </p>
                   <p className="text-gray-600 text-sm mb-4 line-clamp-2">
                     {project.summary}
                   </p>
-                  <div className="flex items-center justify-between text-sm text-gray-500">
+                  <div className="flex items-center justify-between text-sm text-gray-500 pt-4 border-t border-gray-100">
                     <span>{project.location}</span>
-                    <span>{project.year}</span>
+                    <span className="font-semibold">{project.year}</span>
                   </div>
                 </div>
               </motion.div>
@@ -350,8 +442,8 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Client Logos */}
-      <section className="py-16 bg-white" data-testid="clients-section">
+      {/* Client Logos - White */}
+      <section className="py-20 section-light" data-testid="clients-section">
         <div className="container-custom">
           <div className="text-center mb-12">
             <span className="overline mb-4 block">Our Clients</span>
@@ -359,7 +451,7 @@ const HomePage = () => {
               Trusted by Leading Organizations
             </h2>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
             {clientLogos.map((client, index) => (
               <motion.div
                 key={client.name}
@@ -367,21 +459,27 @@ const HomePage = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="w-32 h-20 bg-gray-100 flex items-center justify-center group hover:bg-[#064E3B] transition-colors"
+                className="w-28 h-28 md:w-36 md:h-36 bg-gray-50 rounded-xl flex items-center justify-center group hover:bg-emerald-600 transition-all duration-300 shadow-sm hover:shadow-xl"
                 data-testid={`client-logo-${index}`}
               >
-                <span className="font-outfit text-2xl font-bold text-gray-400 group-hover:text-white transition-colors">
+                <span className="font-outfit text-2xl md:text-3xl font-bold text-gray-400 group-hover:text-white transition-colors">
                   {client.initial}
                 </span>
               </motion.div>
             ))}
           </div>
+          <div className="text-center mt-10">
+            <Link to="/clients" className="text-emerald-600 font-semibold hover:text-amber-500 transition-colors inline-flex items-center gap-2">
+              View All Clients
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials - Cream */}
       {testimonials.length > 0 && (
-        <section className="section-padding bg-[#F0FDF4]" data-testid="testimonials-section">
+        <section className="section-padding section-cream" data-testid="testimonials-section">
           <div className="container-custom">
             <div className="text-center mb-12">
               <span className="overline mb-4 block">Client Testimonials</span>
@@ -394,16 +492,24 @@ const HomePage = () => {
               <CarouselContent>
                 {testimonials.map((testimonial, index) => (
                   <CarouselItem key={testimonial.id}>
-                    <div className="testimonial-card bg-white p-8 md:p-12 text-center">
-                      <Quotes className="w-12 h-12 text-[#D4A373] mx-auto mb-6" weight="fill" />
-                      <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-8">
-                        "{testimonial.content}"
-                      </p>
-                      <div>
-                        <p className="font-outfit font-semibold text-gray-900">{testimonial.name}</p>
-                        <p className="text-gray-500 text-sm">
-                          {testimonial.role}, {testimonial.company}
+                    <div className="testimonial-card shadow-xl mx-4">
+                      <div className="relative z-10">
+                        <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-8 italic">
+                          "{testimonial.content}"
                         </p>
+                        <div className="flex items-center gap-4">
+                          <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center">
+                            <span className="text-white font-bold text-lg">
+                              {testimonial.name.split(' ').map(n => n[0]).join('')}
+                            </span>
+                          </div>
+                          <div>
+                            <p className="font-outfit font-bold text-gray-900">{testimonial.name}</p>
+                            <p className="text-gray-500 text-sm">
+                              {testimonial.role}, {testimonial.company}
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </CarouselItem>
@@ -416,25 +522,30 @@ const HomePage = () => {
         </section>
       )}
 
-      {/* CTA Section */}
-      <section className="py-20 bg-[#064E3B]" data-testid="cta-section">
-        <div className="container-custom text-center">
+      {/* CTA Section - Vibrant Gradient */}
+      <section className="py-24 relative overflow-hidden" data-testid="cta-section">
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-700 via-emerald-600 to-emerald-700" />
+        <div className="absolute inset-0 hero-pattern opacity-20" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-400/30 rounded-full blur-3xl" />
+        
+        <div className="container-custom relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-outfit text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="font-outfit text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               Ready to Start Your Project?
             </h2>
-            <p className="text-white/80 text-lg max-w-2xl mx-auto mb-8">
+            <p className="text-emerald-100 text-lg md:text-xl max-w-2xl mx-auto mb-10">
               Partner with Ghana's leading environmental consultancy for your next project. Let's discuss how we can help you achieve your sustainability goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="bg-white text-[#064E3B] px-8 py-3 font-medium hover:bg-gray-100 transition-colors inline-flex items-center justify-center gap-2"
+                className="btn-accent inline-flex items-center justify-center gap-2"
                 data-testid="cta-contact"
               >
                 Contact Us Today
@@ -442,7 +553,7 @@ const HomePage = () => {
               </Link>
               <Link
                 to="/services"
-                className="border border-white text-white px-8 py-3 font-medium hover:bg-white/10 transition-colors"
+                className="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-4 font-semibold rounded-lg hover:bg-white/20 transition-all"
               >
                 Explore Our Services
               </Link>

@@ -44,7 +44,7 @@ const Header = () => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass-header shadow-sm' : 'bg-transparent'
+        isScrolled ? 'glass-header' : 'bg-emerald-900/80 backdrop-blur-sm'
       }`}
       data-testid="main-header"
     >
@@ -52,12 +52,12 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2" data-testid="logo-link">
-            <div className="w-10 h-10 bg-[#064E3B] rounded-sm flex items-center justify-center">
-              <Leaf className="w-6 h-6 text-white" weight="duotone" />
+            <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center shadow-lg">
+              <Leaf className="w-6 h-6 text-white" weight="fill" />
             </div>
             <div className="hidden sm:block">
-              <span className="font-outfit font-bold text-lg text-[#064E3B]">GreenDev</span>
-              <span className="font-outfit text-xs text-gray-500 block -mt-1">Associates</span>
+              <span className={`font-outfit font-bold text-lg ${isScrolled ? 'text-emerald-700' : 'text-white'}`}>GreenDev</span>
+              <span className={`font-outfit text-xs block -mt-1 ${isScrolled ? 'text-gray-500' : 'text-emerald-200'}`}>Associates</span>
             </div>
           </Link>
 
@@ -73,7 +73,9 @@ const Header = () => {
                 <Link
                   to={item.path}
                   className={`nav-link flex items-center gap-1 py-2 text-sm font-medium ${
-                    location.pathname === item.path ? 'text-[#064E3B] active' : 'text-gray-700'
+                    location.pathname === item.path 
+                      ? (isScrolled ? 'text-emerald-600 active' : 'text-amber-400 active')
+                      : (isScrolled ? 'text-gray-700' : 'text-white')
                   }`}
                   data-testid={`nav-${item.name.toLowerCase()}`}
                 >
@@ -113,7 +115,11 @@ const Header = () => {
           <div className="hidden lg:flex items-center gap-4">
             <Link
               to="/contact"
-              className="btn-primary text-sm"
+              className={`px-6 py-2.5 font-semibold rounded-lg transition-all ${
+                isScrolled 
+                  ? 'bg-emerald-600 text-white hover:bg-emerald-500 shadow-lg shadow-emerald-500/25' 
+                  : 'bg-amber-500 text-white hover:bg-amber-400 shadow-lg shadow-amber-500/25'
+              }`}
               data-testid="header-cta"
             >
               Request Consultation
@@ -127,9 +133,9 @@ const Header = () => {
             data-testid="mobile-menu-toggle"
           >
             {mobileMenuOpen ? (
-              <X className="w-6 h-6 text-gray-800" />
+              <X className={`w-6 h-6 ${isScrolled ? 'text-gray-800' : 'text-white'}`} />
             ) : (
-              <List className="w-6 h-6 text-gray-800" />
+              <List className={`w-6 h-6 ${isScrolled ? 'text-gray-800' : 'text-white'}`} />
             )}
           </button>
         </div>

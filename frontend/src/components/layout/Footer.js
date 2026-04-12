@@ -30,31 +30,33 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="footer-dark" data-testid="main-footer">
-      <div className="container-custom py-16">
+    <footer className="footer-dark relative overflow-hidden" data-testid="main-footer">
+      <div className="absolute inset-0 hero-pattern opacity-10" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl" />
+      <div className="container-custom py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-white/10 rounded-sm flex items-center justify-center">
-                <Leaf className="w-6 h-6 text-[#D4A373]" weight="duotone" />
+              <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center shadow-lg">
+                <Leaf className="w-7 h-7 text-white" weight="fill" />
               </div>
               <div>
-                <span className="font-outfit font-bold text-lg text-white">GreenDev</span>
-                <span className="font-outfit text-xs text-white/60 block -mt-1">Associates International</span>
+                <span className="font-outfit font-bold text-xl text-white">GreenDev</span>
+                <span className="font-outfit text-xs text-emerald-300 block -mt-1">Associates International</span>
               </div>
             </div>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
               Leading sustainable solutions for environmental and engineering excellence across Africa.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="w-10 h-10 bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="LinkedIn">
+              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-amber-500 transition-colors" aria-label="LinkedIn">
                 <LinkedinLogo className="w-5 h-5 text-white" />
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Twitter">
+              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-amber-500 transition-colors" aria-label="Twitter">
                 <TwitterLogo className="w-5 h-5 text-white" />
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Facebook">
+              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-amber-500 transition-colors" aria-label="Facebook">
                 <FacebookLogo className="w-5 h-5 text-white" />
               </a>
             </div>
@@ -62,13 +64,13 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-outfit font-semibold text-white mb-6">Quick Links</h4>
+            <h4 className="font-outfit font-bold text-white mb-6 text-lg">Quick Links</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link 
                     to={link.path} 
-                    className="text-white/70 hover:text-[#D4A373] transition-colors text-sm"
+                    className="text-emerald-200 hover:text-amber-400 transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -79,13 +81,13 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-outfit font-semibold text-white mb-6">Our Services</h4>
+            <h4 className="font-outfit font-bold text-white mb-6 text-lg">Our Services</h4>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
                   <Link 
                     to={service.path} 
-                    className="text-white/70 hover:text-[#D4A373] transition-colors text-sm"
+                    className="text-emerald-200 hover:text-amber-400 transition-colors text-sm"
                   >
                     {service.name}
                   </Link>
@@ -96,30 +98,30 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-outfit font-semibold text-white mb-6">Contact Us</h4>
+            <h4 className="font-outfit font-bold text-white mb-6 text-lg">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#D4A373] flex-shrink-0 mt-0.5" />
-                <span className="text-white/70 text-sm">
+                <MapPin className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                <span className="text-emerald-200 text-sm">
                   Zees Plaza, 6th Street,<br />
                   Dawhenya, Tema Comm 25,<br />
                   Ghana
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-[#D4A373]" />
-                <div className="text-white/70 text-sm space-y-1">
-                  <a href="tel:+233266984364" className="block hover:text-[#D4A373]">
+                <Phone className="w-5 h-5 text-amber-400" />
+                <div className="text-emerald-200 text-sm space-y-1">
+                  <a href="tel:+233266984364" className="block hover:text-amber-400">
                     +233 (0) 266 984 364
                   </a>
-                  <a href="tel:+233247197014" className="block hover:text-[#D4A373]">
+                  <a href="tel:+233247197014" className="block hover:text-amber-400">
                     +233 (0) 247 197 014
                   </a>
                 </div>
               </li>
               <li className="flex items-center gap-3">
-                <Envelope className="w-5 h-5 text-[#D4A373]" />
-                <a href="mailto:greendev.associates@gmail.com" className="text-white/70 hover:text-[#D4A373] text-sm">
+                <Envelope className="w-5 h-5 text-amber-400" />
+                <a href="mailto:greendev.associates@gmail.com" className="text-emerald-200 hover:text-amber-400 text-sm">
                   greendev.associates@gmail.com
                 </a>
               </li>

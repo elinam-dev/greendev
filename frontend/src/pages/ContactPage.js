@@ -76,7 +76,11 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen" data-testid="contact-page">
       {/* Hero Section */}
-      <section className="relative py-32 bg-[#064E3B]" data-testid="contact-hero">
+      <section className="relative py-32 overflow-hidden" data-testid="contact-hero">
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-800 via-emerald-700 to-emerald-800" />
+        <div className="absolute inset-0 hero-pattern opacity-20" />
+        <div className="absolute top-20 right-20 w-72 h-72 bg-amber-500/20 rounded-full blur-3xl" />
+        
         <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -84,11 +88,11 @@ const ContactPage = () => {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <span className="overline text-[#D4A373] mb-4 block">Contact Us</span>
+            <span className="overline text-amber-400 mb-4 block">Contact Us</span>
             <h1 className="font-outfit text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               Let's Discuss Your Project
             </h1>
-            <p className="text-white/80 text-lg md:text-xl">
+            <p className="text-emerald-100 text-lg md:text-xl">
               Get in touch with our team to discuss how we can help you achieve your environmental and sustainability goals.
             </p>
           </motion.div>

@@ -42,22 +42,22 @@ const StatsCounter = ({ stats }) => {
   ];
 
   return (
-    <section className="bg-[#064E3B] py-16" data-testid="stats-section">
-      <div className="container-custom" ref={ref}>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+    <section className="stats-section py-20 relative" data-testid="stats-section">
+      <div className="container-custom relative z-10" ref={ref}>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {defaultStats.map((stat, index) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-center"
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              className="stat-item bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10"
               data-testid={`stat-item-${index}`}
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 bg-white/10 rounded-sm mb-4">
-                <stat.icon className="w-7 h-7 text-[#D4A373]" weight="duotone" />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-500 rounded-xl mb-5 shadow-lg">
+                <stat.icon className="w-8 h-8 text-white" weight="fill" />
               </div>
-              <div className="stat-number text-white">
+              <div className="stat-number">
                 {hasAnimated ? (
                   <CountUp
                     start={0}
@@ -70,7 +70,7 @@ const StatsCounter = ({ stats }) => {
                   <span>0{stat.suffix}</span>
                 )}
               </div>
-              <p className="text-white/70 text-sm mt-2">{stat.label}</p>
+              <p className="stat-label">{stat.label}</p>
             </motion.div>
           ))}
         </div>
