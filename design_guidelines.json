@@ -1,132 +1,108 @@
 {
-  "project_name": "GreenDev Associates International Limited",
-  "domain": "Environmental and Sustainability Consulting",
-  "theme": "Light",
-  "archetype": "Archetype 1 (Organic & Earthy)",
-  "emotional_tone": "Scientifically authoritative, globally competitive, trustworthy, warm, environmentally conscious",
-  "color_palette": {
-    "background": {
-      "primary": "#FFFFFF",
-      "secondary": "#F9FAFB",
-      "tertiary": "#F0FDF4"
-    },
-    "text": {
-      "primary": "#111827",
-      "secondary": "#4B5563",
-      "inverse": "#FFFFFF"
-    },
-    "brand": {
-      "primary_green": "#064E3B",
-      "sage_green": "#4D7C0F",
-      "earth_sand": "#D4A373",
-      "accent_gold": "#B45309"
-    },
-    "surfaces": {
-      "card_bg": "#FFFFFF",
-      "glass_bg": "rgba(255, 255, 255, 0.7)",
-      "dark_surface": "#064E3B"
-    }
+  "theme": "light",
+  "archetype": "Organic & Earthy (Premium African Corporate Variant)",
+  "design_philosophy": "A high-contrast, luxury iteration of the organic archetype. The site must feel grounded in African soil (terracotta/laterite accents) and lush forests (deep obsidian green) while maintaining the sharp, authoritative, and clean precision of an elite corporate consulting firm. It MUST NOT look like a generic Western tech or environmental template (e.g., Tetra Tech).",
+  "colors": {
+    "background": "#F9F7F1",
+    "foreground": "#0A1C12",
+    "primary": "#0B2517",
+    "primary_foreground": "#FFFFFF",
+    "secondary": "#EAE5D9",
+    "secondary_foreground": "#0B2517",
+    "accent": "#C05A3A",
+    "accent_foreground": "#FFFFFF",
+    "muted": "#EAE5D9",
+    "muted_foreground": "#5C6A61",
+    "border": "#D1CCC0",
+    "card": "#FFFFFF",
+    "card_foreground": "#0A1C12",
+    "chart": [
+      "#0B2517",
+      "#C05A3A",
+      "#D4AF37",
+      "#2E523A",
+      "#8BA892"
+    ]
   },
   "typography": {
-    "headings": {
-      "font_family": "Outfit, sans-serif",
-      "weights": ["400", "600", "700"],
-      "h1": "text-4xl md:text-5xl lg:text-6xl tracking-tight leading-none",
-      "h2": "text-3xl md:text-4xl tracking-tight",
-      "h3": "text-2xl",
-      "h4": "text-xl font-semibold"
+    "fonts": {
+      "heading": "'Outfit', sans-serif",
+      "body": "'Manrope', sans-serif",
+      "mono": "'JetBrains Mono', monospace"
     },
-    "body": {
-      "font_family": "IBM Plex Sans, sans-serif",
-      "weights": ["400", "500"],
-      "base": "text-base leading-relaxed text-gray-700",
-      "small": "text-sm text-gray-500",
-      "overline": "text-xs font-semibold tracking-[0.2em] uppercase text-sage-green"
+    "hierarchy": {
+      "h1": "text-5xl sm:text-6xl+ font-black tracking-tighter leading-none text-primary",
+      "h2": "text-3xl sm:text-4xl font-bold tracking-tight text-primary",
+      "h3": "text-xl sm:text-2xl font-semibold tracking-tight text-primary",
+      "body": "text-base leading-relaxed text-muted-foreground",
+      "overline": "text-xs font-mono uppercase tracking-[0.2em] text-accent font-bold"
     }
   },
   "spacing_and_layout": {
-    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
-    "section_padding": "py-24",
-    "grid_system": "grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12",
-    "cards": {
-      "padding": "p-8",
-      "border_radius": "rounded-none",
-      "shadow": "shadow-sm hover:shadow-xl transition-shadow duration-300",
-      "border": "border border-gray-100"
+    "philosophy": "Generous spacing. Containers with borders must use internal padding like p-8 or p-12.",
+    "grid_system": "Bento Grid Mode A (Tetris) for visual sections. Avoid basic symmetrical columns. Mix 3+ shapes: The Hero (col-span-8 row-span-2), The Square (col-span-4), The Tall (col-span-4 row-span-2). Leave 'breathing room'.",
+    "mobile_first": "Images max-h-[80vh] on mobile. Stack to grid-cols-1."
+  },
+  "components_and_surfaces": {
+    "nav_header": "Crystal Glassmorphism: backdrop-blur-xl bg-background/80, 1px subtle inner border border-white/40. MUST have visible links on desktop, NO generic hamburger on desktop.",
+    "cards": "Sharp, tactile, high-contrast. Use flat backgrounds (card) with 1px border (border-border). Hover state: slight lift (-translate-y-1), subtle shadow (shadow-xl), border color darkens.",
+    "buttons": "Primary buttons: bg-primary text-white, sharp corners or very subtle rounding (rounded-sm). Hover: bg-primary/90. Use mono font for button text. Accent buttons: bg-accent text-white.",
+    "forms": "Use Shadcn Form, Input, Select, Textarea but styled to match: bg-transparent border-b-2 border-border focus:border-primary rounded-none. No generic boxy inputs.",
+    "footer": "Massive Space: py-24. Contrast Shift: Dark Footer (bg-primary text-white). Massive 'Let's Talk' CTA."
+  },
+  "motion": {
+    "scroll": "Use Lenis for smooth momentum scrolling. This is MANDATORY for the premium feel.",
+    "entrance": "Framer motion for staggered entrances on lists and grids. Avoid dizzying heavy motion. Focus on elegant fades and slow Y-axis shifts (y: 20 -> 0).",
+    "hover": "Explicit hover states on all interactive elements. transition-transform 0.3s ease, transition-colors 0.3s ease."
+  },
+  "icons": {
+    "library": "lucide-react",
+    "styling": "Stroke width 1.5. Clean, sharp, consistent."
+  },
+  "image_urls": [
+    {
+      "category": "hero_background",
+      "url": "https://images.unsplash.com/photo-1749192901190-ea45a711b0e3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwxfHxzb2xhciUyMHBhbmVscyUyMG5hdHVyZSUyMGRyb25lfGVufDB8fHx8MTc3NjE4NDMwMHww&ixlib=rb-4.1.0&q=85",
+      "description": "Aerial view showing solar farm and farmland, conveying high-end energy and land management."
+    },
+    {
+      "category": "hero_texture",
+      "url": "https://images.unsplash.com/photo-1762578098803-ed5104f6fde7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGdyZWVuJTIwbGVhdmVzJTIwZGFyayUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzc2MTg0MzAwfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Dark green abstract leaf texture, perfect for background overlays or bento card backgrounds."
+    },
+    {
+      "category": "team_meeting",
+      "url": "https://images.unsplash.com/photo-1758519289200-384c7ef2d163?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwyfHxhZnJpY2FuJTIwYnVzaW5lc3MlMjBwcm9mZXNzaW9uYWxzfGVufDB8fHx8MTc3NjE4NDI4OXww&ixlib=rb-4.1.0&q=85",
+      "description": "African business professionals in a meeting. Use for About or Team page header."
+    },
+    {
+      "category": "office_building",
+      "url": "https://images.unsplash.com/photo-1548950308-69fac3b90a45?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwxfHxvZmZpY2UlMjBidWlsZGluZyUyMG1vZGVybiUyMGx1eHVyeXxlbnwwfHx8fDE3NzYxODQzMDB8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Modern high-rise corporate building for industry or corporate overview."
+    },
+    {
+      "category": "project_agriculture",
+      "url": "https://images.unsplash.com/photo-1714588419516-8c266d291dc7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTV8MHwxfHNlYXJjaHwyfHxzdXN0YWluYWJpbGl0eSUyMG5hdHVyZSUyMGFlcmlhbHxlbnwwfHx8fDE3NzYxODQyODh8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Aerial view of a dirt road in a green field. Perfect for 'Environmental Impact Assessment' project card."
+    },
+    {
+      "category": "project_water",
+      "url": "https://images.unsplash.com/photo-1649519764684-d4eb93e1322e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwzfHxnaGFuYSUyMG5hdHVyZXxlbnwwfHx8fDE3NzYxODQzMDB8MA&ixlib=rb-4.1.0&q=85",
+      "description": "People in a small boat on a river in Ghana. Perfect for 'Water Resource Management' project."
+    },
+    {
+      "category": "project_forest",
+      "url": "https://images.unsplash.com/photo-1666040837609-2c23da23e81d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMGdyZWVuJTIwbGVhdmVzJTIwZGFyayUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzc2MTg0MzAwfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Lush green leaves. Use for 'Biodiversity Studies' project."
     }
-  },
-  "surface_strategies": {
-    "header": "Crystal Glass - backdrop-blur-xl bg-white/80 border-b border-gray-200/50 sticky top-0 z-50",
-    "footer": "Solid Dark - bg-primary_green text-white py-24",
-    "services_grid": "Bento Grid - Asymmetrical spanning, 1px subtle borders, solid backgrounds with hover lifts"
-  },
-  "components": {
-    "buttons": {
-      "primary": "bg-primary_green text-white px-8 py-3 font-medium hover:bg-emerald-900 transition-colors",
-      "secondary": "border border-primary_green text-primary_green px-8 py-3 font-medium hover:bg-primary_green hover:text-white transition-colors"
-    },
-    "navigation": "Sticky mega menu using Radix UI/Shadcn Navigation Menu, distinct active states",
-    "forms": "Shadcn UI inputs with subtle borders, generous padding, focus:ring-2 focus:ring-sage-green",
-    "carousels": "Embla Carousel (via Shadcn) for Clients and Testimonials, auto-play enabled",
-    "stats_counter": "Framer Motion intersection observer triggers, React CountUp for number animation"
-  },
-  "animations": {
-    "library": "Framer Motion, Lenis (smooth scrolling)",
-    "page_load": "Subtle fade up for hero text, scale-in for hero image",
-    "scroll": "Staggered fade-up for grid items (0.1s delay between items), image parallax effect on hero"
-  },
-  "iconography": {
-    "library": "@phosphor-icons/react",
-    "style": "Duotone, size 32px for sections, size 24px for ui elements, matching primary_green color"
-  },
-  "media": {
-    "hero": {
-      "description": "High-end sustainable infrastructure and wind turbines",
-      "url": "https://images.pexels.com/photos/9800116/pexels-photo-9800116.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-    },
-    "about_us": {
-      "description": "Environmental scientist doing field work",
-      "url": "https://images.unsplash.com/photo-1612408934218-916d7b033df3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwxfHxlbnZpcm9ubWVudGFsJTIwc2NpZW50aXN0JTIwZmllbGQlMjB3b3JrfGVufDB8fHx8MTc3NTgzNTEzOHww&ixlib=rb-4.1.0&q=85"
-    },
-    "services_bg": {
-      "description": "Abstract solar panel background for technical sections",
-      "url": "https://images.unsplash.com/photo-1766839500277-b6c3a43c14e5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHN1c3RhaW5hYmxlJTIwZW5lcmd5JTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3NzU4MzUxNDl8MA&ixlib=rb-4.1.0&q=85"
-    },
-    "team": [
-      {
-        "description": "Corporate leadership portrait 1",
-        "url": "https://images.pexels.com/photos/36363694/pexels-photo-36363694.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-      },
-      {
-        "description": "Corporate leadership portrait 2",
-        "url": "https://images.pexels.com/photos/4687549/pexels-photo-4687549.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-      }
-    ],
-    "client_logos": [
-      {
-        "description": "Energy Client Logo",
-        "url": "https://images.unsplash.com/photo-1766853209032-3c4b7a5c8b04?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NjZ8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBlbmVyZ3klMjBjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NzU4MzUxMzh8MA&ixlib=rb-4.1.0&q=85"
-      },
-      {
-        "description": "Partner Logo",
-        "url": "https://images.unsplash.com/photo-1764344815160-0e2afc6939a0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxjb21wYW55JTIwbG9nbyUyMHdoaXRlJTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3NzU4MzUxNDl8MA&ixlib=rb-4.1.0&q=85"
-      },
-      {
-        "description": "Corporate Logo",
-        "url": "https://images.pexels.com/photos/9973170/pexels-photo-9973170.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-      }
-    ]
-  },
+  ],
   "instructions_to_main_agent": [
-    "Strictly adhere to the color palette: Deep green (#064E3B) must be the grounding color, accented by earth tones. Do not use generic tailwind blue/indigo.",
-    "For headings, install and use Outfit via Google Fonts. For body, install IBM Plex Sans. Never use Inter for headings.",
-    "Implement Lenis for smooth scrolling globally. This is critical for the premium feel.",
-    "Hero sections MUST have an overlay gradient (bg-gradient-to-r from-black/70 via-black/40 to-transparent) to preserve text readability over complex images.",
-    "Use Phosphor icons. Install via: yarn add @phosphor-icons/react",
-    "Bento grids for 'Services' and 'Industries' sections. Span grid items asymmetrically to create visual interest. Avoid basic 3-column equal layouts.",
-    "Ensure all interactive components and forms have data-testid attributes for testing.",
-    "Do NOT use placeholder text or dummy image URLs. Only use the URLs provided in this media section.",
-    "Add 'group' class to cards and use 'group-hover:translate-x-1' and similar micro-interactions on arrows or icons inside them.",
-    "Build the admin panel using standard Shadcn table/form components but style them densely (Control Room Grid approach)."
+    "You MUST use raw standard HTML/Tailwind classes for all main creative page layouts to ensure asymmetry and precise bento grid spans. DO NOT overuse Shadcn's layout wrappers for marketing sections.",
+    "Use Shadcn UI for interactive elements only (Forms, Inputs, Buttons, Dialogs, Admin Panel).",
+    "Admin Panel: Use 'Control Room' dense grid design. Cardless, sharp 1px borders, white background. Contrast deeply with the marketing pages.",
+    "Colors: Override Tailwind's default colors in tailwind.config.js using the CSS variables defined in this JSON. Ensure pure white is only used inside cards or text to maintain the rich Warm Sand background.",
+    "Typography: Use Outfit for Headings and Manrope for body. Make sure to import them via standard CSS or next/font.",
+    "Hero Section Overlay: Use a max opacity of bg-black/40 over the hero image. Do NOT use a solid color blanket.",
+    "Testing Attributes: All interactive elements MUST include `data-testid` attribute (e.g., `data-testid=\"contact-submit-btn\"`)."
   ]
 }
