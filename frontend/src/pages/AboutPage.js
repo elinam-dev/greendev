@@ -1,38 +1,26 @@
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import axios from 'axios';
 import { 
   ArrowRight, 
   Target, 
   Eye, 
-  Handshake,
   CheckCircle,
   Quotes
 } from '@phosphor-icons/react';
 import StatsCounter from '../components/shared/StatsCounter';
 
-const API_URL = process.env.REACT_APP_BACKEND_URL;
+const STATS = { years_experience: 9, projects_delivered: 100, industries_served: 6, expert_consultants: 11 };
+
+const TEAM_PREVIEW = [
+  { id: '1', name: 'Kojo Anagbo', role: 'Managing Partner', expertise: 'Environmental Sustainability Practitioner' },
+  { id: '2', name: 'Emmanuel Okoh Agyemang', role: 'Partner/Principal Consultant', expertise: 'Sanitation Engineering Specialist' },
+  { id: '3', name: 'Dr. Elvis Nyarko', role: 'Senior Consultant', expertise: 'Marine Ecology' },
+  { id: '4', name: 'Isaac Simpson', role: 'Senior Consultant', expertise: 'Health and Safety Specialist' },
+];
 
 const AboutPage = () => {
-  const [stats, setStats] = useState(null);
-  const [team, setTeam] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [statsRes, teamRes] = await Promise.all([
-          axios.get(`${API_URL}/api/stats`),
-          axios.get(`${API_URL}/api/team`)
-        ]);
-        setStats(statsRes.data);
-        setTeam(teamRes.data.slice(0, 4));
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-    fetchData();
-  }, []);
+  const stats = STATS;
+  const team = TEAM_PREVIEW;
 
   const values = [
     {
@@ -103,13 +91,16 @@ const AboutPage = () => {
                 Who We Are
               </h2>
               <p className="text-gray-600 leading-relaxed mb-6">
-                GreenDev Associates International Limited is a Ghanaian sustainability consultancy and project management firm, incorporated under the Companies Act, 1963 (Act 179) and authorized to commence business since April 2016.
+                GreenDev Associates International Limited is an associate-based sustainability consultancy and project management firm duly registered in Ghana.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                We offer a wide range of environmental and socio-economic impact assessments, permit acquisition support, and capacity building services. Our team comprises experienced environmental scientists, engineers, and industry specialists who bring together technical expertise and practical industry knowledge.
+                The company was established to provide companies with wholesome solutions that enhance their environmental performance and ensure reduction of pollution footprints.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Our focus is to provide a range of sustainability services that helps companies understand their potential environmental and socio-economic impacts and additionally provide support services to enable companies mitigate impacts so they are compliant with relevant legislation.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                We serve diverse industries including Manufacturing, Oil & Gas, Built Environment, Mining, Agriculture, and Energy across Ghana and West Africa, with a strong concentration in the Tema region and Greater Accra.
+                We can take care of your biggest concerns – environmental management systems and permits, waste management, health and safety concerns, social responsibility and community approval, while you concentrate on increasing your profitability and position among your competitors.
               </p>
             </motion.div>
             <motion.div
@@ -146,6 +137,9 @@ const AboutPage = () => {
               <p className="text-gray-600 leading-relaxed">
                 To be acclaimed as a resourceful, responsive and reliable sustainability solutions provider in the sub-region.
               </p>
+              <p className="text-gray-500 text-sm mt-4 italic">
+                — GreenDev Associates International Limited
+              </p>
             </motion.div>
 
             <motion.div
@@ -161,6 +155,9 @@ const AboutPage = () => {
               <h3 className="font-outfit text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
               <p className="text-gray-600 leading-relaxed">
                 To provide professional and practicable guidance for companies to ensure sustainable development at all stages of the project cycle.
+              </p>
+              <p className="text-gray-500 text-sm mt-4 italic">
+                — GreenDev Associates International Limited
               </p>
             </motion.div>
           </div>

@@ -255,10 +255,10 @@ const HomePage = () => {
                 <span className="text-gradient">Sustainability</span>
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                GreenDev Associates International Limited is a Ghanaian sustainability consultancy providing professional and practicable guidance for companies to ensure sustainable development at all stages of the project cycle.
+                GreenDev Associates International Limited is an associate-based sustainability consultancy and project management firm duly registered in Ghana, established to provide companies with wholesome solutions that enhance their environmental performance and ensure reduction of pollution footprints.
               </p>
               <p className="text-gray-600 leading-relaxed mb-8">
-                Our team of 11+ specialists includes environmental scientists, sanitation engineers, marine ecologists, and health & safety experts delivering world-class solutions across manufacturing, oil & gas, mining, and infrastructure sectors.
+                We provide a range of sustainability services that helps companies understand their potential environmental and socio-economic impacts, and provide support to enable companies mitigate impacts so they are compliant with relevant legislation.
               </p>
               
               <div className="grid grid-cols-2 gap-4 mb-8">
