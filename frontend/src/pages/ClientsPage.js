@@ -1,116 +1,30 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import { ArrowRight } from '@phosphor-icons/react';
 
-const API_URL = process.env.REACT_APP_BACKEND_URL;
+const clientList = [
+  { name: 'Puma Energy Ghana Limited', initial: 'PE', industry: 'Oil & Gas', logo: null },
+  { name: 'Devtraco Limited', initial: 'DT', industry: 'Built Environment', logo: null },
+  { name: 'Enclave Power Company', initial: 'EP', industry: 'Energy', logo: null },
+  { name: 'Kasapreko Company Limited', initial: 'KC', industry: 'Manufacturing', logo: null },
+  { name: 'Africa Cement Factory Limited', initial: 'AC', industry: 'Manufacturing', logo: null },
+  { name: 'Ghana Steels Limited', initial: 'GS', industry: 'Manufacturing', logo: null },
+  { name: 'Ferro Fabrik Limited', initial: 'FF', industry: 'Manufacturing', logo: null },
+  { name: 'Vester Oil Mills Limited', initial: 'VO', industry: 'Agriculture', logo: null },
+  { name: 'International Warehouse Company', initial: 'IW', industry: 'Logistics', logo: null },
+  { name: 'M. Barbisotti and Sons Limited', initial: 'MB', industry: 'Logistics', logo: null },
+  { name: 'Atlantic Quarry Limited', initial: 'AQ', industry: 'Mining', logo: null },
+  { name: 'Yantai Chemicals Limited', initial: 'YC', industry: 'Manufacturing', logo: null },
+  { name: 'AMPC International Health Consultants', initial: 'AI', industry: 'Health Services', logo: null },
+  { name: 'Reroy Cables Limited', initial: 'RC', industry: 'Manufacturing', logo: null },
+  { name: 'Western Rod and Wire Limited', initial: 'WR', industry: 'Manufacturing', logo: null },
+  { name: 'Ayaan Global Ghana Limited', initial: 'AG', industry: 'Manufacturing', logo: null },
+];
+
+const industries = [...new Set(clientList.map(c => c.industry))];
 
 const ClientsPage = () => {
-  const [clients, setClients] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  // Real clients with uploaded logos
-  const clientList = [
-    { 
-      name: 'Puma Energy Ghana Limited', 
-      initial: 'PE', 
-      industry: 'Oil & Gas',
-      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/fx46xlb3_Screenshot_12-4-2026_24927_www.bing.com.jpeg'
-    },
-    { 
-      name: 'Devtraco Limited', 
-      initial: 'DT', 
-      industry: 'Built Environment',
-      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/w1fwdwhu_Screenshot_12-4-2026_25221_www.bing.com.jpeg'
-    },
-    { 
-      name: 'Enclave Power Company', 
-      initial: 'EP', 
-      industry: 'Energy',
-      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/3stvz2a1_Screenshot_12-4-2026_25617_www.bing.com.jpeg'
-    },
-    { 
-      name: 'Kasapreko Company Limited', 
-      initial: 'KC', 
-      industry: 'Manufacturing',
-      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/20v5cn2d_Screenshot_12-4-2026_25850_www.bing.com.jpeg'
-    },
-    { 
-      name: 'Africa Cement Factory Limited', 
-      initial: 'AC', 
-      industry: 'Manufacturing',
-      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/8o55n5b8_Screenshot_12-4-2026_3439_www.bing.com.jpeg'
-    },
-    { name: 'Ghana Steels Limited', initial: 'GS', industry: 'Manufacturing', logo: null },
-    { 
-      name: 'Ferro Fabrik Limited', 
-      initial: 'FF', 
-      industry: 'Manufacturing',
-      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/dq9eewte_Screenshot_12-4-2026_31415_www.bing.com.jpeg'
-    },
-    { 
-      name: 'Vester Oil Mills Limited', 
-      initial: 'VO', 
-      industry: 'Agriculture',
-      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/7gkxn3e4_Screenshot_12-4-2026_32256_www.bing.com.jpeg'
-    },
-    { 
-      name: 'International Warehouse Company', 
-      initial: 'IW', 
-      industry: 'Logistics',
-      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/g2z6mzb2_Screenshot_12-4-2026_4510_www.bing.com.jpeg'
-    },
-    { 
-      name: 'M. Barbisotti and Sons Limited', 
-      initial: 'MB', 
-      industry: 'Logistics',
-      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/iu8ghl0x_Screenshot_12-4-2026_35834_www.bing.com.jpeg'
-    },
-    { 
-      name: 'Atlantic Quarry Limited', 
-      initial: 'AQ', 
-      industry: 'Mining',
-      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/4nuartig_Screenshot_12-4-2026_34725_www.bing.com.jpeg'
-    },
-    { 
-      name: 'Yantai Chemicals Limited', 
-      initial: 'YC', 
-      industry: 'Manufacturing',
-      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/4rlulmxo_Screenshot_12-4-2026_34249_www.bing.com.jpeg'
-    },
-    { 
-      name: 'AMPC International Health Consultants', 
-      initial: 'AI', 
-      industry: 'Health Services',
-      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/ktdv8xhh_Screenshot_12-4-2026_3324_www.bing.com.jpeg'
-    },
-    { 
-      name: 'Reroy Cables Limited', 
-      initial: 'RC', 
-      industry: 'Manufacturing',
-      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/clds22bo_Screenshot_12-4-2026_32837_www.bing.com.jpeg'
-    },
-    { 
-      name: 'Western Rod and Wire Limited', 
-      initial: 'WR', 
-      industry: 'Manufacturing',
-      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/mst56ojx_Screenshot_12-4-2026_33031_www.bing.com.jpeg'
-    },
-    { 
-      name: 'Ayaan Global Ghana Limited', 
-      initial: 'AG', 
-      industry: 'Manufacturing',
-      logo: 'https://customer-assets.emergentagent.com/job_sustainability-hub-52/artifacts/pye8u4dn_Screenshot_12-4-2026_32638_www.bing.com.jpeg'
-    },
-  ];
-
-  useEffect(() => {
-    setClients(clientList);
-    setLoading(false);
-  }, []);
-
-  const industries = [...new Set(clientList.map(c => c.industry))];
+  const clients = clientList;
 
   return (
     <div className="min-h-screen" data-testid="clients-page">
@@ -150,12 +64,7 @@ const ClientsPage = () => {
             </p>
           </div>
 
-          {loading ? (
-            <div className="flex justify-center items-center py-20">
-              <div className="spinner" />
-            </div>
-          ) : (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {clients.map((client, index) => (
                 <motion.div
                   key={client.name}
@@ -190,7 +99,6 @@ const ClientsPage = () => {
                 </motion.div>
               ))}
             </div>
-          )}
         </div>
       </section>
 

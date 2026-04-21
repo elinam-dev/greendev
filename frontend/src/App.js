@@ -2,6 +2,7 @@ import "@/App.css";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { AuthProvider } from "./context/AuthContext";
+import { useEffect } from "react";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import HomePage from "./pages/HomePage";
@@ -14,21 +15,6 @@ import ClientsPage from "./pages/ClientsPage";
 import ContactPage from "./pages/ContactPage";
 import AdminPage from "./pages/AdminPage";
 import AdminLoginPage from "./pages/AdminLoginPage";
-
-// Remove platform watermark badge
-const RemoveBadge = () => {
-  useEffect(() => {
-    const remove = () => {
-      const badge = document.getElementById('emergent-badge');
-      if (badge) badge.remove();
-    };
-    remove();
-    const observer = new MutationObserver(remove);
-    observer.observe(document.body, { childList: true, subtree: true });
-    return () => observer.disconnect();
-  }, []);
-  return null;
-};
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -63,7 +49,6 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
-        <RemoveBadge />
         <ScrollToTop />
         <PublicLayout>
           <Routes>
