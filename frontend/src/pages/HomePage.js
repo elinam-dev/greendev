@@ -1,7 +1,5 @@
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import axios from 'axios';
 import { 
   ArrowRight, 
   Leaf, 
@@ -18,33 +16,27 @@ import {
 import StatsCounter from '../components/shared/StatsCounter';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../components/ui/carousel';
 
-const API_URL = process.env.REACT_APP_BACKEND_URL;
+const STATS = { years_experience: 9, projects_delivered: 100, industries_served: 6, expert_consultants: 11 };
+
+const FEATURED_PROJECTS = [
+  { id: '1', client_name: 'Puma Energy Ghana Limited', project_type: 'Environmental Impact Assessment', location: 'Tema, Ghana', summary: 'EIA for Proposed Dual 3.2km LPG/Fuel Underground Pipeline Project connecting Tema Oil Refinery and Kpone Marine Services Limited.', year: 2016, industry: 'Oil & Gas', featured: true },
+  { id: '2', client_name: 'Puma Energy Ghana Limited', project_type: 'Environmental Management Plan', location: 'Tema Free Zones, Ghana', summary: 'Preparation of EMP for 15 million litre aviation fuel tank farm at Tema Free Zones.', year: 2017, industry: 'Oil & Gas', featured: true },
+  { id: '3', client_name: 'Enclave Power Company', project_type: 'Environmental & Social Impact Assessment', location: 'Greater Accra, Ghana', summary: 'ESIA for a 396 MVA Power Substation for the 2000-acre Dawa Industrial City project.', year: 2017, industry: 'Energy', featured: true },
+  { id: '4', client_name: 'Devtraco Limited', project_type: 'Environmental Management Plan & Annual Environmental Report', location: 'Tema Community 25, Ghana', summary: 'Annual Environmental Report and Wastewater/StormWater Management Action Plan for 203-acre Devtraco Courts Residential Estate.', year: 2017, industry: 'Built Environment', featured: true },
+  { id: '5', client_name: 'Devtraco Limited', project_type: 'Comprehensive Waste Management Plan', location: 'Prampram, Ghana', summary: 'Comprehensive Waste Management Plan for 5000-Homes Devtraco Woodlands project on a 1000-acre land.', year: 2018, industry: 'Built Environment', featured: true },
+  { id: '6', client_name: 'Africa Cement Factory Limited', project_type: 'Environmental Impact Assessment', location: 'Tema Free Zones, Ghana', summary: 'EIA for proposed Cement Grinding station at Tema Free Zones Enclave.', year: 2019, industry: 'Manufacturing', featured: true },
+];
+
+const TESTIMONIALS = [
+  { id: '1', name: 'Project Manager', role: 'Operations', company: 'Puma Energy Ghana', content: 'GreenDev Associates delivered exceptional work on our EIA for the LPG/Fuel pipeline project. Their thoroughness and understanding of EPA Ghana requirements ensured smooth permit acquisition.' },
+  { id: '2', name: 'Development Director', role: 'Real Estate', company: 'Devtraco Limited', content: "The team's expertise in environmental management planning for our large-scale residential projects has been invaluable. They consistently deliver practical and compliant solutions." },
+  { id: '3', name: 'HSE Manager', role: 'Manufacturing', company: 'Kasapreko Company Limited', content: 'Professional, knowledgeable, and committed to delivering quality. GreenDev is our trusted partner for all environmental permit renewals and compliance needs.' },
+];
 
 const HomePage = () => {
-  const [stats, setStats] = useState(null);
-  const [projects, setProjects] = useState([]);
-  const [testimonials, setTestimonials] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [statsRes, projectsRes, testimonialsRes] = await Promise.all([
-          axios.get(`${API_URL}/api/stats`),
-          axios.get(`${API_URL}/api/projects?featured=true`),
-          axios.get(`${API_URL}/api/testimonials`)
-        ]);
-        setStats(statsRes.data);
-        setProjects(projectsRes.data);
-        setTestimonials(testimonialsRes.data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
+  const stats = STATS;
+  const projects = FEATURED_PROJECTS;
+  const testimonials = TESTIMONIALS;
 
   const services = [
     {

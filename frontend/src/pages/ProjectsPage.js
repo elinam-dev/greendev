@@ -1,50 +1,36 @@
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import { ArrowRight, MapPin, Calendar, Funnel } from '@phosphor-icons/react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 
-const API_URL = process.env.REACT_APP_BACKEND_URL;
+const ALL_PROJECTS = [
+  { id: '1', client_name: 'Puma Energy Ghana Limited / Blue Ocean Investments Limited', project_type: 'Environmental Impact Assessment', location: 'Tema, Ghana', summary: 'EIA for Proposed Dual 3.2km LPG/Fuel Underground Pipeline Project connecting Tema Oil Refinery and Kpone Marine Services Limited in Tema Heavy Industrial Area.', year: 2016, industry: 'Oil & Gas', featured: true },
+  { id: '2', client_name: 'Puma Energy Ghana Limited', project_type: 'Environmental Management Plan', location: 'Tema Free Zones, Ghana', summary: 'Preparation of EMP for 15 million litre aviation fuel tank farm at Tema Free Zones.', year: 2017, industry: 'Oil & Gas', featured: true },
+  { id: '3', client_name: 'Enclave Power Company', project_type: 'Environmental & Social Impact Assessment', location: 'Greater Accra, Ghana', summary: 'ESIA for a 396 MVA Power Substation for the 2000-acre Dawa Industrial City project in the Greater Accra Region.', year: 2017, industry: 'Energy', featured: true },
+  { id: '4', client_name: 'Devtraco Limited', project_type: 'Environmental Management Plan & Annual Environmental Report', location: 'Tema Community 25, Ghana', summary: 'Annual Environmental Report and Wastewater/StormWater Management Action Plan for 203-acre Devtraco Courts Residential Estate & Housing Project.', year: 2017, industry: 'Built Environment', featured: true },
+  { id: '5', client_name: 'Devtraco Limited', project_type: 'Comprehensive Waste Management Plan', location: 'Prampram, Ghana', summary: 'Comprehensive Waste Management Plan for 5000-Homes Devtraco Woodlands project on a 1000-acre land.', year: 2018, industry: 'Built Environment', featured: true },
+  { id: '6', client_name: 'Africa Cement Factory Limited', project_type: 'Environmental Impact Assessment', location: 'Tema Free Zones, Ghana', summary: 'EIA for proposed Cement Grinding station at Tema Free Zones Enclave.', year: 2019, industry: 'Manufacturing', featured: true },
+  { id: '7', client_name: 'Kasapreko Company Limited', project_type: 'Environmental Management Plan', location: 'Spintex, Accra, Ghana', summary: 'Preparation of EMP to renew permit for alcoholic beverage, non-alcoholic beverage and bottled water plant.', year: 2020, industry: 'Manufacturing', featured: false },
+  { id: '8', client_name: 'AMPC International Health Consultants / New Crystal Health Services', project_type: 'Environmental & Social Impact Assessment', location: 'Ghana', summary: 'ESIA and Life and Fire Safety services for expansion of 2 hospitals and construction of 2 new hospitals.', year: 2020, industry: 'Built Environment', featured: false },
+  { id: '9', client_name: 'Yantai Chemicals Limited', project_type: 'Environmental and Social Impact Assessment', location: 'Lorlorvor, Ghana', summary: 'ESIA for proposed caustic soda manufacturing plant.', year: 2019, industry: 'Manufacturing', featured: false },
+  { id: '10', client_name: 'Green Cross Burkina Faso / Amya Agro Plus', project_type: 'Environmental & Social Impact Assessment', location: 'Burkina Faso', summary: 'ESIA Report for multi-cassava plantation and processing unit.', year: 2018, industry: 'Agriculture', featured: false },
+  { id: '11', client_name: 'Octoglow Ghana Limited / Murphy Homes Limited', project_type: 'Environmental & Social Impact Assessment', location: 'Tema Community 21, Ghana', summary: 'ESIA including liaison services for acquisition of environmental permit for the proposed 125-acre Avilla Gardens estate project.', year: 2017, industry: 'Built Environment', featured: false },
+  { id: '12', client_name: 'Ferro Fabrik Limited', project_type: 'Environmental & Social Impact Assessment', location: 'Tema Free Zones, Ghana', summary: 'ESIA for proposed Iron Rod Manufacturing Facility in Tema Free Zones Enclave.', year: 2018, industry: 'Manufacturing', featured: false },
+  { id: '13', client_name: 'Vester Oil Mills Limited', project_type: 'Environmental Management Plan', location: 'Ashanti Region, Ghana', summary: 'EMP for soya oil processing plant and Vegetable Oil Extraction factory.', year: 2019, industry: 'Agriculture', featured: false },
+  { id: '14', client_name: 'Ghana Steels Limited', project_type: 'Environmental Management Plan', location: 'Kpone, Ghana', summary: 'EMP to renew permit for steel products and plastic recycling factories.', year: 2020, industry: 'Manufacturing', featured: false },
+  { id: '15', client_name: 'Atlantic Quarry Limited', project_type: 'Environmental Management Plan & Monitoring', location: 'Huapase, Ghana', summary: 'EMP and Environmental Monitoring Report for quarry operations.', year: 2019, industry: 'Mining', featured: false },
+];
 
 const ProjectsPage = () => {
-  const [projects, setProjects] = useState([]);
-  const [filteredProjects, setFilteredProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [selectedIndustry, setSelectedIndustry] = useState('all');
 
-  const industries = [
-    'All Industries',
-    'Manufacturing',
-    'Oil & Gas',
-    'Mining',
-    'Agriculture',
-    'Energy',
-    'Infrastructure Development'
-  ];
+  const industries = ['Manufacturing', 'Oil & Gas', 'Mining', 'Agriculture', 'Energy', 'Built Environment'];
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const response = await axios.get(`${API_URL}/api/projects`);
-        setProjects(response.data);
-        setFilteredProjects(response.data);
-      } catch (error) {
-        console.error('Error fetching projects:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchProjects();
-  }, []);
-
-  useEffect(() => {
-    if (selectedIndustry === 'all') {
-      setFilteredProjects(projects);
-    } else {
-      setFilteredProjects(projects.filter(p => p.industry === selectedIndustry));
-    }
-  }, [selectedIndustry, projects]);
+  const filteredProjects = useMemo(() => {
+    if (selectedIndustry === 'all') return ALL_PROJECTS;
+    return ALL_PROJECTS.filter(p => p.industry === selectedIndustry);
+  }, [selectedIndustry]);
 
   return (
     <div className="min-h-screen" data-testid="projects-page">
@@ -82,7 +68,7 @@ const ProjectsPage = () => {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All Industries</SelectItem>
-                {industries.slice(1).map((industry) => (
+                {industries.map((industry) => (
                   <SelectItem key={industry} value={industry}>
                     {industry}
                   </SelectItem>
@@ -96,16 +82,7 @@ const ProjectsPage = () => {
       {/* Projects Grid */}
       <section className="section-padding bg-white" data-testid="projects-grid">
         <div className="container-custom">
-          {loading ? (
-            <div className="flex justify-center items-center py-20">
-              <div className="spinner" />
-            </div>
-          ) : filteredProjects.length === 0 ? (
-            <div className="text-center py-20">
-              <p className="text-gray-500">No projects found for the selected industry.</p>
-            </div>
-          ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
@@ -153,7 +130,6 @@ const ProjectsPage = () => {
                 </motion.div>
               ))}
             </div>
-          )}
         </div>
       </section>
 

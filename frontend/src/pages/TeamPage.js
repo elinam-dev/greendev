@@ -1,28 +1,23 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import { ArrowRight, LinkedinLogo, Envelope } from '@phosphor-icons/react';
 
-const API_URL = process.env.REACT_APP_BACKEND_URL;
+const TEAM = [
+  { id: '1', name: 'Kojo Anagbo', role: 'Managing Partner', expertise: 'Environmental Sustainability Practitioner', bio: 'Leading the firm\'s strategic direction and overseeing all environmental sustainability initiatives across Ghana and West Africa.', order: 1 },
+  { id: '2', name: 'Emmanuel Okoh Agyemang', role: 'Partner/Principal Consultant', expertise: 'Sanitation Engineering Specialist', bio: 'Expert in sanitation engineering with extensive experience in water and wastewater management systems design and implementation.', order: 2 },
+  { id: '3', name: 'Dr. Elvis Nyarko', role: 'Senior Consultant', expertise: 'Marine Ecology', bio: 'Specialized in marine ecology and coastal environmental assessments for offshore and nearshore projects.', order: 3 },
+  { id: '4', name: 'Steven Albert Tsike Kwadwo', role: 'Senior Consultant', expertise: 'Ecologist', bio: 'Expert ecologist specializing in biodiversity assessments and ecological impact studies.', order: 4 },
+  { id: '5', name: 'Isaac Simpson', role: 'Senior Consultant', expertise: 'Health and Safety Specialist', bio: 'Certified health and safety professional with expertise in HSE management systems and workplace safety audits.', order: 5 },
+  { id: '6', name: 'Delali Gamor', role: 'Associate Consultant', expertise: 'Coastal Zone Management Specialist', bio: 'PhD Candidate in Coastal Zone Management with MPhil in Integrated Coastal Zone Management and BSc in Fisheries and Aquatic Sciences.', order: 6 },
+  { id: '7', name: 'Jalel Moujaled', role: 'Associate Consultant', expertise: 'Renewable Energy Specialist', bio: 'Expert in renewable energy project assessments and sustainable energy solutions implementation.', order: 7 },
+  { id: '8', name: 'Nathaniel Sackey', role: 'Associate Consultant', expertise: 'Environmental Geology Expert', bio: 'Specialized in geotechnical investigations and environmental geology assessments.', order: 8 },
+  { id: '9', name: 'Isaac Edem Bibah', role: 'Project Manager', expertise: 'Stakeholder Engagement Practitioner', bio: 'Expert in stakeholder engagement and community consultation for environmental projects.', order: 9 },
+  { id: '10', name: 'Nana Yaw Wiafe', role: 'Lab Technician', expertise: 'Air Quality, Wastewater and Noise Monitoring Specialist', bio: 'Specialized in environmental media monitoring including air quality, wastewater analysis, and noise level assessments.', order: 10 },
+  { id: '11', name: 'Florence Amponsah', role: 'Research Assistant', expertise: 'Research and Data Collection', bio: 'Supporting research activities and field data collection for environmental assessments.', order: 11 },
+];
 
 const TeamPage = () => {
-  const [team, setTeam] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchTeam = async () => {
-      try {
-        const response = await axios.get(`${API_URL}/api/team`);
-        setTeam(response.data);
-      } catch (error) {
-        console.error('Error fetching team:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchTeam();
-  }, []);
+  const team = TEAM;
 
   return (
     <div className="min-h-screen" data-testid="team-page">
@@ -49,12 +44,7 @@ const TeamPage = () => {
       {/* Team Grid */}
       <section className="section-padding bg-white" data-testid="team-grid">
         <div className="container-custom">
-          {loading ? (
-            <div className="flex justify-center items-center py-20">
-              <div className="spinner" />
-            </div>
-          ) : (
-            <>
+          <>
               {/* Leadership Team */}
               <div className="mb-16">
                 <h2 className="font-outfit text-2xl font-bold text-gray-900 mb-8 text-center">

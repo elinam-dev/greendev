@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import axios from 'axios';
 import { 
   MapPin, 
   Phone, 
@@ -14,8 +13,6 @@ import { Textarea } from '../components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 import { Button } from '../components/ui/button';
 
-const API_URL = process.env.REACT_APP_BACKEND_URL;
-
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -25,9 +22,8 @@ const ContactPage = () => {
     service: '',
     message: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [error, setError] = useState('');
 
   const services = [
     'Environmental Impact Assessment',
@@ -49,28 +45,13 @@ const ContactPage = () => {
     setFormData(prev => ({ ...prev, service: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setError('');
-
-    try {
-      await axios.post(`${API_URL}/api/contact`, formData);
-      setIsSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        service: '',
-        message: ''
-      });
-    } catch (err) {
-      setError('Failed to submit. Please try again.');
-      console.error('Contact form error:', err);
-    } finally {
-      setIsSubmitting(false);
-    }
+    const { name, email, phone, company, service, message } = formData;
+    const subject = encodeURIComponent(`Contact Form: ${service || 'General Enquiry'} - ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'N/A'}\nCompany: ${company || 'N/A'}\nService: ${service || 'N/A'}\n\nMessage:\n${message}`);
+    window.location.href = `mailto:greendev.associates@gmail.com?subject=${subject}&body=${body}`;
+    setIsSubmitted(true);
   };
 
   return (
@@ -306,13 +287,7 @@ const ContactPage = () => {
                         />
                       </div>
 
-                      {error && (
-                        <p className="text-red-500 text-sm" data-testid="contact-error">
-                          {error}
-                        </p>
-                      )}
-
-                      <Button
+<Button
                         type="submit"
                         disabled={isSubmitting}
                         className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2"
