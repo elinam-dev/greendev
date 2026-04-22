@@ -3,22 +3,22 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from '@phosphor-icons/react';
 
 const clientList = [
-  { name: 'Puma Energy Ghana Limited', initial: 'PE', industry: 'Oil & Gas', logo: null },
-  { name: 'Devtraco Limited', initial: 'DT', industry: 'Built Environment', logo: null },
-  { name: 'Enclave Power Company', initial: 'EP', industry: 'Energy', logo: null },
-  { name: 'Kasapreko Company Limited', initial: 'KC', industry: 'Manufacturing', logo: null },
-  { name: 'Africa Cement Factory Limited', initial: 'AC', industry: 'Manufacturing', logo: null },
+  { name: 'Puma Energy Ghana Limited', initial: 'PE', industry: 'Oil & Gas', logo: '/images/puma.jpeg' },
+  { name: 'Devtraco Limited', initial: 'DT', industry: 'Built Environment', logo: '/images/devtraco.jpeg' },
+  { name: 'Enclave Power Company', initial: 'EP', industry: 'Energy', logo: '/images/enclave.jpeg' },
+  { name: 'Kasapreko Company Limited', initial: 'KC', industry: 'Manufacturing', logo: '/images/kasapreko.jpeg' },
+  { name: 'Africa Cement Factory Limited', initial: 'AC', industry: 'Manufacturing', logo: '/images/acf.jpeg' },
   { name: 'Ghana Steels Limited', initial: 'GS', industry: 'Manufacturing', logo: null },
-  { name: 'Ferro Fabrik Limited', initial: 'FF', industry: 'Manufacturing', logo: null },
-  { name: 'Vester Oil Mills Limited', initial: 'VO', industry: 'Agriculture', logo: null },
-  { name: 'International Warehouse Company', initial: 'IW', industry: 'Logistics', logo: null },
-  { name: 'M. Barbisotti and Sons Limited', initial: 'MB', industry: 'Logistics', logo: null },
-  { name: 'Atlantic Quarry Limited', initial: 'AQ', industry: 'Mining', logo: null },
-  { name: 'Yantai Chemicals Limited', initial: 'YC', industry: 'Manufacturing', logo: null },
-  { name: 'AMPC International Health Consultants', initial: 'AI', industry: 'Health Services', logo: null },
-  { name: 'Reroy Cables Limited', initial: 'RC', industry: 'Manufacturing', logo: null },
-  { name: 'Western Rod and Wire Limited', initial: 'WR', industry: 'Manufacturing', logo: null },
-  { name: 'Ayaan Global Ghana Limited', initial: 'AG', industry: 'Manufacturing', logo: null },
+  { name: 'Ferro Fabrik Limited', initial: 'FF', industry: 'Manufacturing', logo: '/images/ferro.jpeg' },
+  { name: 'Vester Oil Mills Limited', initial: 'VO', industry: 'Agriculture', logo: '/images/vestermills.jpeg' },
+  { name: 'International Warehouse Company', initial: 'IW', industry: 'Logistics', logo: '/images/international_warehousing.jpeg' },
+  { name: 'M. Barbisotti and Sons Limited', initial: 'MB', industry: 'Logistics', logo: '/images/mbs.jpeg' },
+  { name: 'Atlantic Quarry Limited', initial: 'AQ', industry: 'Mining', logo: '/images/atlantic.jpeg' },
+  { name: 'Yantai Chemicals Limited', initial: 'YC', industry: 'Manufacturing', logo: '/images/yantai.jpeg' },
+  { name: 'AMPC International Health Consultants', initial: 'AI', industry: 'Health Services', logo: '/images/ampc.jpeg' },
+  { name: 'Reroy Cables Limited', initial: 'RC', industry: 'Manufacturing', logo: '/images/reroy.jpeg' },
+  { name: 'Western Rod and Wire Limited', initial: 'WR', industry: 'Manufacturing', logo: '/images/western_rod.jpeg' },
+  { name: 'Ayaan Global Ghana Limited', initial: 'AG', industry: 'Manufacturing', logo: '/images/ayaan.jpeg' },
 ];
 
 const industries = [...new Set(clientList.map(c => c.industry))];
