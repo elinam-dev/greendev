@@ -1,4 +1,3 @@
-import teamBg from '../image/team.jpg';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, LinkedinLogo, Envelope } from '@phosphor-icons/react';
@@ -57,7 +56,7 @@ const TeamPage = () => {
     <div className="min-h-screen" data-testid="team-page">
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden" data-testid="team-hero">
-        <img src={teamBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="/images/team.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-[#064E3B]" style={{ opacity: 0.75 }} />
         <div className="container-custom relative z-10">
           <motion.div

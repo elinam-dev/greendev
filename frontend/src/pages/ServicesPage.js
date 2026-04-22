@@ -1,4 +1,3 @@
-import servicesBg from '../image/service.jpg';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -131,7 +130,7 @@ const ServicesPage = () => {
 
       {/* Hero */}
       <section className="relative py-32 overflow-hidden" data-testid="services-hero">
-        <img src={servicesBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="/images/service.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-emerald-900" style={{ opacity: 0.7 }} />
         <div className="container-custom relative z-10">
           <motion.div

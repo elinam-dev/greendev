@@ -1,4 +1,3 @@
-import industriesBg from '../image/industries.jpg';
 import manufacturingImg from '../image/manufacturing.jpg';
 import oilGasImg from '../image/oilandgas.jpg';
 import builtEnvImg from '../image/builtenvironment.jpeg';
@@ -115,7 +114,7 @@ const IndustriesPage = () => {
     <div className="min-h-screen" data-testid="industries-page">
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden" data-testid="industries-hero">
-        <img src={industriesBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="/images/industries.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-[#064E3B]" style={{ opacity: 0.75 }} />
         <div className="container-custom relative z-10">
           <motion.div

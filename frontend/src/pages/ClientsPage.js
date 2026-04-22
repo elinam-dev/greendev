@@ -1,4 +1,3 @@
-import clientsBg from '../image/background2.jpg';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from '@phosphor-icons/react';
@@ -31,7 +30,7 @@ const ClientsPage = () => {
     <div className="min-h-screen" data-testid="clients-page">
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden" data-testid="clients-hero">
-        <img src={clientsBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="/images/background2.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-emerald-900" style={{ opacity: 0.7 }} />
         
         <div className="container-custom relative z-10">
