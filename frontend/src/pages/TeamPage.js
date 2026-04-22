@@ -57,8 +57,8 @@ const TeamPage = () => {
     <div className="min-h-screen" data-testid="team-page">
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden" data-testid="team-hero">
-        <div className="absolute inset-0" style={{ backgroundImage: `url(${teamBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
-        <div className="absolute inset-0 bg-[#064E3B]/75" />
+        <img src={teamBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-[#064E3B]" style={{ opacity: 0.75 }} />
         <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

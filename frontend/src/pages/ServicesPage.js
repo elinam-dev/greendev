@@ -131,8 +131,8 @@ const ServicesPage = () => {
 
       {/* Hero */}
       <section className="relative py-32 overflow-hidden" data-testid="services-hero">
-        <div className="absolute inset-0" style={{ backgroundImage: `url(${servicesBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
-        <div className="absolute inset-0 bg-emerald-900/70" />
+        <img src={servicesBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-emerald-900" style={{ opacity: 0.7 }} />
         <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

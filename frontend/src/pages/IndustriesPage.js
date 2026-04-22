@@ -115,8 +115,8 @@ const IndustriesPage = () => {
     <div className="min-h-screen" data-testid="industries-page">
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden" data-testid="industries-hero">
-        <div className="absolute inset-0" style={{ backgroundImage: `url(${industriesBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
-        <div className="absolute inset-0 bg-[#064E3B]/75" />
+        <img src={industriesBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-[#064E3B]" style={{ opacity: 0.75 }} />
         <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
