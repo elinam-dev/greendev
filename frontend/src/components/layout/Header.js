@@ -38,12 +38,9 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2" data-testid="logo-link">
-            <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center shadow-lg">
-              <Leaf className="w-6 h-6 text-white" weight="fill" />
-            </div>
+            <img src="/images/logo.jpg" alt="GreenDev Associates" className="h-10 w-auto" />
             <div className="hidden sm:block">
-            <span className="font-outfit font-bold text-lg text-emerald-700">GreenDev</span>
-              <span className="font-outfit text-xs block -mt-1 text-gray-500">Associates</span>
+              <span className="font-outfit font-bold text-lg text-emerald-700">GreenDev Associates</span>
             </div>
           </Link>
 

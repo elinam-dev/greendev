@@ -131,7 +131,7 @@ const ServicesPage = () => {
       {/* Hero */}
       <section className="relative py-32 overflow-hidden" data-testid="services-hero">
         <img src="/images/service.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-emerald-900" style={{ opacity: 0.7 }} />
+        <div className="absolute inset-0 bg-emerald-900" style={{ opacity: 0.5 }} />
         <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
