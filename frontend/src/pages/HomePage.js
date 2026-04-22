@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import backgroundImg from '../image/background.jpg';
+import background2Img from '../image/background2.jpg';
 import { 
   ArrowRight, 
   Leaf, 
@@ -16,7 +18,7 @@ import {
 import StatsCounter from '../components/shared/StatsCounter';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../components/ui/carousel';
 
-const STATS = { years_experience: 9, projects_delivered: 100, industries_served: 6, expert_consultants: 11 };
+const STATS = { years_experience: 10, projects_delivered: 100, industries_served: 50, expert_consultants: 11 };
 
 const FEATURED_PROJECTS = [
   { id: '1', client_name: 'Puma Energy Ghana Limited', project_type: 'Environmental Impact Assessment', location: 'Tema, Ghana', summary: 'EIA for Proposed Dual 3.2km LPG/Fuel Underground Pipeline Project connecting Tema Oil Refinery and Kpone Marine Services Limited.', year: 2016, industry: 'Oil & Gas', featured: true },
@@ -100,13 +102,11 @@ const HomePage = () => {
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ 
-            backgroundImage: `url('https://images.pexels.com/photos/9800116/pexels-photo-9800116.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')` 
-          }}
+          style={{ backgroundImage: `url(${backgroundImg})` }}
         />
         
         {/* Gradient Overlay - Better contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/95 via-emerald-800/90 to-emerald-900/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/80 via-emerald-800/70 to-emerald-900/50" />
         
         {/* Pattern Overlay */}
         <div className="absolute inset-0 hero-pattern opacity-30" />
@@ -157,7 +157,7 @@ const HomePage = () => {
               {/* Trust Indicators */}
               <div className="flex items-center gap-6 mt-10 pt-10 border-t border-white/20">
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-amber-400">9+</p>
+                  <p className="text-3xl font-bold text-amber-400">10+</p>
                   <p className="text-emerald-200 text-sm">Years Experience</p>
                 </div>
                 <div className="w-px h-12 bg-white/20" />
@@ -167,7 +167,7 @@ const HomePage = () => {
                 </div>
                 <div className="w-px h-12 bg-white/20" />
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-amber-400">6</p>
+                  <p className="text-3xl font-bold text-amber-400">50+</p>
                   <p className="text-emerald-200 text-sm">Industries Served</p>
                 </div>
               </div>
@@ -225,7 +225,7 @@ const HomePage = () => {
             >
               <div className="absolute -inset-4 bg-gradient-to-r from-emerald-600 to-amber-500 rounded-2xl blur-xl opacity-20" />
               <img
-                src="https://images.unsplash.com/photo-1612408934218-916d7b033df3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwxfHxlbnZpcm9ubWVudGFsJTIwc2NpZW50aXN0JTIwZmllbGQlMjB3b3JrfGVufDB8fHx8MTc3NTgzNTEzOHww&ixlib=rb-4.1.0&q=85"
+                src={background2Img}
                 alt="Environmental consultant at work"
                 className="relative w-full h-[450px] object-cover rounded-2xl shadow-2xl"
               />

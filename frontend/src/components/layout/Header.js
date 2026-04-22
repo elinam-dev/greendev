@@ -4,18 +4,9 @@ import { List, X, CaretDown, Leaf } from '@phosphor-icons/react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   useEffect(() => {
     setMobileMenuOpen(false);
@@ -42,12 +33,7 @@ const Header = () => {
   ];
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass-header' : 'bg-emerald-900/80 backdrop-blur-sm'
-      }`}
-      data-testid="main-header"
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 glass-header" data-testid="main-header">
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -56,8 +42,8 @@ const Header = () => {
               <Leaf className="w-6 h-6 text-white" weight="fill" />
             </div>
             <div className="hidden sm:block">
-              <span className={`font-outfit font-bold text-lg ${isScrolled ? 'text-emerald-700' : 'text-white'}`}>GreenDev</span>
-              <span className={`font-outfit text-xs block -mt-1 ${isScrolled ? 'text-gray-500' : 'text-emerald-200'}`}>Associates</span>
+            <span className="font-outfit font-bold text-lg text-emerald-700">GreenDev</span>
+              <span className="font-outfit text-xs block -mt-1 text-gray-500">Associates</span>
             </div>
           </Link>
 
@@ -73,9 +59,7 @@ const Header = () => {
                 <Link
                   to={item.path}
                   className={`nav-link flex items-center gap-1 py-2 text-sm font-medium ${
-                    location.pathname === item.path 
-                      ? (isScrolled ? 'text-emerald-600 active' : 'text-amber-400 active')
-                      : (isScrolled ? 'text-gray-700' : 'text-white')
+                    location.pathname === item.path ? 'text-emerald-600 active' : 'text-gray-700'
                   }`}
                   data-testid={`nav-${item.name.toLowerCase()}`}
                 >
@@ -115,11 +99,7 @@ const Header = () => {
           <div className="hidden lg:flex items-center gap-4">
             <Link
               to="/contact"
-              className={`px-6 py-2.5 font-semibold rounded-lg transition-all ${
-                isScrolled 
-                  ? 'bg-emerald-600 text-white hover:bg-emerald-500 shadow-lg shadow-emerald-500/25' 
-                  : 'bg-amber-500 text-white hover:bg-amber-400 shadow-lg shadow-amber-500/25'
-              }`}
+              className="px-6 py-2.5 font-semibold rounded-lg transition-all bg-emerald-600 text-white hover:bg-emerald-500 shadow-lg shadow-emerald-500/25"
               data-testid="header-cta"
             >
               Request Consultation
@@ -133,9 +113,9 @@ const Header = () => {
             data-testid="mobile-menu-toggle"
           >
             {mobileMenuOpen ? (
-              <X className={`w-6 h-6 ${isScrolled ? 'text-gray-800' : 'text-white'}`} />
+              <X className="w-6 h-6 text-gray-800" />
             ) : (
-              <List className={`w-6 h-6 ${isScrolled ? 'text-gray-800' : 'text-white'}`} />
+              <List className="w-6 h-6 text-gray-800" />
             )}
           </button>
         </div>

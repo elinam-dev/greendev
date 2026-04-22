@@ -17,7 +17,7 @@ const StatsCounter = ({ stats }) => {
   const defaultStats = [
     { 
       icon: CalendarCheck, 
-      value: stats?.years_experience || 9, 
+      value: stats?.years_experience || 10, 
       suffix: '+', 
       label: 'Years of Experience' 
     },
@@ -29,8 +29,8 @@ const StatsCounter = ({ stats }) => {
     },
     { 
       icon: Factory, 
-      value: stats?.industries_served || 6, 
-      suffix: '', 
+      value: stats?.industries_served || 50, 
+      suffix: '+', 
       label: 'Industries Served' 
     },
     { 

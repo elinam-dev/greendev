@@ -1,3 +1,10 @@
+import industriesBg from '../image/industries.jpg';
+import manufacturingImg from '../image/manufacturing.jpg';
+import oilGasImg from '../image/oilandgas.jpg';
+import builtEnvImg from '../image/builtenvironment.jpeg';
+import miningImg from '../image/miningandmineral.jpg';
+import agricultureImg from '../image/agriculturalinvestments.jpg';
+import energyImg from '../image/energy.jpg';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
@@ -16,6 +23,7 @@ const IndustriesPage = () => {
       id: 'manufacturing',
       title: 'Manufacturing',
       icon: Factory,
+      image: manufacturingImg,
       description: 'Comprehensive environmental solutions for manufacturing facilities, ensuring compliance while optimizing operations.',
       services: [
         'Environmental impact assessments for new facilities',
@@ -23,91 +31,92 @@ const IndustriesPage = () => {
         'Air quality monitoring and control',
         'Waste management planning',
         'Environmental permit acquisition',
-        'ISO 14001 implementation support'
-      ],
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800'
+        'Factories Inspectorate permit support'
+      ]
     },
     {
       id: 'oil-gas',
-      title: 'Oil & Gas',
+      title: 'Oil and Gas (Downstream and Upstream)',
       icon: Drop,
-      description: 'Specialized environmental consulting for upstream, midstream, and downstream oil and gas operations.',
+      image: oilGasImg,
+      description: 'Specialized environmental consulting for upstream and downstream oil and gas operations across Ghana and West Africa.',
       services: [
-        'EIA for exploration and production',
+        'EIA for exploration and production facilities',
+        'Pipeline and tank farm environmental assessments',
         'Spill prevention and response planning',
-        'Decommissioning studies',
         'Environmental monitoring programs',
         'Regulatory compliance audits',
         'Community engagement programs'
-      ],
-      image: 'https://images.unsplash.com/photo-1518173946687-a4c036bc8e1c?w=800'
+      ]
+    },
+    {
+      id: 'built-environment',
+      title: 'Built Environment',
+      icon: Buildings,
+      image: builtEnvImg,
+      description: 'Integrated environmental solutions for commercial and social infrastructure projects including residential estates, hospitals, and industrial parks.',
+      services: [
+        'EIA for residential and commercial developments',
+        'Wastewater and stormwater management plans',
+        'Fire and life safety assessments',
+        'Environmental permit acquisition',
+        'Annual environmental reporting',
+        'Green building advisory'
+      ]
     },
     {
       id: 'mining',
-      title: 'Mining',
+      title: 'Mining and Mineral Exploration',
       icon: Mountains,
-      description: 'Environmental expertise for mining operations from exploration to closure and rehabilitation.',
+      image: miningImg,
+      description: 'Environmental expertise for mining and mineral exploration operations from prospecting to closure and rehabilitation.',
       services: [
         'Mining EIA and permitting',
+        'Environmental monitoring reports',
         'Mine closure planning',
         'Biodiversity management',
         'Water management solutions',
-        'Tailings management',
         'Community impact assessment'
-      ],
-      image: 'https://images.unsplash.com/photo-1605891595832-07e36eafdd81?w=800'
+      ]
     },
     {
       id: 'agriculture',
-      title: 'Agriculture',
+      title: 'Agricultural Investments',
       icon: Plant,
-      description: 'Sustainable agricultural development solutions that balance productivity with environmental stewardship.',
+      image: agricultureImg,
+      description: 'Sustainable agricultural development solutions that balance productivity with environmental stewardship across West Africa.',
       services: [
         'Agricultural EIA studies',
-        'Irrigation system design',
-        'Soil conservation planning',
-        'Sustainable farming practices',
         'Agro-processing facility assessments',
-        'Climate-smart agriculture advisory'
-      ],
-      image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800'
+        'Plantation and processing unit ESIA',
+        'Soil conservation planning',
+        'Sustainable farming practices advisory',
+        'Climate-smart agriculture consulting'
+      ]
     },
     {
       id: 'energy',
       title: 'Energy',
       icon: Lightning,
-      description: 'Environmental consulting for conventional and renewable energy projects across West Africa.',
+      image: energyImg,
+      description: 'Environmental consulting for power plants, substations, transmission lines, and renewable energy projects across West Africa.',
       services: [
-        'Power plant EIA and permitting',
-        'Renewable energy assessments',
+        'EIA for power plants and substations',
+        'Transmission line environmental assessments',
+        'Renewable energy project assessments',
         'Grid infrastructure studies',
-        'Environmental monitoring',
-        'Carbon footprint analysis',
-        'Energy efficiency consulting'
-      ],
-      image: 'https://images.pexels.com/photos/9800116/pexels-photo-9800116.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    {
-      id: 'infrastructure',
-      title: 'Infrastructure Development',
-      icon: Buildings,
-      description: 'Integrated environmental and engineering solutions for urban and rural infrastructure projects.',
-      services: [
-        'Urban development EIA',
-        'Transportation infrastructure studies',
-        'Water supply and sanitation',
-        'Drainage and flood control',
-        'Resettlement action planning',
-        'Green building consulting'
-      ],
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800'
+        'Environmental monitoring programs',
+        'Carbon footprint analysis'
+      ]
     }
   ];
 
   return (
     <div className="min-h-screen" data-testid="industries-page">
       {/* Hero Section */}
-      <section className="relative py-32 bg-[#064E3B]" data-testid="industries-hero">
+      <section className="relative py-32 overflow-hidden" data-testid="industries-hero">
+        <div className="absolute inset-0" style={{ backgroundImage: `url(${industriesBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+        <div className="absolute inset-0 bg-[#064E3B]/75" />
         <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -141,9 +150,11 @@ const IndustriesPage = () => {
                 data-testid={`industry-card-${index}`}
               >
                 <div className="h-48 bg-gray-100 overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-[#064E3B] to-[#4D7C0F] flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
-                    <industry.icon className="w-20 h-20 text-white/30" weight="duotone" />
-                  </div>
+                  <img
+                    src={industry.image}
+                    alt={industry.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-4">
@@ -227,8 +238,12 @@ const IndustriesPage = () => {
                 transition={{ duration: 0.6 }}
                 className={index % 2 !== 0 ? 'lg:order-1' : ''}
               >
-                <div className="h-[400px] bg-gradient-to-br from-[#064E3B] to-[#4D7C0F] flex items-center justify-center">
-                  <industry.icon className="w-40 h-40 text-white/20" weight="duotone" />
+                <div className="h-[400px] overflow-hidden rounded-xl">
+                  <img
+                    src={industry.image}
+                    alt={industry.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </motion.div>
             </div>

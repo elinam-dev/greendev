@@ -9,10 +9,10 @@ import {
 } from '@phosphor-icons/react';
 import StatsCounter from '../components/shared/StatsCounter';
 
-const STATS = { years_experience: 9, projects_delivered: 100, industries_served: 6, expert_consultants: 11 };
+const STATS = { years_experience: 10, projects_delivered: 100, industries_served: 50, expert_consultants: 11 };
 
 const TEAM_PREVIEW = [
-  { id: '1', name: 'Kojo Anagbo', role: 'Managing Partner', expertise: 'Environmental Sustainability Practitioner' },
+  { id: '1', name: 'Edward Kojo Anagbo', role: 'Managing Director', expertise: 'Environmental Sustainability Practitioner' },
   { id: '2', name: 'Emmanuel Okoh Agyemang', role: 'Partner/Principal Consultant', expertise: 'Sanitation Engineering Specialist' },
   { id: '3', name: 'Dr. Elvis Nyarko', role: 'Senior Consultant', expertise: 'Marine Ecology' },
   { id: '4', name: 'Isaac Simpson', role: 'Senior Consultant', expertise: 'Health and Safety Specialist' },
@@ -90,16 +90,16 @@ const AboutPage = () => {
               <h2 className="font-outfit text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Who We Are
               </h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
                 GreenDev Associates International Limited is an associate-based sustainability consultancy and project management firm duly registered in Ghana.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
                 The company was established to provide companies with wholesome solutions that enhance their environmental performance and ensure reduction of pollution footprints.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
                 Our focus is to provide a range of sustainability services that helps companies understand their potential environmental and socio-economic impacts and additionally provide support services to enable companies mitigate impacts so they are compliant with relevant legislation.
               </p>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 text-lg leading-relaxed">
                 We can take care of your biggest concerns – environmental management systems and permits, waste management, health and safety concerns, social responsibility and community approval, while you concentrate on increasing your profitability and position among your competitors.
               </p>
             </motion.div>
@@ -110,9 +110,9 @@ const AboutPage = () => {
               transition={{ duration: 0.6 }}
             >
               <img
-                src="https://images.unsplash.com/photo-1612408934218-916d7b033df3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwxfHxlbnZpcm9ubWVudGFsJTIwc2NpZW50aXN0JTIwZmllbGQlMjB3b3JrfGVufDB8fHx8MTc3NTgzNTEzOHww&ixlib=rb-4.1.0&q=85"
-                alt="Environmental consultant at work"
-                className="w-full h-[500px] object-cover"
+                src={require('../image/greendev.jpg')}
+                alt="GreenDev Associates"
+                className="w-full h-[500px] object-cover rounded-2xl shadow-2xl"
               />
             </motion.div>
           </div>
@@ -120,45 +120,49 @@ const AboutPage = () => {
       </section>
 
       {/* Vision & Mission */}
-      <section className="section-padding bg-[#F9FAFB]" data-testid="vision-mission">
+      <section className="section-padding bg-white" data-testid="vision-mission">
         <div className="container-custom">
+          <div className="text-center mb-12">
+            <span className="overline text-emerald-600 mb-4 block">What Drives Us</span>
+            <h2 className="font-outfit text-3xl md:text-4xl font-bold text-gray-900">Our Vision & Mission</h2>
+          </div>
           <div className="grid md:grid-cols-2 gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-white p-8 md:p-12 border border-gray-100"
+              className="relative bg-[#F0FDF4] border border-emerald-100 rounded-2xl p-10"
             >
-              <div className="w-14 h-14 bg-[#F0FDF4] flex items-center justify-center mb-6">
-                <Eye className="w-7 h-7 text-[#064E3B]" weight="duotone" />
+              <div className="w-16 h-16 bg-amber-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                <Eye className="w-8 h-8 text-white" weight="fill" />
               </div>
               <h3 className="font-outfit text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
-              <p className="text-gray-600 leading-relaxed">
-                To be acclaimed as a resourceful, responsive and reliable sustainability solutions provider in the sub-region.
+              <p className="text-gray-700 text-lg leading-relaxed">
+                To be acclaimed as a <span className="text-emerald-700 font-semibold">resourceful, responsive and reliable</span> sustainability solutions provider in the sub-region.
               </p>
-              <p className="text-gray-500 text-sm mt-4 italic">
-                — GreenDev Associates International Limited
-              </p>
+              <div className="mt-8 pt-6 border-t border-emerald-100">
+                <p className="text-emerald-600 text-sm">Shaping a sustainable future for West Africa</p>
+              </div>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-white p-8 md:p-12 border border-gray-100"
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="relative bg-[#F0FDF4] border border-emerald-100 rounded-2xl p-10"
             >
-              <div className="w-14 h-14 bg-[#F0FDF4] flex items-center justify-center mb-6">
-                <Target className="w-7 h-7 text-[#064E3B]" weight="duotone" />
+              <div className="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                <Target className="w-8 h-8 text-white" weight="fill" />
               </div>
               <h3 className="font-outfit text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
-              <p className="text-gray-600 leading-relaxed">
-                To provide professional and practicable guidance for companies to ensure sustainable development at all stages of the project cycle.
+              <p className="text-gray-700 text-lg leading-relaxed">
+                To provide <span className="text-emerald-700 font-semibold">professional and practicable guidance</span> for companies to ensure sustainable development at all stages of the project cycle.
               </p>
-              <p className="text-gray-500 text-sm mt-4 italic">
-                — GreenDev Associates International Limited
-              </p>
+              <div className="mt-8 pt-6 border-t border-emerald-100">
+                <p className="text-emerald-600 text-sm">Guiding every project from inception to completion</p>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -166,30 +170,6 @@ const AboutPage = () => {
 
       {/* Stats */}
       <StatsCounter stats={stats} />
-
-      {/* Leadership Message */}
-      <section className="section-padding bg-white" data-testid="leadership-message">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center"
-            >
-              <Quotes className="w-16 h-16 text-[#D4A373] mx-auto mb-8" weight="fill" />
-              <blockquote className="font-outfit text-2xl md:text-3xl text-gray-900 leading-relaxed mb-8">
-                "At GreenDev Associates, we understand project objectives thoroughly, visit sites for baseline data collection, and interact with all stakeholders including regulatory bodies, affected persons, project owners, and end-users. We conduct extensive research and practice a systematic quality control strategy to deliver professional and practicable guidance."
-              </blockquote>
-              <div>
-                <p className="font-outfit font-semibold text-gray-900">Kojo Anagbo</p>
-                <p className="text-gray-500">Managing Partner, Environmental Sustainability Practitioner</p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* Our Approach */}
       <section className="section-padding bg-[#F9FAFB]" data-testid="our-approach">
@@ -236,6 +216,30 @@ const AboutPage = () => {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Message */}
+      <section className="section-padding bg-white" data-testid="leadership-message">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center"
+            >
+              <Quotes className="w-16 h-16 text-[#D4A373] mx-auto mb-8" weight="fill" />
+              <blockquote className="font-outfit text-2xl md:text-3xl text-gray-900 leading-relaxed mb-8">
+                "At GreenDev Associates, we understand project objectives thoroughly, visit sites for baseline data collection, and interact with all stakeholders including regulatory bodies, affected persons, project owners, and end-users. We conduct extensive research and practice a systematic quality control strategy to deliver professional and practicable guidance."
+              </blockquote>
+              <div>
+                <p className="font-outfit font-semibold text-gray-900">Edward Kojo Anagbo</p>
+                <p className="text-gray-500">Managing Director, Environmental Sustainability Practitioner</p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
