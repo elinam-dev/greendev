@@ -121,6 +121,22 @@ const ALL_SERVICES = [
       'Risk and hazard mapping',
       'Site comparison and recommendation'
     ]
+  },
+  {
+    id: 'earth-engineering',
+    category: 'Advisory & Capacity Building',
+    categoryColor: 'bg-blue-600',
+    icon: Handshake,
+    title: 'Earth Engineering',
+    description: 'Specialized earth engineering services supporting sustainable land use, geotechnical investigations, and ground improvement for infrastructure and industrial projects.',
+    details: [
+      'Geotechnical site investigations',
+      'Soil and ground condition assessments',
+      'Land use and terrain analysis',
+      'Ground improvement recommendations',
+      'Earthworks design and supervision',
+      'Foundation engineering support'
+    ]
   }
 ];
 
@@ -212,7 +228,7 @@ const ServicesPage = () => {
 
                   {/* CTA */}
                   <Link
-                    to="/contact"
+                    to={`/contact?service=${encodeURIComponent(service.title)}`}
                     className="inline-flex items-center gap-2 text-emerald-600 font-semibold text-sm group-hover:text-amber-500 transition-colors mt-auto"
                   >
                     Get a Consultation
@@ -274,7 +290,7 @@ const ServicesPage = () => {
                 Our team is ready to discuss your specific requirements and develop a customized approach for your project.
               </p>
               <Link
-                to="/contact"
+                to="/contact?message=I would like to request a consultation for a tailored sustainability solution."
                 className="bg-white text-emerald-700 px-8 py-4 font-bold rounded-xl hover:bg-amber-400 hover:text-white transition-all inline-flex items-center gap-2 shadow-lg"
                 data-testid="services-contact-btn"
               >

@@ -38,9 +38,7 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center shadow-lg">
-                <Leaf className="w-7 h-7 text-white" weight="fill" />
-              </div>
+              <img src="/images/logo.jpg" alt="GreenDev Associates" className="h-12 w-auto" />
               <div>
                 <span className="font-outfit font-bold text-xl text-white">GreenDev</span>
                 <span className="font-outfit text-xs text-emerald-300 block -mt-1">Associates International</span>
@@ -102,11 +100,16 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
-                <span className="text-emerald-200 text-sm">
+                <a
+                  href="https://maps.app.goo.gl/1H5eaytKuupV6yv16"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-200 text-sm hover:text-amber-400 transition-colors"
+                >
                   Zees Plaza, 6th Street,<br />
                   Dawhenya, Tema Comm 25,<br />
                   Ghana
-                </span>
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-amber-400" />

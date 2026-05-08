@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 import { 
   MapPin, 
   Phone, 
@@ -14,6 +15,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Button } from '../components/ui/button';
 
 const ContactPage = () => {
+  const location = useLocation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -24,6 +26,19 @@ const ContactPage = () => {
   });
   const [isSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const service = params.get('service');
+    const message = params.get('message');
+    if (service || message) {
+      setFormData(prev => ({
+        ...prev,
+        ...(service && { service }),
+        ...(message && { message })
+      }));
+    }
+  }, [location.search]);
 
   const services = [
     'Environmental Impact Assessment',
@@ -98,10 +113,17 @@ const ContactPage = () => {
                   <div>
                     <h4 className="font-outfit font-semibold text-gray-900 mb-1">Office Address</h4>
                     <p className="text-gray-600 text-sm">
-                      Zees Plaza, 6th Street,<br />
-                      Dawhenya, Tema Comm 25 – Dawhenya Stretch,<br />
-                      Ghana<br />
-                      <span className="text-gray-500">P. O. BOX CS 8412 TEMA</span>
+                      <a 
+                        href="https://maps.app.goo.gl/1H5eaytKuupV6yv16" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="hover:text-[#064E3B] hover:underline transition-colors cursor-pointer"
+                      >
+                        Zees Plaza, 6th Street,<br />
+                        Dawhenya, Tema Comm 25 – Dawhenya Stretch,<br />
+                        Ghana<br />
+                        <span className="text-gray-500">P. O. BOX CS 8412 TEMA</span>
+                      </a>
                     </p>
                   </div>
                 </div>
@@ -147,8 +169,7 @@ const ContactPage = () => {
                   <div>
                     <h4 className="font-outfit font-semibold text-gray-900 mb-1">Business Hours</h4>
                     <p className="text-gray-600 text-sm">
-                      Monday - Friday: 8:00 AM - 5:00 PM<br />
-                      Saturday: 9:00 AM - 1:00 PM
+                      Monday - Friday: 9:00 AM - 5:00 PM
                     </p>
                   </div>
                 </div>
@@ -317,7 +338,7 @@ const ContactPage = () => {
       {/* Map Section */}
       <section className="h-[400px] bg-gray-200" data-testid="contact-map">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.3671898854!2d0.0458!3d5.6835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwNDEnMDAuNiJOIDDCsDAyJzQ0LjkiRQ!5e0!3m2!1sen!2sgh!4v1600000000000!5m2!1sen!2sgh"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1220.615834582133!2d0.049056976895969426!3d5.750871501064821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x102080932e2cc353%3A0x3e5d6062e1563fca!2s6th%20street%2C%20Dawhenya!5e0!3m2!1sen!2sgh!4v1777528543041!5m2!1sen!2sgh"
           width="100%"
           height="100%"
           style={{ border: 0 }}

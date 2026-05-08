@@ -21,12 +21,12 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 const STATS = { years_experience: 10, projects_delivered: 100, industries_served: 50, expert_consultants: 11 };
 
 const FEATURED_PROJECTS = [
-  { id: '1', client_name: 'Puma Energy Ghana Limited', project_type: 'Environmental Impact Assessment', location: 'Tema, Ghana', summary: 'EIA for Proposed Dual 3.2km LPG/Fuel Underground Pipeline Project connecting Tema Oil Refinery and Kpone Marine Services Limited.', year: 2016, industry: 'Oil & Gas', featured: true },
-  { id: '2', client_name: 'Puma Energy Ghana Limited', project_type: 'Environmental Management Plan', location: 'Tema Free Zones, Ghana', summary: 'Preparation of EMP for 15 million litre aviation fuel tank farm at Tema Free Zones.', year: 2017, industry: 'Oil & Gas', featured: true },
-  { id: '3', client_name: 'Enclave Power Company', project_type: 'Environmental & Social Impact Assessment', location: 'Greater Accra, Ghana', summary: 'ESIA for a 396 MVA Power Substation for the 2000-acre Dawa Industrial City project.', year: 2017, industry: 'Energy', featured: true },
-  { id: '4', client_name: 'Devtraco Limited', project_type: 'Environmental Management Plan & Annual Environmental Report', location: 'Tema Community 25, Ghana', summary: 'Annual Environmental Report and Wastewater/StormWater Management Action Plan for 203-acre Devtraco Courts Residential Estate.', year: 2017, industry: 'Built Environment', featured: true },
-  { id: '5', client_name: 'Devtraco Limited', project_type: 'Comprehensive Waste Management Plan', location: 'Prampram, Ghana', summary: 'Comprehensive Waste Management Plan for 5000-Homes Devtraco Woodlands project on a 1000-acre land.', year: 2018, industry: 'Built Environment', featured: true },
-  { id: '6', client_name: 'Africa Cement Factory Limited', project_type: 'Environmental Impact Assessment', location: 'Tema Free Zones, Ghana', summary: 'EIA for proposed Cement Grinding station at Tema Free Zones Enclave.', year: 2019, industry: 'Manufacturing', featured: true },
+  { id: '1', client_name: 'Puma Energy Ghana Limited', project_type: 'EIA & Environmental Management Plan', location: 'Tema / Accra, Ghana', summary: 'EIA for Proposed Dual 3.2km LPG/Fuel Underground Pipeline Project and EMP for 15 million litre aviation fuel tank farm at Tema Free Zones.', industry: 'Oil & Gas' },
+  { id: '2', client_name: 'Enclave Power Company', project_type: 'Environmental & Social Impact Assessment', location: 'Greater Accra, Ghana', summary: 'ESIA for a 396 MVA Power Substation for the 2000-acre Dawa Industrial City project in the Greater Accra Region.', industry: 'Energy' },
+  { id: '3', client_name: 'Devtraco Limited', project_type: 'Environmental Management Plans & Waste Management', location: 'Tema / Prampram, Ghana', summary: 'Annual Environmental Report and Wastewater/StormWater Management Action Plan for Devtraco Courts and Comprehensive Waste Management Plan for 5000-Homes Devtraco Woodlands project.', industry: 'Built Environment' },
+  { id: '4', client_name: 'Africa Cement Factory Limited', project_type: 'Environmental Impact Assessment', location: 'Tema Free Zones, Ghana', summary: 'EIA for proposed Cement Grinding station at Tema Free Zones Enclave.', industry: 'Manufacturing' },
+  { id: '5', client_name: 'Kasapreko Company Limited', project_type: 'Environmental Management Plan', location: 'Spintex, Accra, Ghana', summary: 'Preparation of Environmental Management Plan to renew permit for alcoholic beverage, non-alcoholic beverage and bottled water plant.', industry: 'Manufacturing' },
+  { id: '6', client_name: 'Atlantic Quarry Limited', project_type: 'Environmental Management Plan & Monitoring', location: 'Huapase, Ghana', summary: 'Preparation of Environmental Management Plan and Environmental Monitoring Report for Huapase-based Quarry.', industry: 'Mining' },
 ];
 
 const TESTIMONIALS = [
@@ -85,14 +85,14 @@ const HomePage = () => {
   ];
 
   const clientLogos = [
-    { name: 'Puma Energy', initial: 'PE', logo: null },
-    { name: 'Devtraco', initial: 'DT', logo: null },
-    { name: 'Kasapreko', initial: 'KC', logo: null },
-    { name: 'Enclave Power', initial: 'EP', logo: null },
-    { name: 'AMPC Health', initial: 'AI', logo: null },
-    { name: "Int'l Warehouse", initial: 'IW', logo: null },
-    { name: 'Ferro Fabrik', initial: 'FF', logo: null },
-    { name: 'Reroy Cables', initial: 'RC', logo: null },
+    { name: 'Puma Energy', initial: 'PE', logo: '/images/puma.jpeg' },
+    { name: 'Devtraco', initial: 'DT', logo: '/images/devtraco.jpeg' },
+    { name: 'Kasapreko', initial: 'KC', logo: '/images/kasapreko.jpeg' },
+    { name: 'Enclave Power', initial: 'EP', logo: '/images/enclave.jpeg' },
+    { name: 'AMPC Health', initial: 'AI', logo: '/images/ampc.jpeg' },
+    { name: "Int'l Warehouse", initial: 'IW', logo: '/images/international_warehousing.jpeg' },
+    { name: 'Ferro Fabrik', initial: 'FF', logo: '/images/ferro.jpeg' },
+    { name: 'Reroy Cables', initial: 'RC', logo: '/images/reroy.jpeg' },
   ];
 
   return (
@@ -406,11 +406,6 @@ const HomePage = () => {
                   <span className="font-outfit text-5xl font-bold text-white/20">
                     {project.client_name.split(' ').map(w => w[0]).join('').slice(0, 2)}
                   </span>
-                  {project.featured && (
-                    <span className="absolute top-4 right-4 badge-featured rounded-full">
-                      Featured
-                    </span>
-                  )}
                 </div>
                 <div className="p-6">
                   <span className="badge-industry">
@@ -425,9 +420,8 @@ const HomePage = () => {
                   <p className="text-gray-600 text-sm mb-4 line-clamp-2">
                     {project.summary}
                   </p>
-                  <div className="flex items-center justify-between text-sm text-gray-500 pt-4 border-t border-gray-100">
+                  <div className="flex items-center text-sm text-gray-500 pt-4 border-t border-gray-100">
                     <span>{project.location}</span>
-                    <span className="font-semibold">{project.year}</span>
                   </div>
                 </div>
               </motion.div>

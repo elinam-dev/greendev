@@ -19,7 +19,21 @@ const clientList = [
   { name: 'Reroy Cables Limited', initial: 'RC', industry: 'Manufacturing', logo: '/images/reroy.jpeg' },
   { name: 'Western Rod and Wire Limited', initial: 'WR', industry: 'Manufacturing', logo: '/images/western_rod.jpeg' },
   { name: 'Ayaan Global Ghana Limited', initial: 'AG', industry: 'Manufacturing', logo: '/images/ayaan.jpeg' },
+  { name: 'Sentuo Oil Refinery', initial: 'SO', industry: 'Oil & Gas', logo: null },
+  { name: 'Ghana Gas', initial: 'GG', industry: 'Energy', logo: null },
+  { name: 'Sahara Petroleum Warehouse', initial: 'SP', industry: 'Oil & Gas', logo: null },
 ];
+
+const industryLinks = {
+  'Manufacturing': '/industries#manufacturing',
+  'Oil & Gas': '/industries#oil-gas',
+  'Built Environment': '/industries#built-environment',
+  'Mining': '/industries#mining',
+  'Agriculture': '/industries#agriculture',
+  'Energy': '/industries#energy',
+  'Logistics': '/industries',
+  'Health Services': '/industries',
+};
 
 const industries = [...new Set(clientList.map(c => c.industry))];
 
@@ -29,10 +43,7 @@ const ClientsPage = () => {
   return (
     <div className="min-h-screen" data-testid="clients-page">
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden" data-testid="clients-hero">
-        <img src="/images/background2.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-emerald-900" style={{ opacity: 0.5 }} />
-        
+      <section className="relative py-32 bg-[#064E3B]" data-testid="clients-hero">
         <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -119,9 +130,13 @@ const ClientsPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white px-6 py-3 border border-gray-200 rounded-lg hover:border-emerald-500 hover:bg-emerald-600 hover:text-white transition-all cursor-default shadow-sm"
               >
-                {industry}
+                <Link
+                  to={industryLinks[industry] || '/industries'}
+                  className="block bg-white px-6 py-3 border border-gray-200 rounded-lg hover:border-emerald-500 hover:bg-emerald-600 hover:text-white transition-all shadow-sm"
+                >
+                  {industry}
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -169,7 +184,7 @@ const ClientsPage = () => {
               Discover how GreenDev Associates can help your organization achieve its environmental and sustainability goals.
             </p>
             <Link
-              to="/contact"
+              to="/contact?message=I would like to become a client of GreenDev Associates."
               className="btn-primary inline-flex items-center gap-2"
               data-testid="clients-contact-btn"
             >

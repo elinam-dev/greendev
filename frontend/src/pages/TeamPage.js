@@ -3,17 +3,21 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, LinkedinLogo, Envelope } from '@phosphor-icons/react';
 
 const TEAM = [
-  { id: '1', name: 'Edward Kojo Anagbo', role: 'Managing Director', expertise: 'Environmental Sustainability Practitioner', order: 1 },
-  { id: '2', name: 'Emmanuel Okoh Agyemang', role: 'Partner/Principal Consultant', expertise: 'Sanitation Engineering Specialist', order: 2 },
-  { id: '3', name: 'Dr. Elvis Nyarko', role: 'Senior Consultant', expertise: 'Marine Ecology', order: 3 },
-  { id: '4', name: 'Steven Albert Tsike Kwadwo', role: 'Senior Consultant', expertise: 'Ecologist', order: 4 },
-  { id: '5', name: 'Isaac Simpson', role: 'Senior Consultant', expertise: 'Health and Safety Specialist', order: 5 },
-  { id: '6', name: 'Delali Gamor', role: 'Associate Consultant', expertise: 'Coastal Zone Management Specialist', order: 6 },
-  { id: '7', name: 'Jalel Moujaled', role: 'Associate Consultant', expertise: 'Renewable Energy Specialist', order: 7 },
-  { id: '8', name: 'Nathaniel Sackey', role: 'Associate Consultant', expertise: 'Environmental Geology Expert', order: 8 },
-  { id: '9', name: 'Isaac Edem Bibah', role: 'Project Manager', expertise: 'Stakeholder Engagement Practitioner', order: 9 },
-  { id: '10', name: 'Nana Yaw Wiafe', role: 'Lab Technician', expertise: 'Air Quality, Wastewater and Noise Monitoring Specialist', order: 10 },
-  { id: '11', name: 'Florence Amponsah', role: 'Research Assistant', expertise: 'Research and Data Collection', order: 11 },
+  { id: '12', name: 'Isaac Bibah', role: 'Operations Manager', expertise: 'Operations & Project Coordination', order: 1 },
+  { id: '13', name: 'Joshua Dakorah', role: 'Fields Manager', expertise: 'Field Operations & Environmental Monitoring', order: 2 },
+  { id: '14', name: 'Jacinta Gbadegbe', role: 'Business Development', expertise: 'Business Development & Client Relations', order: 3 },
+  { id: '15', name: 'Augusta Gyinae', role: 'Consultant', expertise: 'Environmental Consulting', order: 4 },
+  { id: '16', name: 'Oliver Gator', role: 'Environmental Quality Analyst', expertise: 'Environmental Quality Analysis & Reporting', order: 5 },
+  { id: '1', name: 'Edward Kojo Anagbo', role: 'Managing Director', expertise: 'Environmental Sustainability Practitioner', order: 6 },
+  { id: '3', name: 'Dr. Elvis Nyarko', role: 'Senior Consultant', expertise: 'Marine Ecology', order: 7 },
+  { id: '4', name: 'Steven Albert Tsike Kwadwo', role: 'Senior Consultant', expertise: 'Ecologist', order: 8 },
+  { id: '5', name: 'Isaac Simpson', role: 'Senior Consultant', expertise: 'Health and Safety Specialist', order: 9 },
+  { id: '6', name: 'Delali Gamor', role: 'Associate Consultant', expertise: 'Coastal Zone Management Specialist', order: 10 },
+  { id: '7', name: 'Jalel Moujaled', role: 'Associate Consultant', expertise: 'Renewable Energy Specialist', order: 11 },
+  { id: '8', name: 'Nathaniel Sackey', role: 'Associate Consultant', expertise: 'Environmental Geology Expert', order: 12 },
+  { id: '9', name: 'Isaac Edem Bibah', role: 'Project Manager', expertise: 'Stakeholder Engagement Practitioner', order: 13 },
+  { id: '10', name: 'Nana Yaw Wiafe', role: 'Lab Technician', expertise: 'Air Quality, Wastewater and Noise Monitoring Specialist', order: 14 },
+  { id: '11', name: 'Florence Amponsah', role: 'Research Assistant', expertise: 'Research and Data Collection', order: 15 },
 ];
 
 const TeamCard = ({ member, index, testId }) => (
@@ -83,7 +87,7 @@ const TeamPage = () => {
           <div className="mb-16">
             <h2 className="font-outfit text-2xl font-bold text-gray-900 mb-8 text-center">Leadership Team</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {team.filter(m => m.order <= 2).map((member, index) => (
+              {team.filter(m => m.order <= 5).map((member, index) => (
                 <TeamCard key={member.id} member={member} index={index} testId={`team-leader-${index}`} />
               ))}
             </div>
@@ -93,7 +97,7 @@ const TeamPage = () => {
           <div>
             <h2 className="font-outfit text-2xl font-bold text-gray-900 mb-8 text-center">Consultants & Staff</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {team.filter(m => m.order > 2).map((member, index) => (
+              {team.filter(m => m.order > 5).map((member, index) => (
                 <TeamCard key={member.id} member={member} index={index} testId={`team-consultant-${index}`} />
               ))}
             </div>
@@ -116,7 +120,7 @@ const TeamPage = () => {
               <p className="text-gray-600 mb-8">
                 We're always looking for talented environmental professionals and engineers to join our growing team. If you're passionate about sustainability and making a positive impact, we'd love to hear from you.
               </p>
-              <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
+              <Link to="/contact?message=I would like to get in touch with your team of experts." className="btn-primary inline-flex items-center gap-2">
                 View Open Positions
                 <ArrowRight className="w-5 h-5" />
               </Link>
@@ -139,7 +143,7 @@ const TeamPage = () => {
               Let our experienced team help you navigate your environmental and engineering challenges.
             </p>
             <Link
-              to="/contact"
+              to="/contact?message=I would like to work with your team of experts on my project."
               className="bg-white text-[#064E3B] px-8 py-3 font-medium hover:bg-gray-100 transition-colors inline-flex items-center gap-2"
               data-testid="team-contact-btn"
             >

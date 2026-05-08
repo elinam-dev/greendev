@@ -35,12 +35,12 @@ const IndustriesPage = () => {
     },
     {
       id: 'oil-gas',
-      title: 'Oil and Gas (Downstream and Upstream)',
+      title: 'Oil and Gas (Downstream)',
       icon: Drop,
       image: oilGasImg,
-      description: 'Specialized environmental consulting for upstream and downstream oil and gas operations across Ghana and West Africa.',
+      description: 'Specialized environmental consulting for downstream oil and gas operations across Ghana and West Africa.',
       services: [
-        'EIA for exploration and production facilities',
+        'EIA for downstream oil and gas facilities',
         'Pipeline and tank farm environmental assessments',
         'Spill prevention and response planning',
         'Environmental monitoring programs',
@@ -172,7 +172,7 @@ const IndustriesPage = () => {
                     ))}
                   </ul>
                   <Link
-                    to="/contact"
+                    to={`/contact?message=I would like to discuss a ${industry.title} project with your team.`}
                     className="inline-flex items-center gap-2 text-[#064E3B] font-medium text-sm group-hover:text-[#4D7C0F] transition-colors"
                   >
                     Discuss Your Project
@@ -223,7 +223,7 @@ const IndustriesPage = () => {
                   ))}
                 </div>
                 <Link
-                  to="/contact"
+                  to={`/contact?message=I would like an industry-specific consultation for ${industry.title}.`}
                   className="btn-primary inline-flex items-center gap-2"
                 >
                   Get Industry-Specific Consultation
@@ -266,7 +266,7 @@ const IndustriesPage = () => {
               Our industry experts can help you identify the right environmental solutions for your specific sector and project requirements.
             </p>
             <Link
-              to="/contact"
+              to="/contact?message=I am not sure which services I need. I would like to schedule a consultation to discuss my project requirements."
               className="bg-white text-[#064E3B] px-8 py-3 font-medium hover:bg-gray-100 transition-colors inline-flex items-center gap-2"
               data-testid="industries-contact-btn"
             >
