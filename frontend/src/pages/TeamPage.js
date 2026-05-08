@@ -83,24 +83,11 @@ const TeamPage = () => {
       {/* Team Grid */}
       <section className="section-padding bg-white" data-testid="team-grid">
         <div className="container-custom">
-          {/* Leadership Team */}
-          <div className="mb-16">
-            <h2 className="font-outfit text-2xl font-bold text-gray-900 mb-8 text-center">Leadership Team</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {team.filter(m => m.order <= 5).map((member, index) => (
-                <TeamCard key={member.id} member={member} index={index} testId={`team-leader-${index}`} />
-              ))}
-            </div>
-          </div>
-
-          {/* Consultants & Staff */}
-          <div>
-            <h2 className="font-outfit text-2xl font-bold text-gray-900 mb-8 text-center">Consultants & Staff</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {team.filter(m => m.order > 5).map((member, index) => (
-                <TeamCard key={member.id} member={member} index={index} testId={`team-consultant-${index}`} />
-              ))}
-            </div>
+          {/* Team Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {team.map((member, index) => (
+              <TeamCard key={member.id} member={member} index={index} testId={`team-member-${index}`} />
+            ))}
           </div>
         </div>
       </section>

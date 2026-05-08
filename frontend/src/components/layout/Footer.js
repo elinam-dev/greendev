@@ -27,6 +27,7 @@ const Footer = () => {
     { name: 'Environmental Audits', path: '/services#environmental' },
     { name: 'Water & Sanitation', path: '/services#engineering' },
     { name: 'CSR Development', path: '/services#advisory' },
+    { name: 'Earth Engineering', path: '/subsidiary' },
   ];
 
   return (
