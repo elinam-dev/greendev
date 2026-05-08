@@ -144,7 +144,7 @@ const ProjectsPage = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
             {[
               { value: '100+', label: 'Projects Completed' },
-              { value: '6', label: 'Industries Served' },
+              { value: '50+', label: 'Industries Served' },
               { value: '100%', label: 'Client Satisfaction' },
             ].map((stat, index) => (
               <motion.div

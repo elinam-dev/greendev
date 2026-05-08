@@ -257,9 +257,8 @@ const SubsidiaryPage = () => {
               </div>
               <h4 className="font-outfit font-semibold text-gray-900">Phone</h4>
               <div className="text-gray-600 text-sm space-y-1">
-                <a href="tel:+233266984364" className="block hover:text-emerald-600">+233 (0) 266 984 364</a>
                 <a href="tel:+233247197014" className="block hover:text-emerald-600">+233 (0) 247 197 014</a>
-                <a href="tel:+233558600571" className="block hover:text-emerald-600">+233 (0) 558 600 571</a>
+                <a href="tel:+233266984364" className="block hover:text-emerald-600">+233 (0) 266 984 364</a>
               </div>
             </div>
           </div>
