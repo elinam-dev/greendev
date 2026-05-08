@@ -23,6 +23,7 @@ const Header = () => {
         { name: 'Environmental Services', path: '/services#environmental' },
         { name: 'Engineering Services', path: '/services#engineering' },
         { name: 'Advisory Services', path: '/services#advisory' },
+        { name: 'GERS — Research & Lab Services', path: '/subsidiary' },
       ]
     },
     { name: 'Industries', path: '/industries' },

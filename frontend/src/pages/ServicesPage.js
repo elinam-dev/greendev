@@ -128,15 +128,16 @@ const ALL_SERVICES = [
     categoryColor: 'bg-blue-600',
     icon: Handshake,
     title: 'Earth Engineering',
-    description: 'Specialized earth engineering services supporting sustainable land use, geotechnical investigations, and ground improvement for infrastructure and industrial projects.',
+    description: 'Specialized environmental research, laboratory testing, and data-driven monitoring services through our subsidiary GreenDev Environmental Research Services (GERS).',
     details: [
-      'Geotechnical site investigations',
-      'Soil and ground condition assessments',
-      'Land use and terrain analysis',
-      'Ground improvement recommendations',
-      'Earthworks design and supervision',
-      'Foundation engineering support'
-    ]
+      'Baseline environmental studies and site characterisation',
+      'Ambient air quality monitoring and analysis',
+      'Wastewater and effluent sampling and analysis',
+      'Soil and groundwater sampling and characterisation',
+      'GIS mapping and spatial data analysis',
+      'Annual Environmental Reports (AER) preparation'
+    ],
+    link: '/subsidiary'
   }
 ];
 
@@ -228,10 +229,10 @@ const ServicesPage = () => {
 
                   {/* CTA */}
                   <Link
-                    to={`/contact?service=${encodeURIComponent(service.title)}`}
+                    to={service.link || `/contact?service=${encodeURIComponent(service.title)}`}
                     className="inline-flex items-center gap-2 text-emerald-600 font-semibold text-sm group-hover:text-amber-500 transition-colors mt-auto"
                   >
-                    Get a Consultation
+                    {service.link ? 'Learn More' : 'Get a Consultation'}
                     <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </Link>
                 </div>
