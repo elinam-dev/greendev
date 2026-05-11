@@ -1,4 +1,5 @@
 import edwardImg from '../team/Edward.jpg';
+import augustaImg from '../team/augusta.jpg';
 import isaacImg from '../team/Isaac.jpg';
 import godsonImg from '../team/Godson.jpg';
 import joshuaImg from '../team/Joshua.jpg';
@@ -12,7 +13,7 @@ const TEAM = [
   { id: '12', name: 'Isaac Bibah', role: 'Operations Manager', expertise: 'Operations & Project Coordination', image_url: isaacImg, order: 2 },
   { id: '2', name: 'Joshua Dakorah', role: 'Fields Manager', expertise: 'Quality Expert', image_url: joshuaImg, order: 3 },
   { id: '3', name: 'Jacinta Gbadegbe', role: 'Business Development', expertise: 'Client Relations', image_url: null, order: 4 },
-  { id: '4', name: 'Augusta Gyinae', role: 'Consultant', expertise: 'Environmental Consulting', image_url: null, order: 5 },
+  { id: '4', name: 'Augusta Gyinae', role: 'Consultant', expertise: 'Environmental Consulting', image_url: augustaImg, order: 5 },
   { id: '5', name: 'Oliver Gator', role: 'Environmental Quality Analyst', expertise: 'Environmental Quality Analysis', image_url: oliverImg, order: 6 },
   { id: '13', name: 'Adriana Parker-Benin', role: 'Consultant', expertise: 'Environmental Consulting', image_url: null, order: 7 },
   { id: '7', name: 'Emmanuel Okoh Agyemang', role: 'Associate Consultant', expertise: 'Hydrologist', image_url: null, order: 8 },
