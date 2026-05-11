@@ -1,23 +1,25 @@
+import edwardImg from '../team/Edward.jpg';
+import isaacImg from '../team/Isaac.jpg';
+import godsonImg from '../team/Godson.jpg';
+import joshuaImg from '../team/Joshua.jpg';
+import oliverImg from '../team/Oliver.jpg';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, LinkedinLogo, Envelope } from '@phosphor-icons/react';
 
 const TEAM = [
-  { id: '12', name: 'Isaac Bibah', role: 'Operations Manager', expertise: 'Operations & Project Coordination', order: 1 },
-  { id: '13', name: 'Joshua Dakorah', role: 'Fields Manager', expertise: 'Field Operations & Environmental Monitoring', order: 2 },
-  { id: '14', name: 'Jacinta Gbadegbe', role: 'Business Development', expertise: 'Business Development & Client Relations', order: 3 },
-  { id: '15', name: 'Augusta Gyinae', role: 'Consultant', expertise: 'Environmental Consulting', order: 4 },
-  { id: '16', name: 'Oliver Gator', role: 'Environmental Quality Analyst', expertise: 'Environmental Quality Analysis & Reporting', order: 5 },
-  { id: '1', name: 'Edward Kojo Anagbo', role: 'Managing Director', expertise: 'Environmental Sustainability Practitioner', order: 6 },
-  { id: '3', name: 'Dr. Elvis Nyarko', role: 'Senior Consultant', expertise: 'Marine Ecology', order: 7 },
-  { id: '4', name: 'Steven Albert Tsike Kwadwo', role: 'Senior Consultant', expertise: 'Ecologist', order: 8 },
-  { id: '5', name: 'Isaac Simpson', role: 'Senior Consultant', expertise: 'Health and Safety Specialist', order: 9 },
-  { id: '6', name: 'Delali Gamor', role: 'Associate Consultant', expertise: 'Coastal Zone Management Specialist', order: 10 },
-  { id: '7', name: 'Jalel Moujaled', role: 'Associate Consultant', expertise: 'Renewable Energy Specialist', order: 11 },
-  { id: '8', name: 'Nathaniel Sackey', role: 'Associate Consultant', expertise: 'Environmental Geology Expert', order: 12 },
-  { id: '9', name: 'Isaac Edem Bibah', role: 'Project Manager', expertise: 'Stakeholder Engagement Practitioner', order: 13 },
-  { id: '10', name: 'Nana Yaw Wiafe', role: 'Lab Technician', expertise: 'Air Quality, Wastewater and Noise Monitoring Specialist', order: 14 },
-  { id: '11', name: 'Florence Amponsah', role: 'Research Assistant', expertise: 'Research and Data Collection', order: 15 },
+  { id: '6', name: 'Edward Kojo Anagbo', role: 'Managing Director', expertise: 'Environmental Sustainability Practitioner', image_url: edwardImg, order: 1 },
+  { id: '12', name: 'Isaac Bibah', role: 'Operations Manager', expertise: 'Operations & Project Coordination', image_url: isaacImg, order: 2 },
+  { id: '2', name: 'Joshua Dakorah', role: 'Fields Manager', expertise: 'Quality Expert', image_url: joshuaImg, order: 3 },
+  { id: '3', name: 'Jacinta Gbadegbe', role: 'Business Development', expertise: 'Client Relations', image_url: null, order: 4 },
+  { id: '4', name: 'Augusta Gyinae', role: 'Consultant', expertise: 'Environmental Consulting', image_url: null, order: 5 },
+  { id: '5', name: 'Oliver Gator', role: 'Environmental Quality Analyst', expertise: 'Environmental Quality Analysis', image_url: oliverImg, order: 6 },
+  { id: '13', name: 'Adriana Parker-Benin', role: 'Consultant', expertise: 'Environmental Consulting', image_url: null, order: 7 },
+  { id: '7', name: 'Emmanuel Okoh Agyemang', role: 'Associate Consultant', expertise: 'Hydrologist', image_url: null, order: 8 },
+  { id: '8', name: 'Dr. Elvis Nyarko', role: 'Senior Consultant', expertise: 'Marine Ecology', image_url: null, order: 9 },
+  { id: '9', name: 'Steven Albert Tsike Kwadwo', role: 'Senior Consultant', expertise: 'Ecologist', image_url: null, order: 10 },
+  { id: '10', name: 'Delali Gamor', role: 'Associate Consultant', expertise: 'Coastal Zone Management Specialist', image_url: null, order: 11 },
+  { id: '11', name: 'Godson Amanie', role: 'Transport and Logistics Officer', expertise: 'Transport and Logistics', image_url: godsonImg, order: 12 },
 ];
 
 const TeamCard = ({ member, index, testId }) => (
@@ -31,11 +33,15 @@ const TeamCard = ({ member, index, testId }) => (
     data-testid={testId}
   >
     <div className="aspect-square bg-gray-100 overflow-hidden">
-      <div className="w-full h-full bg-gradient-to-br from-[#064E3B] to-[#4D7C0F] flex items-center justify-center">
-        <span className="font-outfit text-5xl font-bold text-white/20">
-          {member.name.split(' ').map(n => n[0]).join('')}
-        </span>
-      </div>
+      {member.image_url ? (
+        <img src={member.image_url} alt={member.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+      ) : (
+        <div className="w-full h-full bg-gradient-to-br from-[#064E3B] to-[#4D7C0F] flex items-center justify-center">
+          <span className="font-outfit text-5xl font-bold text-white/20">
+            {member.name.split(' ').map(n => n[0]).join('')}
+          </span>
+        </div>
+      )}
     </div>
     <div className="p-6 bg-white border border-gray-100 border-t-0">
       <h3 className="font-outfit text-lg font-semibold text-gray-900">{member.name}</h3>

@@ -1,9 +1,9 @@
-import manufacturingImg from '../image/manufacturing.jpg';
-import oilGasImg from '../image/oilandgas.jpg';
-import builtEnvImg from '../image/builtenvironment.jpeg';
-import miningImg from '../image/miningandmineral.jpg';
-import agricultureImg from '../image/agriculturalinvestments.jpg';
-import energyImg from '../image/energy.jpg';
+import manufacturingImg from '../components/image/manufacturing.jpg';
+import oilGasImg from '../components/image/oilandgas.jpg';
+import builtEnvImg from '../components/image/builtenvironment.jpeg';
+import miningImg from '../components/image/miningandmineral.jpg';
+import agricultureImg from '../components/image/agriculturalinvestments.jpg';
+import energyImg from '../components/image/energy.jpg';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 

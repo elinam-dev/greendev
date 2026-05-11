@@ -1,13 +1,5 @@
 import { Link } from 'react-router-dom';
-import { 
-  Leaf, 
-  MapPin, 
-  Phone, 
-  Envelope, 
-  LinkedinLogo, 
-  TwitterLogo, 
-  FacebookLogo 
-} from '@phosphor-icons/react';
+import { MapPin, Phone, Envelope } from '@phosphor-icons/react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -18,15 +10,16 @@ const Footer = () => {
     { name: 'Industries', path: '/industries' },
     { name: 'Projects', path: '/projects' },
     { name: 'Team', path: '/team' },
+    { name: 'Subsidiary', path: '/subsidiary' },
     { name: 'Contact', path: '/contact' },
   ];
 
   const services = [
-    { name: 'Environmental Impact Assessment', path: '/services#environmental' },
-    { name: 'Social Impact Assessment', path: '/services#environmental' },
-    { name: 'Environmental Audits', path: '/services#environmental' },
-    { name: 'Water & Sanitation', path: '/services#engineering' },
-    { name: 'CSR Development', path: '/services#advisory' },
+    { name: 'Environmental Impact Assessment', path: '/services' },
+    { name: 'Social Impact Assessment', path: '/services' },
+    { name: 'Permits & Licenses', path: '/services' },
+    { name: 'CSR Development', path: '/services' },
+    { name: 'Capacity Building', path: '/services' },
     { name: 'Earth Engineering', path: '/subsidiary' },
   ];
 
@@ -48,17 +41,6 @@ const Footer = () => {
             <p className="text-white/70 text-sm leading-relaxed mb-6">
               Leading sustainable solutions for environmental and engineering excellence across Africa.
             </p>
-            <div className="flex items-center gap-4">
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-amber-500 transition-colors" aria-label="LinkedIn">
-                <LinkedinLogo className="w-5 h-5 text-white" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-amber-500 transition-colors" aria-label="Twitter">
-                <TwitterLogo className="w-5 h-5 text-white" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-amber-500 transition-colors" aria-label="Facebook">
-                <FacebookLogo className="w-5 h-5 text-white" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -115,11 +97,11 @@ const Footer = () => {
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-amber-400" />
                 <div className="text-emerald-200 text-sm space-y-1">
-                  <a href="tel:+233266984364" className="block hover:text-amber-400">
-                    +233 (0) 266 984 364
-                  </a>
                   <a href="tel:+233247197014" className="block hover:text-amber-400">
                     +233 (0) 247 197 014
+                  </a>
+                  <a href="tel:+233266984364" className="block hover:text-amber-400">
+                    +233 (0) 266 984 364
                   </a>
                 </div>
               </li>

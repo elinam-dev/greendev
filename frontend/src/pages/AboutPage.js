@@ -13,9 +13,9 @@ const STATS = { years_experience: 10, projects_delivered: 100, industries_served
 
 const TEAM_PREVIEW = [
   { id: '1', name: 'Edward Kojo Anagbo', role: 'Managing Director', expertise: 'Environmental Sustainability Practitioner' },
-  { id: '2', name: 'Emmanuel Okoh Agyemang', role: 'Partner/Principal Consultant', expertise: 'Sanitation Engineering Specialist' },
-  { id: '3', name: 'Dr. Elvis Nyarko', role: 'Senior Consultant', expertise: 'Marine Ecology' },
-  { id: '4', name: 'Isaac Simpson', role: 'Senior Consultant', expertise: 'Health and Safety Specialist' },
+  { id: '2', name: 'Isaac Simpson', role: 'Senior Consultant', expertise: 'Health and Safety Specialist' },
+  { id: '3', name: 'Emmanuel Okoh Agyemang', role: 'Associate Consultant', expertise: 'Hydrologist' },
+  { id: '4', name: 'Dr. Elvis Nyarko', role: 'Senior Consultant', expertise: 'Marine Ecology' },
 ];
 
 const AboutPage = () => {
@@ -110,7 +110,7 @@ const AboutPage = () => {
               transition={{ duration: 0.6 }}
             >
               <img
-                src={require('../image/greendev.jpg')}
+                src={require('../components/image/greendev.jpg')}
                 alt="GreenDev Associates"
                 className="w-full h-[500px] object-cover rounded-2xl shadow-2xl"
               />

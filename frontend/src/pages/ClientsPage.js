@@ -1,27 +1,45 @@
+import pumaImg from '../components/image/puma.jpeg';
+import devtracoImg from '../components/image/devtraco.jpeg';
+import enclaveImg from '../components/image/enclave.jpeg';
+import acfImg from '../components/image/acf.jpeg';
+import ferroImg from '../components/image/ferro.jpeg';
+import vesterImg from '../components/image/vestermills.jpeg';
+import iwcImg from '../components/image/international_warehousing.jpeg';
+import mbsImg from '../components/image/mbs.jpeg';
+import atlanticImg from '../components/image/atlantic.jpeg';
+import yantaiImg from '../components/image/yantai.jpeg';
+import ampcImg from '../components/image/ampc.jpeg';
+import reroyImg from '../components/image/reroy.jpeg';
+import westernRodImg from '../components/image/western_rod.jpeg';
+import ayaanImg from '../components/image/ayaan.jpeg';
+import sentuoImg from '../components/image/sentuo.jpg';
+import lmiImg from '../components/image/lmi.jpg';
+import saharaImg from '../components/image/sahara.jpg';
+import ghanaGasImg from '../components/image/ghana gas.jpg';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from '@phosphor-icons/react';
 
 const clientList = [
-  { name: 'Puma Energy Ghana Limited', initial: 'PE', industry: 'Oil & Gas', logo: '/images/puma.jpeg' },
-  { name: 'Devtraco Limited', initial: 'DT', industry: 'Built Environment', logo: '/images/devtraco.jpeg' },
-  { name: 'Enclave Power Company', initial: 'EP', industry: 'Energy', logo: '/images/enclave.jpeg' },
-  { name: 'Kasapreko Company Limited', initial: 'KC', industry: 'Manufacturing', logo: '/images/kasapreko.jpeg' },
-  { name: 'Africa Cement Factory Limited', initial: 'AC', industry: 'Manufacturing', logo: '/images/acf.jpeg' },
+  { name: 'Sentuo Oil Refinery', initial: 'SO', industry: 'Oil & Gas', logo: sentuoImg },
+  { name: 'LMI Holdings', initial: 'LM', industry: 'Built Environment', logo: lmiImg },
+  { name: 'Sahara Petroleum Warehouse', initial: 'SP', industry: 'Oil & Gas', logo: saharaImg },
+  { name: 'Ghana Gas', initial: 'GG', industry: 'Energy', logo: ghanaGasImg },
+  { name: 'Puma Energy Ghana Limited', initial: 'PE', industry: 'Oil & Gas', logo: pumaImg },
+  { name: 'Devtraco Limited', initial: 'DT', industry: 'Built Environment', logo: devtracoImg },
+  { name: 'Enclave Power Company', initial: 'EP', industry: 'Energy', logo: enclaveImg },
+  { name: 'Africa Cement Factory Limited', initial: 'AC', industry: 'Manufacturing', logo: acfImg },
   { name: 'Ghana Steels Limited', initial: 'GS', industry: 'Manufacturing', logo: null },
-  { name: 'Ferro Fabrik Limited', initial: 'FF', industry: 'Manufacturing', logo: '/images/ferro.jpeg' },
-  { name: 'Vester Oil Mills Limited', initial: 'VO', industry: 'Agriculture', logo: '/images/vestermills.jpeg' },
-  { name: 'International Warehouse Company', initial: 'IW', industry: 'Logistics', logo: '/images/international_warehousing.jpeg' },
-  { name: 'M. Barbisotti and Sons Limited', initial: 'MB', industry: 'Logistics', logo: '/images/mbs.jpeg' },
-  { name: 'Atlantic Quarry Limited', initial: 'AQ', industry: 'Mining', logo: '/images/atlantic.jpeg' },
-  { name: 'Yantai Chemicals Limited', initial: 'YC', industry: 'Manufacturing', logo: '/images/yantai.jpeg' },
-  { name: 'AMPC International Health Consultants', initial: 'AI', industry: 'Health Services', logo: '/images/ampc.jpeg' },
-  { name: 'Reroy Cables Limited', initial: 'RC', industry: 'Manufacturing', logo: '/images/reroy.jpeg' },
-  { name: 'Western Rod and Wire Limited', initial: 'WR', industry: 'Manufacturing', logo: '/images/western_rod.jpeg' },
-  { name: 'Ayaan Global Ghana Limited', initial: 'AG', industry: 'Manufacturing', logo: '/images/ayaan.jpeg' },
-  { name: 'Sentuo Oil Refinery', initial: 'SO', industry: 'Oil & Gas', logo: null },
-  { name: 'Ghana Gas', initial: 'GG', industry: 'Energy', logo: null },
-  { name: 'Sahara Petroleum Warehouse', initial: 'SP', industry: 'Oil & Gas', logo: null },
+  { name: 'Ferro Fabrik Limited', initial: 'FF', industry: 'Manufacturing', logo: ferroImg },
+  { name: 'Vester Oil Mills Limited', initial: 'VO', industry: 'Agriculture', logo: vesterImg },
+  { name: 'International Warehouse Company', initial: 'IW', industry: 'Logistics', logo: iwcImg },
+  { name: 'M. Barbisotti and Sons Limited', initial: 'MB', industry: 'Logistics', logo: mbsImg },
+  { name: 'Atlantic Quarry Limited', initial: 'AQ', industry: 'Mining', logo: atlanticImg },
+  { name: 'Yantai Chemicals Limited', initial: 'YC', industry: 'Manufacturing', logo: yantaiImg },
+  { name: 'AMPC International Health Consultants', initial: 'AI', industry: 'Health Services', logo: ampcImg },
+  { name: 'Reroy Cables Limited', initial: 'RC', industry: 'Manufacturing', logo: reroyImg },
+  { name: 'Western Rod and Wire Limited', initial: 'WR', industry: 'Manufacturing', logo: westernRodImg },
+  { name: 'Ayaan Global Ghana Limited', initial: 'AG', industry: 'Manufacturing', logo: ayaanImg },
 ];
 
 const industryLinks = {

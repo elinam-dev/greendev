@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import backgroundImg from '../image/background.jpg';
-import background2Img from '../image/background2.jpg';
+import backgroundImg from '../components/image/background.jpg';
+import background2Img from '../components/image/background2.jpg';
 import { 
   ArrowRight, 
   Leaf, 
@@ -124,7 +124,7 @@ const HomePage = () => {
             >
               <div className="inline-flex items-center gap-2 bg-amber-500/20 backdrop-blur-sm border border-amber-500/30 rounded-full px-4 py-2 mb-6">
                 <span className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
-                <span className="text-amber-300 text-sm font-semibold">Ghana's Premier Environmental Consultancy</span>
+                <span className="text-amber-300 text-sm font-semibold">Leading Environmental Consultancy Firm</span>
               </div>
               
               <h1 className="font-outfit text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
