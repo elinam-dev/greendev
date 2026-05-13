@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import subsidiaryImg from '../components/image/subsidiary.jpg';
 import {
   ArrowRight, CheckCircle, Flask, Microscope, ChartBar,
   MapPin, Phone, Envelope, Buildings, Drop, Mountains, Plant, Lightning, Factory
@@ -67,9 +68,8 @@ const SubsidiaryPage = () => {
 
       {/* Hero */}
       <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-900" />
-        <div className="absolute inset-0 hero-pattern opacity-20" />
-        <div className="absolute top-20 right-20 w-72 h-72 bg-amber-500/20 rounded-full blur-3xl" />
+        <img src={subsidiaryImg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-[#064E3B]" style={{ opacity: 0.6 }} />
         <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

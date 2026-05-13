@@ -3,6 +3,7 @@ import augustaImg from '../team/augusta.jpg';
 import isaacImg from '../team/Isaac.jpg';
 import godsonImg from '../team/Godson.jpg';
 import joshuaImg from '../team/Joshua.jpg';
+import jacintaImg from '../team/jacinta.jpg';
 import oliverImg from '../team/Oliver.jpg';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -12,15 +13,15 @@ const TEAM = [
   { id: '6', name: 'Edward Kojo Anagbo', role: 'Managing Director', expertise: 'Environmental Sustainability Practitioner', image_url: edwardImg, order: 1 },
   { id: '12', name: 'Isaac Bibah', role: 'Operations Manager', expertise: 'Operations & Project Coordination', image_url: isaacImg, order: 2 },
   { id: '2', name: 'Joshua Dakorah', role: 'Fields Manager', expertise: 'Quality Expert', image_url: joshuaImg, order: 3 },
-  { id: '3', name: 'Jacinta Gbadegbe', role: 'Business Development', expertise: 'Client Relations', image_url: null, order: 4 },
+  { id: '3', name: 'Jacinta Gbadegbe', role: 'Business Development & Client Relations', expertise: 'Business', image_url: jacintaImg, order: 4 },
   { id: '4', name: 'Augusta Gyinae', role: 'Consultant', expertise: 'Environmental Consulting', image_url: augustaImg, order: 5 },
-  { id: '5', name: 'Oliver Gator', role: 'Environmental Quality Analyst', expertise: 'Environmental Quality Analysis', image_url: oliverImg, order: 6 },
-  { id: '13', name: 'Adriana Parker-Benin', role: 'Consultant', expertise: 'Environmental Consulting', image_url: null, order: 7 },
-  { id: '7', name: 'Emmanuel Okoh Agyemang', role: 'Associate Consultant', expertise: 'Hydrologist', image_url: null, order: 8 },
-  { id: '8', name: 'Dr. Elvis Nyarko', role: 'Senior Consultant', expertise: 'Marine Ecology', image_url: null, order: 9 },
-  { id: '9', name: 'Steven Albert Tsike Kwadwo', role: 'Senior Consultant', expertise: 'Ecologist', image_url: null, order: 10 },
-  { id: '10', name: 'Delali Gamor', role: 'Associate Consultant', expertise: 'Coastal Zone Management Specialist', image_url: null, order: 11 },
-  { id: '11', name: 'Godson Amanie', role: 'Transport and Logistics Officer', expertise: 'Transport and Logistics', image_url: godsonImg, order: 12 },
+  { id: '5', name: 'Oliver Gator', role: 'Environmental Quality Analyst', expertise: null, image_url: oliverImg, order: 6 },
+  { id: '13', name: 'Adriana Parker-Benin', role: 'Admin', expertise: 'Administration', image_url: null, order: 7 },
+  { id: '11', name: 'Godson Amanie', role: 'Transport and Logistics Officer', expertise: 'Transport and Logistics', image_url: godsonImg, order: 8 },
+  { id: '7', name: 'Emmanuel Okoh Agyemang', role: 'Associate Consultant', expertise: 'Hydrologist', image_url: null, order: 9 },
+  { id: '8', name: 'Dr. Elvis Nyarko', role: 'Associate Consultant', expertise: 'Marine Ecology', image_url: null, order: 10 },
+  { id: '9', name: 'Steven Albert Tsike Kwadwo', role: 'Associate Consultant', expertise: 'Ecologist', image_url: null, order: 11 },
+  { id: '10', name: 'Delali Gamor', role: 'Associate Consultant', expertise: 'Coastal Zone Management Specialist', image_url: null, order: 12 },
 ];
 
 const TeamCard = ({ member, index, testId }) => (
@@ -47,7 +48,7 @@ const TeamCard = ({ member, index, testId }) => (
     <div className="p-6 bg-white border border-gray-100 border-t-0">
       <h3 className="font-outfit text-lg font-semibold text-gray-900">{member.name}</h3>
       <p className="text-[#4D7C0F] text-sm font-medium mb-1">{member.role}</p>
-      <p className="text-gray-500 text-sm mb-4">{member.expertise}</p>
+      {member.expertise && <p className="text-gray-500 text-sm mb-4">{member.expertise}</p>}
       <div className="flex items-center gap-3">
         <a href="#" className="w-8 h-8 bg-gray-100 flex items-center justify-center hover:bg-[#064E3B] group/icon transition-colors">
           <LinkedinLogo className="w-4 h-4 text-gray-500 group-hover/icon:text-white transition-colors" />
