@@ -5,7 +5,6 @@ import jacintaImg from '../team/jacinta.jpg';
 import isaacImg from '../team/Isaac.jpg';
 import godsonImg from '../team/Godson.jpg';
 import joshuaImg from '../team/Joshua.jpg';
-import jacintaImg from '../team/jacinta.jpg';
 import oliverImg from '../team/Oliver.jpg';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
