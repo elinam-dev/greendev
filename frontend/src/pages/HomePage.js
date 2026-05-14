@@ -128,7 +128,7 @@ const HomePage = () => {
               </div>
               
               <h1 className="font-outfit text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-                Leading Sustainable Solutions for{' '}
+                Driving Sustainable Solutions for{' '}
                 <span className="text-amber-400">Environmental Excellence</span>
               </h1>
               

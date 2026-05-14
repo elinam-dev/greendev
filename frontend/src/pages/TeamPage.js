@@ -1,5 +1,7 @@
 import edwardImg from '../team/Edward.jpg';
 import augustaImg from '../team/augusta.jpg';
+import adrianaImg from '../team/adriana.jpg';
+import jacintaImg from '../team/jacinta.jpg';
 import isaacImg from '../team/Isaac.jpg';
 import godsonImg from '../team/Godson.jpg';
 import joshuaImg from '../team/Joshua.jpg';
@@ -16,7 +18,7 @@ const TEAM = [
   { id: '3', name: 'Jacinta Gbadegbe', role: 'Business Development & Client Relations', expertise: 'Business', image_url: jacintaImg, order: 4 },
   { id: '4', name: 'Augusta Gyinae', role: 'Consultant', expertise: 'Environmental Consulting', image_url: augustaImg, order: 5 },
   { id: '5', name: 'Oliver Gator', role: 'Environmental Quality Analyst', expertise: null, image_url: oliverImg, order: 6 },
-  { id: '13', name: 'Adriana Parker-Benin', role: 'Admin', expertise: 'Administration', image_url: null, order: 7 },
+  { id: '13', name: 'Adriana Parker-Benin', role: 'Admin', expertise: 'Administration', image_url: adrianaImg, order: 7 },
   { id: '11', name: 'Godson Amanie', role: 'Transport and Logistics Officer', expertise: 'Transport and Logistics', image_url: godsonImg, order: 8 },
   { id: '7', name: 'Emmanuel Okoh Agyemang', role: 'Associate Consultant', expertise: 'Hydrologist', image_url: null, order: 9 },
   { id: '8', name: 'Dr. Elvis Nyarko', role: 'Associate Consultant', expertise: 'Marine Ecology', image_url: null, order: 10 },
