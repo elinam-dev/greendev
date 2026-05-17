@@ -85,6 +85,8 @@ const HomePage = () => {
   ];
 
   const clientLogos = [
+    { name: 'Mantrac Ghana', initial: 'MG', logo: '/images/mantrac.jpg' },
+    { name: 'Toyota Ghana', initial: 'TG', logo: '/images/toyota.jpg' },
     { name: 'Puma Energy', initial: 'PE', logo: '/images/puma.jpeg' },
     { name: 'Devtraco', initial: 'DT', logo: '/images/devtraco.jpeg' },
     { name: 'Enclave Power', initial: 'EP', logo: '/images/enclave.jpeg' },

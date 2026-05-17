@@ -1,4 +1,6 @@
 import pumaImg from '../components/image/puma.jpeg';
+import mantracImg from '../components/image/mantrac.jpg';
+import toyotaImg from '../components/image/toyota.jpg';
 import devtracoImg from '../components/image/devtraco.jpeg';
 import enclaveImg from '../components/image/enclave.jpeg';
 import acfImg from '../components/image/acf.jpeg';
@@ -21,6 +23,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from '@phosphor-icons/react';
 
 const clientList = [
+  { name: 'Mantrac Ghana Limited', initial: 'MG', industry: 'Manufacturing', logo: mantracImg },
+  { name: 'Toyota Ghana Limited', initial: 'TG', industry: 'Manufacturing', logo: toyotaImg },
   { name: 'Sentuo Oil Refinery', initial: 'SO', industry: 'Oil & Gas', logo: sentuoImg },
   { name: 'LMI Holdings', initial: 'LM', industry: 'Built Environment', logo: lmiImg },
   { name: 'Sahara Petroleum Warehouse', initial: 'SP', industry: 'Oil & Gas', logo: saharaImg },
