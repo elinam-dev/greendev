@@ -87,7 +87,6 @@ const HomePage = () => {
   const clientLogos = [
     { name: 'Puma Energy', initial: 'PE', logo: '/images/puma.jpeg' },
     { name: 'Devtraco', initial: 'DT', logo: '/images/devtraco.jpeg' },
-    { name: 'Kasapreko', initial: 'KC', logo: '/images/kasapreko.jpeg' },
     { name: 'Enclave Power', initial: 'EP', logo: '/images/enclave.jpeg' },
     { name: 'AMPC Health', initial: 'AI', logo: '/images/ampc.jpeg' },
     { name: "Int'l Warehouse", initial: 'IW', logo: '/images/international_warehousing.jpeg' },
