@@ -21,11 +21,11 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 const STATS = { years_experience: 10, projects_delivered: 100, industries_served: 50, expert_consultants: 11 };
 
 const FEATURED_PROJECTS = [
-  { id: '1', client_name: 'Puma Energy Ghana Limited', project_type: 'EIA & Environmental Management Plan', location: 'Tema / Accra, Ghana', summary: 'EIA for Proposed Dual 3.2km LPG/Fuel Underground Pipeline Project and EMP for 15 million litre aviation fuel tank farm at Tema Free Zones.', industry: 'Oil & Gas' },
+  { id: '1', client_name: 'Sentuo Group', project_type: 'ESIA, Monitoring & Compliance', location: 'Ghana', summary: 'Environmental and Social Impact Assessment, environmental monitoring and compliance services for Sentuo Group operations in Ghana.', industry: 'Oil & Gas' },
   { id: '2', client_name: 'Enclave Power Company', project_type: 'Environmental & Social Impact Assessment', location: 'Greater Accra, Ghana', summary: 'ESIA for a 396 MVA Power Substation for the 2000-acre Dawa Industrial City project in the Greater Accra Region.', industry: 'Energy' },
-  { id: '3', client_name: 'Devtraco Limited', project_type: 'Environmental Management Plans & Waste Management', location: 'Tema / Prampram, Ghana', summary: 'Annual Environmental Report and Wastewater/StormWater Management Action Plan for Devtraco Courts and Comprehensive Waste Management Plan for 5000-Homes Devtraco Woodlands project.', industry: 'Built Environment' },
+  { id: '3', client_name: 'Ghana Gas', project_type: 'Environmental Consulting', location: 'Ghana', summary: 'Environmental consulting and advisory services for Ghana Gas operations and infrastructure projects.', industry: 'Energy' },
   { id: '4', client_name: 'Africa Cement Factory Limited', project_type: 'Environmental Impact Assessment', location: 'Tema Free Zones, Ghana', summary: 'EIA for proposed Cement Grinding station at Tema Free Zones Enclave.', industry: 'Manufacturing' },
-  { id: '5', client_name: 'Kasapreko Company Limited', project_type: 'Environmental Management Plan', location: 'Spintex, Accra, Ghana', summary: 'Preparation of Environmental Management Plan to renew permit for alcoholic beverage, non-alcoholic beverage and bottled water plant.', industry: 'Manufacturing' },
+  { id: '5', client_name: 'Devtraco Limited', project_type: 'Environmental Management Plans & Waste Management', location: 'Tema / Prampram, Ghana', summary: 'Annual Environmental Report and Wastewater/StormWater Management Action Plan for Devtraco Courts and Comprehensive Waste Management Plan for 5000-Homes Devtraco Woodlands project.', industry: 'Built Environment' },
   { id: '6', client_name: 'Atlantic Quarry Limited', project_type: 'Environmental Management Plan & Monitoring', location: 'Huapase, Ghana', summary: 'Preparation of Environmental Management Plan and Environmental Monitoring Report for Huapase-based Quarry.', industry: 'Mining' },
 ];
 

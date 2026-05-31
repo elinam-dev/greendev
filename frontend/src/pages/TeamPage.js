@@ -20,7 +20,7 @@ const TEAM = [
   { id: '5', name: 'Oliver Gator', role: 'Environmental Quality Analyst', expertise: null, image_url: oliverImg, order: 7 },
   { id: '13', name: 'Adriana Parker-Benin', role: 'Admin', expertise: 'Administration', image_url: adrianaImg, order: 7 },
   { id: '11', name: 'Godson Amanie', role: 'Transport and Logistics Officer', expertise: 'Transport and Logistics', image_url: godsonImg, order: 8 },
-  { id: '7', name: 'Emmanuel Okoh Agyemang', role: 'Associate Consultant', expertise: 'Hydrologist', image_url: null, order: 9 },
+  { id: '7', name: 'Emmanuel Okoh Agyemang', role: 'Associate Consultant', expertise: 'Sanitation Engineering Specialist', image_url: null, order: 9 },
   { id: '8', name: 'Dr. Elvis Nyarko', role: 'Associate Consultant', expertise: 'Marine Ecology', image_url: null, order: 10 },
   { id: '9', name: 'Steven Albert Tsike Kwadwo', role: 'Associate Consultant', expertise: 'Ecologist', image_url: null, order: 11 },
   { id: '10', name: 'Delali Gamor', role: 'Associate Consultant', expertise: 'Coastal Zone Management Specialist', image_url: null, order: 12 },
